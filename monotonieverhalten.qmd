@@ -1,0 +1,130 @@
+---
+title: "Monotonieverhalten untersuchen"
+format: html
+filters:
+  - pyodide
+---
+
+# Monotonie
+
++ Eine Funktion heißt auf einem Abschnitt **monoton steigend**, wenn sie auf diesem Abschnitt dauerhaft eine Steigung $\ge 0$ aufweist.
++ Eine Funktion heißt auf einem Abschnitt **monoton fallend**, wenn sie auf diesem Abschnitt dauerhaft eine Steigung $\le 0$ aufweist.
++ Eine Funktion heißt auf einem Abschnitt ***streng* monoton steigend**, wenn sie auf diesem Abschnitt dauerhaft eine Steigung $\mathbf{>} 0$ aufweist.
++ Eine Funktion heißt auf einem Abschnitt ***streng* monoton fallend**, wenn sie auf diesem Abschnitt dauerhaft eine Steigung $\mathbf{<} 0$ aufweist.
+
+# Monotonieverhalten
+
+Das Monotonieverhalten beschreibt in welchen Bereichen eine Funktion welche Form der Monotonie aufweist.
+Die Monotonie kann, wie in dem Kapitel **[Ableitungen](ableitungen.qmd)** angeteased wurde, mithilfe der Ableitung bestimmt werden, da diese an jedem Punkt die Steigung an dieser Stelle darstellt.
+
+Um das Monotonieverhalten einer Funktion zu bestimmen gehen wir wie folgt vor:
+
+1.  **Erste Ableitung bilden:**  
+Berechne die erste Ableitung $f'(x)$ der Funktion $f(x)$.
+2.  **Nullstellen der Ableitung finden:**   
+Bestimme die Nullstellen der ersten Ableitung, indem du die Gleichung $f'(x) = 0$ löst. Diese Nullstellen markieren die Grenzen der Monotonie-Intervalle.
+3.  **Intervalle aufstellen:**   
+Die Nullstellen von $f'(x)$ teilen den Definitionsbereich in die Intervalle von $-\inf$ bis $F(x_0)$ und von $F(x_n-1)$ bis $\inf$, wobei $x_0$ bis $x_n-1$ die Nullstellen von $f'(x)$ sind.
+4.  **Vorzeichen von $f'(x)$ prüfen:**   
+Wähle für jedes Intervall einen beliebigen Testwert und setze ihn in die erste Ableitung $f'(x)$ ein. Das Vorzeichen des Ergebnisses verrät dir das Monotonieverhalten in diesem gesamten Intervall:
+    -   $f'(x) > 0 \implies$ $f$ ist streng monoton steigend.
+    -   $f'(x) < 0 \implies$ $f$ ist streng monoton fallend.
+Falls zwei oder mehr aufeinander folgende Intervalle steigend/fallend sind, so können sie als ein nicht *streng* monoton, sondern nur monoton steigender/fallender Intervall betrachtet werden.
+
+# Python Implementierung
+
+Nun geht es darum diesen ganzen Prozess als Python Programm zu automatisieren.
+Zuerst einmal brauchen wir die Erkenntnisse die Du die in den **[Nullstellen](nullstellen.qmd)**, sowie **[Ableitungen](ableitungen.qmd)** Kapiteln gelernten hast.
+
+Hier ein Teil des Codes, _der Teil den du schon kennst_ und eine kleine Anleitung, damit Du die Ausgabe mithilfe von Schleifen passend gestalten kannst.
+
+```{pyodide-python}
+#| read-only: true
+
+import sympy
+
+x = sympy.symbols('x')
+
+f = x**3 - 3*x**2 + 2
+
+f_prime = sympy.diff(f, x)
+
+print(f"Die erste Ableitung ist: f'(x) = {f_prime}")
+
+extremstellen = sympy.solve(f_prime, x)
+extremstellen.sort() #sortiert die Nullstellen in aufsteigender Reihenfolge
+
+punkte = [-sympy.oo] + extremstellen + [sympy.oo]
+#Addiert die unterschiedlichen "Listen" zusammen (würde auch mit mehreren Listen funktionieren)
+
+```
+
+Jetzt ist das Programm schon fast fertig. 
+Bitte lies Dir einmal in Ruhe den bisherigen Teil durch und versuch alles zu verstehen, was da getan wurde.
+
+## Aufgabe 
+
+Jetzt geht es darum den letzten Schritts des Programms zu schreiben.
+Hierbei ist es hilfreich entweder eine While-Schleife, oder eine For-Schleife zu verwenden.
+
+<details>
+<summary> While-/For- Schleifen </summary>
+
+#### While-Schleife 
+
+Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, is dies vereinfacht mit Hilfe von Schleifen möglich.
+`While-Schleifen`wiederholen hierbei den Code solange wie eine gewisse Bedingung erfüllt ist.
+Ein kleines Bsp.:
+```{pyodide-python}
+a = 3
+b = 11
+while a<b: 
+    a = a+1 #ist sehr wichtig, da sonst die Bedingung nie erfüllt würde, heißt es wäre eine ENDLOS-Schleife
+    print(a)
+```
+
+#### For-Schleife 
+
+`For-Schleifen`wiederholen sich über einen gewissen Intervall. Das Schlüsselwort `range` beschreibt hierbei das Intervall von $a$ bis $b$. Dabei ist $a$ der Start der Iteration und $b$ der Endpunkt der Iteration.
+
+```{pyodide-python}
+a = 5 
+b = 20
+for i in range(a,b,2): #a,b sind die Grenzen 2 die Schrittgröße
+    print(i+1)
+```
+
+</details> 
+
+Wenn Du die unterschiedlichen Schleifen verstanden hast (teste gerne auch noch ein wenig herum).  
+Versuch das obige Programm (hier drunter nochmal in Kopie), so fortzusetzen, dass es die Liste durchgeht und in jedem Intervall einen Wert testet, dessen Vorzeichen bestimmt (also ob die Funktion steigt/fällt) und das nutzt um das Monotonieverhalten passend zu bestimmen. 
+
+```{pyodide-python}
+import sympy
+
+x = sympy.symbols('x')
+
+f = x**3 - 3*x**2 + 2
+
+f_prime = sympy.diff(f, x)
+
+print(f"Die erste Ableitung ist: f'(x) = {f_prime}")
+
+extremstellen = sympy.solve(f_prime, x)
+extremstellen.sort() #sortiert die Nullstellen in aufsteigender Reihenfolge
+
+punkte = [-sympy.oo] + extremstellen + [sympy.oo]
+#Addiert die unterschiedlichen "Listen" zusammen (würde auch mit mehreren Listen funktionieren)
+
+```
+
+##  Aufgabe 2
+
+Wenn Du das hinbekommen hast, versuche das Programm noch ein wenig zu verfeinern. 
+Baue in das Programm noch eine Ausgabe ein, welche Nutznießern des Programms ausgibt, was das Monotonieverhalten ist.  
+    
+Hier kannst Du an der Ausgabe noch eine Menge stellschrauben drehen, die die Ausgabe direkter machen. D.h. wie oben erwähnt kannst du Abschnitte an denen das gleiche Vorzeichen nacheinander vorkommt zusammen fassen und statt _streng_ monoton, als monoton steigend/fallend bezeichnen.  
+
+Probiere das Ganze am besten mit unterschiedlichen Funktionen aus um zu testen, wie gut dein Programm für sie funktioniert.
+
+Wenn du mit deinem Ergebnis zufrieden bist, geht es weiter in **[Extrempunkte-Sattelpunkte](extrempunkte.qmd)**.

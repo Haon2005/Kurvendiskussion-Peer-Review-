@@ -1,0 +1,30 @@
+---
+title: "Definitionsbereich und Wertebereich"
+format: html
+filters:
+  - pyodide
+---
+# Der Definitionsbereich
+
+Der **[Definitionsbereich](definitionsbereich.qmd)** (auch Definitionsmenge genannt) einer Funktion **\(f\)** ist die Menge aller Werte, für die die Funktion definiert ist, d.h., für die ein gültiger Funktionswert berechnet werden kann.
+Mit Python und der Bibliothek `SymPy` können wir versuchen, den Definitionsbereich für verschiedene Arten von Funktionen zu bestimmen. `SymPy` erlaubt uns, mit mathematischen Symbolen und Ausdrücken zu arbeiten. Also Gleichungen zu lösen.
+
+Es gibt zwei Gründe, warum eine Funktion eine Definitionslücke hat, beide hängen von den jeweiligen Begrenzungen unser Begriffe ab.  
+Zum einen **[gebrochen-rationale Funktionen](definitionsbereich.qmd#gebrochen-rationale-funktionen)** bzw. Brüche. Die Division durch Null ist nicht definiert, daher hat jede Funktion eine Definitionslücke, wenn sonst durch 0 geteilt werden würde an der Stelle.  
+Zum anderen **[Funktionen mit Wurzeln](definitionsbereich.qmd#funktionen-mit-Wurzeln)** gerade Wurzeln (2te-,4te-,\dots Wurzel) sind für negative Zahlen nicht definiert (Es sei denn man befindet sich in ℂ). Da negative Werte innerhalb eine Wurzel nicht definiert sind, gibt es auch hier eine Definitionslücke, für alle Werte an denen Die Funktion einen negativen Wert der Wurzel wiedergeben würde.
+
+Wir betrachten die unterschiedlichen Untersuchungen getrennt, natürlich können die beiden Untersuchungen auch in einem Python Programm abgearbeitet werden.
+
+# Der Wertebereich
+
+Der **[Wertebereich](definitionsbereich.qmd)** (auch Wertemenge genannt) einer Funktion **\(f\)** ist die Menge aller Werte, die diese Funktion annehmen kann, d.h. die Menge aller Werte welche durch einsetzen aller Elemente aus dem Definitionsbereich bestimmt werden.
+Der Wertebereich einer Funktion kann aus verschiedenen Gründen eingeschränkt sein, es gibt den trivialen Fall der auch untersucht werden kann, denn wir hier aber der Übersichtlichkeit wegen wegfallen lassen. 
+Obendrein wird empfohlen erst die anderen Kapitel durchzuarbeiten, da das Kapitel Wertebereich unteranderem **[Extremwerte](extrempunkte.qmd)** wichtig ist, aber auch **[Asymptoten](asymptoten.qmd)** und **[Verhalten der Funktion an Grenzen oder im Unendlichen](globalverhalten.qmd)** beinhaltet.  
+
+Es gibt zum einen **strukturelle Eigenschaften der Funktion** welche den Wertebereich einschränken können. 
+Darunter fällt das vorhanden Sein von **globalen Extremwerten** und **natürliche Wertegrenzen bestimmter Funktionstypen** (Exponentialfunktionen, Wurzelfunktionen, Betragsfunktionen, Trigonometrische Funktion, Periodische Funktionen)
+Auch spielt das **Verhalten der Funktion an Grenzen oder im Unendlichen** einen Rollen, dies bezieht sich vor allem auf **horizontale Asymptoten**, da diese den Wertbereich einschränken. 
+
+
+
+

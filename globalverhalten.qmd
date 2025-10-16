@@ -1,0 +1,47 @@
+---
+title: "Globalverhalten untersuchen"
+format: html
+filters:
+  - pyodide
+---
+
+# Globalverhalten (Verhalten im Unendlichen)
+
+In diesem Abschnitt geht es um das **Globalverhalten**, auch **Verhalten im Unendlichen** genannt.  
+Es wird betrachtet, wie sich die Funktionswerte $f(x)$ verhalten, wenn die $x$-Werte sehr groß (gegen $+\infty$) oder sehr klein (gegen $-\infty$) werden, d.h. wir betrachten die **Grenzwerte (Limes)**:
+
+$$ \lim_{x \to \infty} f(x) \quad \text{und} \quad \lim_{x \to -\infty} f(x) $$
+
+Das Ergebnis dieser Untersuchung verrät uns, ob sich der Graph der Funktion für große/kleine $x$-Werte einer bestimmten Zahl nähert (**[horizontale Asymptote](asymptoten.qmd#horizontale-Asymptoten)**) oder ob er unbegrenzt weiter steigt oder fällt.
+
+## Globalverhalten mit Python bestimmen
+
+Innerhalb der Python-Bibliothek `sympy` gibt es eine sehr hilfreiche Funktion die das Ganze für uns berechnet `sympy.limit()`.
+
+```{pyodide-python}
+#| read-only: true
+
+# Diese Funktion berechnet den pos. bzw. neg. Limes von x gegen + bzw. - Unendlich.
+
+limit_pos_oo = sympy.limit(f, x, sympy.oo) #positiver Grenzwert
+limit_neg_oo = sympy.limit(f, x, -sympy.oo) #negativer Grenzwert
+```
+
+## Aufgabe Globalverhalten mit Python bestimmen lassen
+
+Davon ausgehend, dass Du mehrere der anderen Abschnitte dieses Tutorials bereits bearbeitet hast, sollte diese Funktion einzubetten recht leicht für Dich sein.  
+Versuche einen Code zu erstellen, welcher eine von dir bestimmte Funktion untersucht auf das Globalverhalten in positive wie negative Richtung.  
+Dazu sollte es eine Ausgabe geben, in welcher dem Nutzer angegeben wird, wie sich die Funktion verhält.
+
+_Als kleine Sonderaufgabe: Du kannst auch versuchen den Error auszugeben. Teste am besten aus, was du für eine Ausgabe bekommst, bei unterschiedlichem Grenzverhalten_
+
+
+```{pyodide-python}
+# Hier deinen Code einfügen
+```
+
+
+
+Wenn du das geschafft hast, bist du bereit für das nächste Kapitel.  
+Das Globalverhalten ist entscheidend für die Bestimmung von waagerechten Asymptoten.  
+Im nächsten Kapitel **Asymptoten bestimmen** werden wir dieses Wissen nutzen.

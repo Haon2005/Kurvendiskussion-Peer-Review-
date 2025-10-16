@@ -1,0 +1,49 @@
+---
+title: "Inhaltsverzeichnis"
+format: html
+filters:
+  - pyodide
+---
+
+Auf dieser Seite gibt es eine kurze Beschreibung dessen was in den unterschiedlichen Kapiteln geschehen soll. 
+
+# Kapitelübersicht
+
+*   **[Startseite](index.qmd#kurven-diskussion-mit-python-realisieren)**
+    *   *Kurzbeschreibung:*  
+    Dieser Abschnitt soll dir erklären wie diese Website funktioniert und dir die Möglichkeiten zeigen, die durch die Python-Codeblöcken gegeben werden. Auch kannst du hier sehen, wie du neue Python Blöcke erzeugst.
+
+---
+
+
+*   **[Definitionsbereiche und Wertebereiche](uebersicht_definition_werte.qmd)**
+    *   *Kurzbeschreibung:*  
+    Dieser Abschnitt teilt sich in Definitionsbereich und Wertebereich Untersuchung auf. In den jeweiligen Abschnitten wird gezeigt, wie die jeweiligen Bereiche einer Funktion mit Hilfe von Python bestimmt werden können.
+
+---
+
+*   **[Symmetrie und Achsenschnittpunkte](uebersicht_symmetrie_achsen.qmd)**
+    *   *Kurzbeschreibung:*  
+    Erfahre hier, wie du Funktionen auf Symmetrieeigenschaften (Achsensymmetrie zur y-Achse, Punktsymmetrie zum Ursprung) untersuchst und die Schnittpunkte mit der x-Achse (Nullstellen) sowie der y-Achse in/mit Python bestimmst.
+
+---
+
+*   **[Globalverhalten und Asymptoten](uebersicht_global_asymptoten.qmd)**
+    *   *Kurzbeschreibung:*  
+    Dieser Teil des Tutorials zeigt dir, wie du das Verhalten einer Funktion im Unendlichen mit Python bestimmst.
+    Auch wird dir hier gezeigt, wie eine Funktion auf die unterschiedliche Asymptoten (waagerecht, senkrecht, schief) untersuchst und wie du das ganze von Python ausgeben lassen kannst.
+
+---
+
+*   **[Monotonie und Krümmungsverhalten](uebersicht_monotonie_kruemmung.qmd)**
+    *   *Kurzbeschreibung:*  
+    Lerne, wie du mithilfe der Ableitungen das Monotonieverhalten (steigend/fallend), Extrempunkte (Hoch-/Tiefpunkte), das Krümmungsverhalten (konvex/konkav) und Wendepunkte einer Funktion mit Python untersuchst.
+
+---
+
+*   **[Graphen zeichnen](uebersicht_graphen_zeichnen.qmd)**
+    *   *Kurzbeschreibung:*  
+    Als Abschluss des Tutorials geht es um die Visualisierung.
+    In diesem Kapitel geht es darum zu beschreiben, wie ein Graph i.A. dargestellt werden kann, aber auch wie in einer Darstellung Punkte markiert und beschriftet werden können (Extrem-, Wendestellen, Asymptoten).
+
+---

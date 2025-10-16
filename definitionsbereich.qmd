@@ -1,0 +1,220 @@
+---
+title: "Definitionsbereich bestimmen"
+format: html
+filters:
+  - pyodide
+---
+
+# Gebrochen-rationale Funktionen
+
+## Definitionslücke im Nenner bestimmen
+
+Bei gebrochen-rationalen Funktionen (Funktionen, die als Bruch zweier Polynome dargestellt werden) ist die Division durch Null nicht definiert. Der Nenner darf also nicht Null werden.
+
+Nun gilt es einen Algorithmus zu schreiben, welcher die Stellen berechnet, an denen der Nenner Null werden kann.
+
+```{pyodide-python}
+import sympy
+#| read-only: true
+#Definiere X als Variable(Symbol) für Python
+x= sympy.symbols('x')
+
+#Bsp:
+nenner=x-1
+
+problemstellen=sympy.solve(nenner,x)
+
+print("Die Problemstelle ist bei x=", problemstellen[0])
+
+#sympy.solve() löst die Gleichung nenner=0 nach x auf
+#Problemstellen[0] nutzt den ersten Eintrag der Liste an Nullstellen, die durch sympy.solve bestimmt wird.
+
+
+```
+
+### Aufgabe zu den gebrochen-rationalen Funktionen
+
+Versuche mit den obigen Tipps selbst eine Funktion zu schreiben, welche zu einer gebrochen rationalen Funktion den passenden Definitionsbereich angibt.
+
+Tipp:_Benutzt eine if else (wenn dann, sonst) Abfrage.[siehe Schleifen](grundlagen.qmd#schleifen)_
+
+```{pyodide-python}
+import sympy
+
+```
+
+## Nenner aus einer Funktion auslesen
+
+Jetzt wissen wir also, wir bei einem bekannten Nenner bestimmen können, wann dieser Null wird.
+Den Nenner direkt anzugeben ist aber zweifelsfrei nicht unbedingt sinnvoll.
+
+Daher betrachten wir jetzt, wie aus einer gegebenen Funktion der Nenner bestimmt werden kann.
+
+In einem weiteren Schritt kann später die Eingabe, von der das Programm nutzenden Person, im Terminal eingegeben werden und diese Ausgabe wird dann verarbeitet (ein möglicher Nenner ausgelesen und der Definitionsbereich bestimmt).
+
+**Beispiel:** 
+$$
+f(x)= \frac{1}{x-2}
+$$
+
+Es geht nun erst einmal darum eine Funktion zu schreiben, welche bei diesem  Beispiel den Nenner erkennt.
+
+
+```{pyodide-python}
+import sympy
+#| read-only: true
+
+x = sympy.symbols('x')
+
+funktion_string = "1/(x-2)" #definiert unsere Funktion als Python Variable
+f = sympy.sympify(funktion_string) #wandelt unsere Funktion in ein Sympy Objekt um, welches wir dann als Variable f weiterbenutzen
+
+nenner = sympy.fraction(f)[1] #Da Sympy nun die Funktion als Objekt erkennt, kann Zähler/Nenner differenziert werden. [0] ist Zähler [1] der Nenner.
+
+print(f"Der Nenner der Funktion ist: {nenner}")
+
+```
+
+### Funktion eingeben lassen und daraus den Definitionsbereich bestimmen
+
+Ideal wäre es wenn nun ein Nutzer die Funktion eingeben würde und unser Programm aus dem Input direkt  den Definitionsbereich bestimmt würde.
+Leider ist die implementierte Version von Python hier ein wenig eingeschränkt und lässt keine Eingabe Aufforderung zu (Ansonsten gibt es den Befehl input () mit dem Sich das durchführen lassen würde), daher betrachten wir hier die Möglichkeit die Funktion selber einzugeben in die funktion_eingabe Variable.
+
+
+```{pyodide-python}
+import sympy
+#| read-only: true
+
+print("Hallo! Dieses Programm kann dir den  Definitionsbereich einer Funktion ausgeben.")
+
+
+x = sympy.symbols('x')
+
+funktion_eingabe = x**2/(x-4) #Hier  kannst du deine Funktion eingeben.
+
+ 
+try: #Versuch Eingabe als Sympy Ausdruck zu interpretieren und Nullstelle zu bestimmen
+    f = sympy.sympify(funktion_eingabe)
+    
+    zaehler , nenner = sympy.fraction(f) 
+
+    alle_problemstellen = sympy.solve(nenner, x)
+    # Da auch komplexe Lösungen existieren könnten, wir aber uns erstmal aber nur mit reellen beschäftigen wollen:
+    reelle_problemstellen = [s for s in alle_problemstellen if s.is_real]
+
+    print(f"Der Nenner der Funktion ist: {nenner}")
+
+    if not reelle_problemstellen:
+        print("Der Nenner hat keine reellen Nullstellen.")
+        print("Definitionsbereich: D = ℝ (alle reellen Zahlen)")
+    else:
+        # Formatierung der Problemstellen für die Ausgabe
+        stellen_str_luecken = ", ".join(map(str, reelle_problemstellen)) 
+
+#map ist hierbei eine Funktion die genutzt wird um alle reellen Problemstellen in einen String umzuschreiben.
+#", "join gibt dann die einzelnen Problemstellen aus von "" umrahmt, mit Komma(ta) dazwischen.
+
+        print(f"Definitionslücke(n) bei x = {stellen_str_luecken}")
+
+        # Formatierung für den Definitionsbereich
+        if len(reelle_problemstellen) == 1:
+            print(f"Definitionsbereich: D = ℝ \\ {{{reelle_problemstellen[0]}}}")
+        else:
+            stellen_str_domain = ", ".join(map(str, sorted(reelle_problemstellen))) # sorted sortiert die Ausgaben
+            print(f"Definitionsbereich: D = ℝ \\ {{{stellen_str_domain}}}")
+
+except (SyntaxError, TypeError, sympy.SympifyError) as e: # Falls es einen Error gab in der Funktionserkennung wird dieser Error ausgegeben
+    print(f"Fehler bei der Verarbeitung der Funktion: {e}. Bitte überprüfe deine Eingabe.")
+``` 
+
+### Aufgabe zum Definitionsbereich bestimmen lassen  
+
+Teste die gegebene Funktion für unterschiedliche Funktionen (auch für solche, die vielleicht keine Definitionslücken haben und auch keine Brüche i.A.) überprüfe die Ausgabe, passt sie zu dem was du haben willst?  
+Teste vielleicht das ganze auch mal mit eine Funktion mit Wurzel, wie reagiert das Programm, hast du vielleicht schon eine Idee wie du das Problem angehen willst, bevor du in den nächsten Abschnitt gehst?
+
+Kleine Erinnerung: _Falls du das ganze selber umschreiben willst und nicht nur ausführen willst... du kannst extra Blöcke erschaffen._
+
+#  Funktionen mit Wurzeln
+
+In diesem Abschnitt wird davon ausgegangen, dass das obige Abschnitt bearbeitet worden ist, falls Code zu komplex wirkt, findest Du im obigen Teil vermutlich die Erklärung.
+
+## Definitionslücke in der Wurzel bestimmen
+
+Funktionen mit Quadratwurzel im speziellen, aber Funktionen die eine Wurzel mit geradem Nenner im Exponent haben im Allgemeinen haben Definitionslücken, wenn unterhalb der Wurzel eine negative Zahl steht. Diese Definitionslücken gibt es nicht in den komplexen Zahlen, aber in den häufig vor allem in der Schule genutzten reellen Zahlen.
+
+Betrachten wir also wie in in den gebrochen-rationalen Funktionen zunächst, wie können wir von einem passenden Term auslesen für welche Bereiche dieser negativ ist.
+
+```{pyodide-python}
+import sympy
+#| read-only: true
+
+x = sympy.symbols('x')
+
+radikand = x - 2
+print(f"Betrachten wir den Radikanden: {radikand}")
+
+bedingung_ungleichung = sympy.solve_univariate_inequality(radikand >= 0, x, relational=True)
+bedingung_intervall = sympy.solve_univariate_inequality(radikand >= 0, x, relational=False)
+#relational=True besagt, dass das die Lösungsmenge relational aufgeschrieben wird, der Standardwert ist relational=False (falls relational nicht angegeben wird)
+
+print(f"Die Bedingung lautet: {radikand} >= 0")
+print(f"Das gilt für alle x die folgende Ungleichung erfüllen: {bedingung_ungleichung}")
+
+print(f"Bzw. für alle x in dem folgenden Intervall: {bedingung_intervall}")
+
+
+``` 
+
+### Aufgabe zur Bestimmung negativer Werte
+
+Versuche mit den gegebenen Tipps ein Programm zu schreiben, bei welchem aus der Eingabe des Nutzers bestimmt wird, was die Definitionslücken in der Funktion des Nutzers sind.
+
+_Tipp: Die einfachere Version zum Einsteigen ist, sich den Radikanden angeben zu lassen vom Nutzer._
+
+```{pyodide-python}
+import sympy
+
+
+```
+
+## Radikanden aus einer Funktion auslesen
+
+Das ganze funktioniert sehr ähnlich wie beim Auslesen des Nenners, zuerst muss aus einer Funktion ein `Sympy` Objekt gemacht werden. Aus `Sympy` kann Python dann den Radikanden auslesen in dem das richtige Argument abgefragt wird.
+
+```{pyodide-python}
+import sympy
+#| read-only: true
+
+x = sympy.symbols('x')
+
+funktion_string_wurzel = "sqrt(x-2)" #Beispielfunktion
+g = sympy.sympify(funktion_string_wurzel) 
+
+print(f"Die Funktion lautet: {g}")
+
+# Du kannst alle Argumente der Funktion mit  g.args ausgeben 
+# Probiere aus welches Argument immer dein Radikand ist.
+print(f"Die Argumente der Funktion g sind: {g.args}") 
+
+
+``` 
+
+### Aufgabe zur Bestimmung negativer Werte im Radikanden
+
+Versuche mit den gegebenen Tipps ein Programm zu schreiben, welches ähnlich wie in dem obigen Beispiel zum Auslesen des Nenners aus einer Eingabe (bzw. hier einer Veränderung der Funktion im Code) automatisch die Definitionslücke bestimmt, welche durch eine Wurzel verursacht wurde
+
+```{pyodide-python}
+import sympy
+
+
+```
+
+# Abschlussaufgabe
+
+Versuche nun ein Programm zu schreiben, welches beide Möglichkeiten der Untersuchung kombiniert.
+Also ein Programm, welches falls eine Definitionslücke existiert diese angibt, unabhängig davon, ob diese aus einem nicht durch Null teilen Problem, oder aus negative Zahlen unter der Wurzel Problem, verursacht wurde.
+
+```{pyodide-python}
+import sympy
+
+```

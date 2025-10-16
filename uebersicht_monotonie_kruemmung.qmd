@@ -1,0 +1,34 @@
+---
+title: "Monotonie- und Krümmungsverhalten"
+format: html
+filters:
+  - pyodide
+---
+
+# Kapitelübesicht
+
+In diesem Kapitel geht es um den Hauptteil der schulischen Kurvendiskussionsuntersuchung.  
+Es geht um die Bestimmung von Extrem-/Sattel- und Wendepunkten.  
+
+
+*   **[Monotonieverhalten](monotonieverhalten.qmd)**
+    * In diesem Abschnitt geht es zuerst einmal darum den Begriff der Monotonie zu erklären und zu erklären wie man diese überhaupt untersucht.
+    Es wird auch der Bezug zur Ableitung hergestellt sowie gezeigt wie man eine Untersuchung in Python durchführen kann.
+
+---
+
+*   **[Extrempunkte](extrempunkte.qmd)**  
+    * In diesem Abschnitt wird das Wissen aus dem ersten Abschnitt genutzt um zusammen mit der Definition von Extrempunkten die hier gegeben wird eine Untersuchungsmethode für Extrema zu bestimmen.  
+    Bei der Implementierung in Python werden unterschiedliche Möglichkeiten der Bestimmung von Hoch/Tiefpunkten mit einbezogen.
+
+---
+
+*   **[Krümmungsverhalten](kruemmungsverhalten.qmd)**  
+    * In diesem Abschnitt des Tutorials wird der Begriff Krümmungsverhalten mit Inhalt gefüllt, so wie die Differenzierung zwischen links- und rechts- Krümmung erklärt. Abgesehen davon wird in diesem Kapitel natürlich auch die mögliche Nutzung von Python zu effizienteren Bestimmung von Krümmungsverhalten beschrieben.
+
+---
+
+*   **[Wendepunkte](wendepunkte.qmd)**
+    * Im letzten Abschnitt des Kapitels geht es darum die Ergebnisse des Krümmungsverhalten Abschnittes zu nutzen um damit herauszufinden wie Wendepunkte mit Hilfe von Python bestimmt werden können.
+
+---

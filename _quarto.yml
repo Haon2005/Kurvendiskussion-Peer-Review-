@@ -1,0 +1,74 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Kurvendiskussion mit Python"
+  reader-mode: true
+  navbar: 
+    right:
+      - icon: github
+        #href: "Hier Link zum GitHub Repository einfügen" 
+  sidebar:
+    collapse-level: 1
+    style: "floating"
+    contents:
+      - text: "Startseite"
+        href: index.qmd 
+      - text: "Inhaltsverzeichnis"
+        href: toc.qmd 
+      - text: "Python Grundlagen"
+        href: grundlagen.qmd
+      - section: "Definitionsbereich und Wertebereich"
+        href: uebersicht_definition_werte.qmd
+        contents:
+          - text: "Definitionsbereich bestimmen"
+            href: definitionsbereich.qmd 
+          - text: "Wertebereich bestimmen"
+            href: wertebereich.qmd 
+      - section: "Symmetrie und Achsenschnittpunkte"
+        href: uebersicht_symmetrie_achsen.qmd
+        contents:
+          - text: "Symmetrieverhalten untersuchen"
+            href: symmetrieverhalten.qmd 
+          - text: "Nullstellen bestimmen"
+            href: nullstellen.qmd
+          - text: "Y-Achsenschnittpunkte bestimmen"
+            href: achsenschnittpunkte.qmd 
+      - section: "Globalverhalten und Asymptoten"
+        href: uebersicht_global_asymptoten.qmd
+        contents:
+          - text: "Globalverhalten untersuchen"
+            href: globalverhalten.qmd 
+          - text: "Asymptoten bestimmen"
+            href: asymptoten.qmd 
+      - section: "Monotonie- und Krümmungsverhalten"
+        href: uebersicht_monotonie_kruemmung.qmd
+        contents:
+          - text: "Ableitungen berechnen"
+            href: ableitungen.qmd 
+          - text: "Monotonieverhalten untersuchen"
+            href: monotonieverhalten.qmd 
+          - text: "Extrempunkte/ Sattelpunkte bestimmen"
+            href: extrempunkte.qmd 
+          - text: "Krümmungsverhalten untersuchen"
+            href: kruemmungsverhalten.qmd 
+          - text: "Wendepunkte bestimmen"
+            href: wendepunkte.qmd 
+      - section: "Graphen zeichnen"
+        href: uebersicht_graphen_zeichnen.qmd
+        contents:
+          - text: "Graphen erstellen"
+            href: graphen.qmd   
+          - text: "Graphen beschriften"
+            href: graphen_beschriften.qmd 
+
+format:
+  html:
+    theme:
+      light: [cosmo]
+      dark: [darkly]
+    respect-user-color-scheme: true
+    css: styles.css
+    toc: true
+    code-tools: true

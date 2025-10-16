@@ -1,0 +1,85 @@
+---
+title: "Krümmungsverhalten untersuchen"
+format: html
+filters:
+  - pyodide
+---
+
+# Was ist die Krümmung?
+
+Die **Krümmung** einer Funktion beschreibt, wie sich der Graph "krümmt", bzw. "biegt" d.h. wie weit sich die Funktion von einer Geraden entfernt. Es hilft sich das als Analogie mit Hilfe einer Straße vorzustellen, die Krümmung gibt an, ob die Straße nach rechts oder nach links abknickt und wie stark der Knick ist.  
+Die Krümmung eines Funktion wird in dem Graphen der ersten Ableitung, dadurch erkenntlich, dass es die Stellen sind, an denen sich das **[Monotonieverhalten](monotonieverhalten.qmd)** verändert.  
+**Wichtig** bei Betrachtung des "Monotonieverhaltens" darf nicht außer Acht bleiben, dass hier das Monotonieverhalten der ersten **Ableitung** betrachtet wird.
+Mathematisch unterscheiden wir **zwei Hauptarten der Krümmung**:
+
+*   **Linksgekrümmt (konvex)**: Der Graph "knickt" sich nach oben. Wenn man sich auf dem Graphen bewegt, biegt er sich nach links.
+*   **Rechtsgekrümmt (konkav)**: Der Graph "knickt" sich nach unten. Wenn man sich auf dem Graphen bewegt, biegt er sich nach rechts.
+
+## Krümmungsverhalten bestimmen
+
+Um das Krümmungsverhalten einer Funktion zu bestimmen, nutzen wir die **zweite Ableitung** $f''(x)$. Da wir dort, wie oben beschrieben die Stellen finden, an denen die Änderungsrate der Steigung Null ist.
+Die **Schritte zur Bestimmung des Krümmungsverhaltens** sind wie folgt:
+
+1.  **Zweite Ableitung bilden:** Berechne die zweite Ableitung $f''(x)$ der Funktion $f(x)$.
+2.  **Dritte Ableitung bilden**: Berechne die dritte Ableitung $f'''(x)$ der Funktion $f(x)$.
+3.  **Nullstellen der zweiten Ableitung finden:** Bestimme die Nullstellen der zweiten Ableitung, indem du die Gleichung $f''(x) = 0$ löst. Diese Nullstellen sind **potenzielle Wendepunkte**, an denen sich das Krümmungsverhalten ändern könnte.
+4.  **Intervalle aufstellen:** Die Nullstellen von $f''(x)$ bilden die Grenzen der Intervalle.
+5.  **Vorzeichen von $f'''(x)$ prüfen:** Wähle für jedes Intervall einen beliebigen Wert innerhalb des Intervalls aus. Setze diesen Wert in $f''(x)$ ein. Das Vorzeichen des Ergebnisses verrät dir das Krümmungsverhalten in diesem gesamten Intervall:
+    *   $f'''(x) > 0 \implies$ Der Graph ist in diesem Intervall **linksgekrümmt (konvex)**.
+    *   $f'''(x) < 0 \implies$ Der Graph ist in diesem Intervall **rechtsgekrümmt (konkav)**.
+
+# Python Implementierung
+
+Wenn die oben kurzgefasste Theorie verstanden ist, kann die betrachtet werden, wie das ganze in Python implementiert werden kann.  
+
+```{pyodide-python}
+#| read-only: true
+import sympy
+x = sympy.symbols('x')
+f = x**4 - 4*x**3 + 2
+
+print(f"Die Funktion ist: f(x) = {f}")
+f_prime = sympy.diff(f, x)
+print(f"f'(x) = {f_prime}")
+f_double_prime = sympy.diff(f_prime, x)
+print(f"f''(x) = {f_double_prime}")
+
+potentielle_wendepunkte = sympy.solve(f_double_prime, x)
+potentielle_wendepunkte.sort() 
+print(f"Die Nullstellen der zweiten Ableitung sind: {potentielle_wendepunkte}")
+
+intervall_grenzen = [-sympy.oo] + potentielle_wendepunkte + [sympy.oo]
+
+print("\n--- Untersuchung des Krümmungsverhaltens ---")
+for i in range(len(intervall_grenzen) - 1):
+    untere_grenze = intervall_grenzen[i]
+    obere_grenze = intervall_grenzen[i+1]
+
+    # Hier wird der Mittelpunkt des Intervalls betrachtet (falls die Grenzen endlich sind)
+    if untere_grenze == -sympy.oo:
+        test_wert = obere_grenze - 1 if obere_grenze != sympy.oo else 0
+    elif obere_grenze == sympy.oo:
+        test_wert = untere_grenze + 1
+    else:
+        test_wert = (untere_grenze + obere_grenze) / 2
+
+    f_double_prime_at_test_wert = f_double_prime.subs(x, test_wert)
+```
+
+## Aufgabe: Krümmungsverhalten bestimmen
+
+Der Code oben hat bisher noch keine Ausgabe.  
+Um zu testen, dass Du den Code wirklich verstanden hast, versuche eine Ausgabe zu schreiben, welche den entsprechenden Werten, die in der Funktion bestimmt werden, die passende Ausgabe zu ordnet.  
+D.h. in welchem Intervall hat die Funktion welche Krümmung?
+
+```{pyodide-python}
+# Gib hier deinen Code an
+```
+
+::: {.callout-note title="Hinweis" collapse="true"}  
+*   Überleg Dir welcher Abschnitt im Code dafür zuständig ist das Krümmungsverhalten zu berechnen
+*   Im Anschluss Überleg dir warum di Variablen so heißen wie sie heißen (Was bedeutet jede einzelne)
+*   Zuletzt was wurde oben im Text erklärt, was muss angegeben werden wenn es darum geht ein Krümmungsverhalten anzugeben.
+:::
+
+Wenn Du damit fertig bist, kommt als letzter Teil dieses Kapitels der Abschnitt **[Wendepunkte bestimmten](wendepunkte.qmd)**.

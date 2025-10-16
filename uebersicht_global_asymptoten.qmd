@@ -1,0 +1,25 @@
+---
+title: "Globalverhalten und Asymptoten"
+format: html
+filters:
+  - pyodide
+---
+
+**Kapitelübersicht**
+
+Dieses Kapitel hat zwei Abschnitte welche sich mit den folgenden Themen beschäftigen: 
+
+*   **[Globalverhalten](globalverhalten.qmd)**
+    * Dieser Abschnitt beschäftigt sich mit Verhalten von Funktionen im Unendlichen, d.h. es wird betrachtet, wie sich die FUnktionswerte ändern, wenn man $\infty$, bzw. $-\infty$ einsetzt. Das wird i.A. das **Globalverhalten** der  Funktion genannt.
+
+---
+
+*   **[Asymptoten](asymptoten.qmd)**  
+    * Dieser Abschnitt befasst sich mit dem Begriff der **Asymptoten**.  
+    Es gibt horizontale und vertikale Asymptoten.   
+    Vertikale Asymptoten bilden sich z.B. um Definitionslücken, wie eine Stelle an der durch Null geteilt werden würde.  
+    Horizontale Asymptoten bilden sich hingegen z.B. bei Brüchen, wie $\frac{1}{n}$.
+    Bei beiden handelt es sich um Stellen, bzw. Werte die nicht von der Funktion erreicht werden in deren Umfeld die Funktion jedoch starke Veränderungen durchläuft.
+
+---
+

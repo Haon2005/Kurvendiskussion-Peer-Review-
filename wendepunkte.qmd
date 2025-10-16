@@ -1,0 +1,50 @@
+---
+title: "Wendepunkte bestimmen"
+format: html
+filters:
+  - pyodide
+---
+
+# Wendepunkt
+
+Als **Wendepunkt** wird ein Punkt einer Funktion bezeichnet an dem sich das Krümmungsverhalten der Funktion ändert.
+Das heißt ähnlich wie bei den **Extremwerten** und dem **Monotonieverhalten** verhält es sich auch bei den **Wendepunkten** und dem **Krümmungsverhalten**.
+
+Falls Du also noch nicht den Abschnitt **[Krümmungsverhalten](kruemmungsverhalten.qmd)** kannst du das über den Link nachholen. Wissen aus dem Abschnitt wird hier vorausgesetzt.
+
+Als kleine Erinnerung an den anderen Abschnitt:
+```{pyodide-python}
+#| read-only: true
+import sympy
+x = sympy.symbols('x')
+f = x**4 - 4*x**3 + 2
+
+print(f"Die Funktion ist: f(x) = {f}")
+f_prime = sympy.diff(f, x)
+print(f"f'(x) = {f_prime}")
+f_double_prime = sympy.diff(f_prime, x)
+print(f"f''(x) = {f_double_prime}")
+
+potentielle_wendepunkte = sympy.solve(f_double_prime, x)
+potentielle_wendepunkte.sort() 
+print(f"Die Nullstellen der zweiten Ableitung sind: {potentielle_wendepunkte}")
+```
+
+## Aufgabe: Wendepunkte bestimmen
+
+Der Code oben bestimmt bisher noch keine Wendepunkte, sondern bietet nur eine sehr gute Grundlage dafür.  
+Nutze dein Wissen aus den vergangenen Abschnitten um einen Code zu erarbeiten der die Wendepunkte einer Funktion bestimmt.
+
+```{pyodide-python}
+# Gib hier deinen Code an 
+```
+
+## Bonusaufgabe 
+
+Wenn Dir alle Aufgaben bisher zu einfach waren kannst Du im folgenden ein Programm schreiben, welches alle Abschnitte des Kapitels miteinander verbindet.
+
+```{pyodide-python}
+# Gib hier deinen Code an
+```
+
+Wenn Du damit fertig bist ist dieses Kapitel abgeschlossen.

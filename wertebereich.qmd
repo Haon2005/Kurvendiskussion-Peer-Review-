@@ -1,0 +1,85 @@
+---
+title: "Wertebereich untersuchen"
+format: html
+filters:
+  - pyodide
+---
+
+# Der Wertebereich
+
+Der Wertebereich (oder die Wertemenge) einer Funktion \(f\) ist die Menge aller möglichen Ausgabewerte \(f(x)\), die entstehen, wenn man alle erlaubten Eingabewerte \(x\) aus dem Definitionsbereich einsetzt.
+
+Dieser Abschnitt ist ein recht komplexer, da die Existenz von Extrempunkten, bzw. das Verhalten im Unendlichen, oder das existieren von Asymptoten hierfür relevant ist, wird geraten diesen Abschnitt erst nach den Kapiteln **[Globalverhalten und Asymptoten](uebersicht_global_asymptoten.qmd)**, so wie **[Extrempunkte/Sattelpunkte](extrempunkte.qmd)** zu betrachten.
+
+# Wie bestimmt man den Wertebereich?
+
+Um den Wertebereich zu bestimmen, müssen wir verschiedene Eigenschaften der Funktion analysieren, die in anderen Kapiteln behandelt wurden:
+
+*   **Globale Extrema:** Ein globales Maximum oder Minimum begrenzt den Wertebereich. Die Untersuchung von Extrema wird im Kapitel **[Extrempunkte/Sattelpunkte](extrempunkte.qmd)** behandelt.
+*   **Verhalten im Unendlichen:** Horizontale Asymptoten zeigen, welchen Werten sich die Funktion annähert. Dies ist entscheidend, um zu sehen, ob der Wertebereich nach oben oder unten beschränkt ist. Mehr dazu unter **[Horizontale Asymptoten](asymptoten.html#horizontale-asymptoten)**.
+*   **Definitionslücken:** An Polstellen (vertikalen Asymptoten) strebt die Funktion oft gegen \( \pm\infty \), was den Wertebereich auf \( (-\infty, \infty) \) erweitern kann. Siehe **[Vertikale Asymptoten](asymptoten.html#vertikale-asymptoten)**.
+*   **Ränder des Definitionsbereichs:** Bei Funktionen wie \( \sqrt{x} \) beginnt der Wertebereich am Funktionswert des Randpunktes (hier \(x=0\)). Die Bestimmung des Definitionsbereichs ist in **[Definitionsbereich bestimmen](definitionsbereich.qmd)** erklärt.
+
+## Python-Implementierung: Wertebereich bestimmen
+
+Wie gerade gesehen ist das bestimmen des Wertebereich durch sehr viele Faktoren recht schwierig.  
+
+1.  Es muss bestimmt werden, ob es [Definitionslücken](definitionsbereich.qmd#gebrochen-rationalen-Funktionen) gibt.
+2.  Dann muss untersucht werden, ist die Funktion linear oder nicht-linear
+3.  Falls linear, hat sie eine Steigung? 
+4.  Falls nicht linear hat sie ein [globales Minimum, Maximum](extrempunkte.qmd#extremwerte)?
+5.  Gibt es eine horizontale [Asymptote](asymptoten.html#horizontale-asymptoten)?
+6.  Falls eine solche existiert schränkt diese im [Globalverhalten](globalverhalten.qmd) die Funktionswerte ein.  
+
+`sympy` hat dankenswerterweise eine Untermodul `sympy.calculus.util` welches die Funktion `function_range` beinhaltet.  
+Die Funktion berechnet genau das was im Namen steckt, die Range der Funktion, also alle Werte die die Funktion annehmen kann zu gut Deutsch den **Wertebereich der Funktion**.
+
+```{pyodide-python}
+# Gib hier Deinen Code ein.
+```
+
+::: {.callout-note title="Tipp 1" collapse="true"}
+* Wie schon oben erklärt geht es mehr oder minder nur darum die Funktion `function_range` anzuwenden.
+* Diese Funktion befindet sich aber in einem Untermodul von `sympy`
+* D.h. es reicht nicht von sympy zu importieren, es muss auch das Untermodul `sympy.calculus.util` importiert werden.
+* Wenn das importiert ist, sollte der Rest des Programms relativ leicht zu schreiben sein (davon ausgehend, dass dieses Kapitel wie empfohlen als vorletztes gemacht wird.)
+:::
+
+::: {.callout-note title="Tipp 2" collapse="true"}
+* Das Modul kann wie folgt importiert werden:
+```{pyodide-python}
+import sympy
+from sympy.calculus.util import function_range
+```
+
+* Wichtig ist, dass `function_range` jetzt genutzt werden kann, ohne ein sympy. davor, oder gar einem sympy.calculus.util. davor!
+* Denk dran eine Ausgabe zu formulieren in der der bestimmte Wertebereich ausgegeben wird. 
+:::
+
+::: {.callout-note title="Eine mögliche Minimallösung" collapse="true"}
+```{pyodide-python}
+import sympy
+from sympy.calculus.util import function_range # Korrekter Import
+
+def bestimme_wertebereich(funktion_str):
+    x = sympy.symbols('x') 
+    print(f"Untersuchung der Funktion: f(x) = {funktion_str}")    
+    try:
+        f = sympy.sympify(funktion_str)         
+        wertebereich = function_range(f, x, S.Reals)        
+        print(f"Der berechnete Wertebereich ist: {wertebereich}")    
+    print("-" * 50)
+
+# Test Funktionen
+# 1. Eine nach oben geöffnete Parabel (hat ein globales Minimum)
+bestimme_wertebereich("x**2 + 4")
+# 2. Eine gebrochen-rationale Funktion mit horizontaler Asymptote
+bestimme_wertebereich("1 / (x**2 + 1)")
+# 3. Eine trigonometrische Funktion mit beschränktem Wertebereich
+bestimme_wertebereich("sin(x)")
+# 4. Eine Funktion, deren Wertebereich alle reellen Zahlen umfasst
+bestimme_wertebereich("x**3")"
+```
+
+:::
+Damit ist die grundlegende Kurvendiskussion abgeschlossen! Im nächsten großen Abschnitt **Graphen zeichnen** lernst du, wie du all diese Erkenntnisse nutzen kannst, um eine aussagekräftige Visualisierung deiner Funktion zu erstellen.

@@ -1,0 +1,415 @@
+---
+title: "Python Grundlagen"
+format: html
+filters:
+  - pyodide
+---
+
+Diese Seite dient als Erinnerung an die Grundlagen von Python, **wenn die Inhalte dieser Seite nicht bearbeitet und oder bekannt sind ist die Weiterarbeit im Tutorial schwierig**.
+
+::: {.panel-tabset}
+
+## Variablen
+
+Für einen leichten Einstieg in Python beschäftigen wir uns zunächst mit Variablen. Dabei ist der Unterschied zu Variablen in der Mathematik hervorzuheben. Im Folgenden ein kleines Beispiel:
+
+```{pyodide-python}
+#| read-only: true
+a = 7 
+print(a)
+```
+Dies ist eine Variablenzuweisung. Die Variablen können nach der Zuweisung für die Berechnung verwendet werden. Ein paar Beispiele siehst du im folgenden Code:
+
+```{pyodide-python}
+#| read-only: true
+a = 4 
+b = 5  
+print(a+b)
+print(a*b)
+print(a/2)
+print(a-b)
+```
+Für die Multiplikation wird in Python ein Sternchen * verwendet. Dividieren kannst du in Python mit dem Schrägstrich /.  
+Am folgenden Beispiel lässt sich der Unterschied zu Variablen in der Mathematik verdeutlichen:
+
+```{pyodide-python}
+#| read-only: true
+a = 4 
+a = 7 + a
+b = 5  
+print(a+b)
+print(a*b)
+print(a/2)
+print(a-b)
+```
+
+Wie du siehst können sich Variablen verändern bzw. neu zugewiesen werden. In Python hat eine Variable immer den Wert, der ihr zuletzt zugewiesen worden ist.
+
+Statt einzelner Anweisungen wollen wir uns jetzt ein ganzes Programm ansehen. Stellen wir uns vor, wir fahren mit dem Auto eine längere Strecke und notieren uns dabei den Kilometerstand des Fahrzeugs zu Beginn der Fahrt sowie zu gewissen Zeitpunkten während der Fahrt gemeinsam mit der bisherigen Fahrtdauer. 
+Diese Informationen können wir nutzen, um uns die Durchschnittsgeschwindigkeit der ganzen Fahrt sowie in den Teilintervallen zu berechnen. 
+Ein einfaches Python-Programm, das dies für uns erledigt, ist das folgende:
+
+
+```{pyodide-python}
+#| read-only: true
+# Programm zur Berechnung der Durchschnittsgeschwindigkeit
+s0 = 13157.6 # Kilometerstand zu Beginn
+s1 = 13160.0 # Kilometerstand bei 1. Messung
+t1 = 4 # Minuten ab Fahrtbeginn bei 1. Messung
+s2 = 13177.4 # Kilometerstand bei 2. Messung
+t2 = 16 # Minuten ab Fahrtbeginn bei 2. Messung
+s3 = 13267.4 # Kilometerstand bei 3. Messung
+t3 = 64 # Minuten ab Fahrtbeginn bei 3. Messung
+# Durchschnittsgeschwindigkeit in km/h im ...
+v1 = (s1 - s0) / (t1 / 60) # ... 1. Intervall
+v2 = (s2 - s1) / ((t2 - t1) / 60) # ... 2. Intervall
+v3 = (s3 - s2) / ((t3 - t2) / 60) # ... 3. Intervall
+v_durchschnitt = (s3 - s0) / (t3 / 60) # Gesamt
+print(v1)
+print(v2)
+print(v3)
+print("Durchschnitt: {} km/h".format(v_durchschnitt))
+```
+
+An diesem Beispiel siehst du zudem, dass Variablen auch mehr als einen Buchstaben haben können. 
+Es können in Python auch Variablen durch ganze Wörter definiert werden, was zudem sinnvoll ist, um den Code mit passenden Variablennamen besser verstehen zu können.
+
+### Aufgabe zu Variablen
+
+Probiere einmal den Code so zu verändern, dass die Berechnung durch eine 4. und 5. Messung erweitert wird. 
+Bei der vierten Messung war der Kilometerstand bei 13281km und 75 Minuten nach Fahrtbeginn. 
+Bei der fünften Messung betrug der Kilometerstand 13334km und 119 Minuten nach Fahrtbeginn.
+Diese Berechnungen sollen auch mit dem Befehl print() ausgegeben werden. 
+
+```{pyodide-python}
+# Programm zur Berechnung der Durchschnittsgeschwindigkeit
+s0 = 13157.6 # Kilometerstand zu Beginn
+s1 = 13160.0 # Kilometerstand bei 1. Messung
+t1 = 4 # Minuten ab Fahrtbeginn bei 1. Messung
+s2 = 13177.4 # Kilometerstand bei 2. Messung
+t2 = 16 # Minuten ab Fahrtbeginn bei 2. Messung
+s3 = 13267.4 # Kilometerstand bei 3. Messung
+t3 = 64 # Minuten ab Fahrtbeginn bei 3. Messung
+# Durchschnittsgeschwindigkeit in km/h im ...
+v1 = (s1 - s0) / (t1 / 60) # ... 1. Intervall
+v2 = (s2 - s1) / ((t2 - t1) / 60) # ... 2. Intervall
+v3 = (s3 - s2) / ((t3 - t2) / 60) # ... 3. Intervall
+v_durchschnitt = (s3 - s0) / (t3 / 60) # Gesamt
+print(v1)
+print(v2)
+print(v3)
+print("Durchschnitt: {} km/h".format(v_durchschnitt))
+```
+
+## Fallunterscheidungen
+
+
+Bei den Datentypen haben wir bereits eine Fallunterscheidung gesehen. Bei einer Fallunterscheidung möchte man zwei oder mehr Fälle unterscheiden. 
+Übersetzt heißt dies wenn "x", mache "y", ansonsten mache "z". Betrachte das folgende Beispiel: 
+
+```{pyodide-python}
+#| read-only: true
+a = 15 
+b = 20
+if a>=b:
+    print("a ist größer als b oder gleich b")
+else: 
+    print("b ist größer als a")
+```
+
+Probiere es selbst aus und schreibe einen Code, in dem du zwischen a und b unterscheidest. Wenn a gleich b ist soll ein entsprechender Text ausgegeben werden und wenn sie unterschiedlich sind ein entsprechend anderer Text. 
+
+```{pyodide-python}
+```
+
+Wenn du mehr als zwei Fälle unterscheiden möchtest, kannst du "elif" zwischen "if" und "else" verwenden. Dies ist die Kurzfassung für "else if". Betrachte den folgenden Code: 
+
+```{pyodide-python}
+#| read-only: true
+a = 25 
+b = 20
+if a==b:
+    print("a ist gleich b")
+elif a>b: 
+    print("a ist größer als b")
+else: 
+    print("b ist größer als a")
+```
+
+Es ist nicht notwendig immer if und else zu verwenden. Du kannst auch nur if verwenden, wenn du im else-Fall nichts machen möchtest: 
+
+### Aufgabe zu Fallunterscheidungen
+
+Ändere den folgenden Code und probiere aus, was passiert, wenn a ungleich b ist.
+```{pyodide-python}
+a = 20 
+b = 20
+if a==b:
+    print("Fallunterscheidungen sind super")
+```
+
+
+## Datentypen
+
+
+Es gibt verschiedene Datentypen, die in Python unterschieden werden. Ganzzahlen heißen Integer. Dezimalzahlen werden "Float" genannt. 
+Sobald in einer Berechnung eine Dezimalzahl vorkommt, ist das Ergebnis ebenfalls ein Float, auch, wenn es eigentlich zu einer Ganzzahl ist. Im folgenden Beispiel kannst du dies sehen: 
+
+```{pyodide-python}
+#| read-only: true
+a = 15 
+print(a)
+b = 1.5
+print(a*b)
+print(a/b)
+```
+Die Division ergibt immer eine Gleitkommazahl, auch wenn ein Integer von einem anderen dividiert wird: 
+
+```{pyodide-python}
+#| read-only: true
+a = 15 
+b = 5
+print (a/b)
+```
+Ein weiterer Datentyp ist der sogenannte Boolean, der als wahr oder falsch ausgewertet wird. Führe den folgenden Code aus und verändere ihn so, dass "falsch" ausgegeben wird. 
+
+```{pyodide-python}
+a = 15 
+if a==15:
+  print ("wahr")
+else: 
+  print ("falsch")
+```
+
+Im obigen Beispiel haben wir einen Vergleichsoperator "==" verwendet, um auf Gleichheit zu überprüfen. 
+Möchte man abfragen, ob a ungleich einem bestimmten Wert ist, sagen wir 7, so verwendet man "a!=7". 
+
+### Aufgabe zu Datentypen
+
+Schreibe nun einmal das Programm so um, dass du abfragst, ob a ungleich 8 ist. 
+Wenn dies der Fall ist, schreibe "wahr", wenn nicht, schreibe "falsch".
+
+```{pyodide-python}
+
+```
+
+## Listen
+
+Neben den numerischen Datentypen, gibt es weitere, worin sich mehrere Zahlen in einer Menge darstellen lassen. Diese nennen sich Listen und können sowohl direkt mit Zahlen erstellt werden, als auch zunächst leer gelassen werden. 
+Betrachte die folgenden Beispiele:
+
+```{pyodide-python}
+#| read-only: true
+Liste = [2, -4, 5, 9, 12]
+print(Liste)
+print(Liste[4])
+```
+
+Im obigen Beispiel wird eine Liste aus fünf Zahlen initialisiert. Anschließend wird die Liste und der fünfte Eintrag der Liste ausgegeben. Der Grund, wieso wir dabei "Liste[4]" und nicht "Liste[5]" verwenden, ist, weil der Index der Listeneinträge bei null beginnt. 
+So ist der erste Listeneintrag bei "Liste[0]" und der fünfte bei "Liste[4]".
+
+Im nächsten Beispiel werden wir eine leere Liste erstellen und dann zwei Einträge hinzufügen. Anschließend verändern wir einen der Einträge. Beachte die Ausgabe:
+
+```{pyodide-python}
+#| read-only: true
+Liste = []
+Liste.append(4)
+Liste.append(-7)
+print(Liste)
+Liste[1]=-9
+print(Liste)
+```
+
+### Aufgabe zu Listen
+
+Versuch es einmal selbst und erstelle eine Liste mit den Einträgen 2, -13, 6 und 4. Gib die Liste aus. Verändere denn den zweiten Eintrag zu einer 4 und gib die neue Liste aus. 
+
+```{pyodide-python}
+```
+
+## Funktionen
+
+Bisher haben wir Code geschrieben, der von oben nach unten ausgeführt wird. Wenn wir eine Berechnung wie die der Fakultät oder der Durchschnittsgeschwindigkeit an verschiedenen Stellen mit unterschiedlichen Werten wiederholen wollten, müssten wir den Code kopieren und einfügen. Das ist unübersichtlich und fehleranfällig.
+
+**Funktionen** lösen dieses Problem. Eine Funktion ist ein benannter, wiederverwendbarer Codeblock, der eine bestimmte Aufgabe erfüllt. Man definiert sie einmal und kann sie dann beliebig oft "aufrufen".
+
+Eine Funktion wird mit dem Schlüsselwort `def` definiert, gefolgt von einem Namen und Klammern `()`. Innerhalb der Klammern können **Parameter** (Eingabewerte) übergeben werden. Mit `return` gibt die Funktion ein Ergebnis zurück.
+
+### f-Strings in Python
+Im folgenden verwenden wir sogenannte **f-Strings** für die `print()`-Ausgaben. Ein f-String wird durch ein `f` vor dem öffnenden Anführungszeichen eingeleitet (z.B. `f"Hallo"`).
+
+Der große Vorteil ist, dass man Variablen und Ausdrücke direkt in den Text einbetten kann, indem man sie in geschweifte Klammern `{}` setzt. Das macht den Code oft deutlich lesbarer.
+```{pyodide-python}
+#| read-only: true
+# Definition einer einfachen Funktion, die zwei Zahlen addiert
+def addiere(zahl1, zahl2):
+    summe = zahl1 + zahl2
+    return summe
+
+# Aufruf der Funktion mit den Werten 5 und 10
+print(f"Das Ergebnis von 5 + 10 ist: {addiere(5, 10)}")
+
+# Erneuter Aufruf mit anderen Werten
+print(f"Das Ergebnis von -2 + 7 ist: {addiere(-2, 7)}")
+```
+
+### Aufgabe zu Funktionen
+
+Schreibe eine Funktion mit dem Namen `rechteck_flaeche`, die die Länge und Breite eines Rechtecks als Parameter entgegennimmt und dessen Flächeninhalt berechnet und zurückgibt.
+
+- Die Funktion soll zwei Parameter annehmen: `laenge` und `breite`.
+- Sie soll das Produkt der beiden Parameter berechnen und mit `return` zurückgeben.
+- Teste deine Funktion mit unterschiedlichen Wertepaaren und lass diese ausgeben
+
+```{pyodide-python}
+def rechteck_flaeche(laenge, breite):
+    # Dein Code hier
+
+```
+
+
+## Schleifen
+
+Zum Verständnis ein paar Beispiele und eine Aufgabe dazu:  
+
+`For-Schleifen`wiederholen sich über einen gewissen Intervall. Das Schlüsselwort `range` beschreibt hierbei das Intervall von $a$ bis $b$. Dabei ist $a$ der Start der Iteration und $b$ der Endpunkt der Iteration.
+
+```{pyodide-python}
+a = 5 #Die Variable a wird hier definiert
+b = 20
+for i in range(a,b,2): #a,b sind die Grenzen 2 die Schrittgröße
+    print(i+1)
+```
+
+Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, is dies vereinfacht mit Hilfe von Schleifen möglich.
+`While-Schleifen`wiederholen hierbei den Code solange wie eine gewisse Bedingung erfüllt ist.
+Ein kleines Bsp.:
+```{pyodide-python}
+a = 3 #Die Variable a wird hier definiert
+b = 11
+while a<b: 
+    a = a+1 #ist sehr wichtig, da sonst die Bedingung nie erfüllt würde, heißt es wäre eine ENDLOS-Schleife
+    print(a)
+```
+
+### Aufgabe zu For-/While- Schleifen
+
+Die obigen Blöcke sind absichtlich bearbeitbar, teste ein wenig in ihnen herum um ein Verständnis dafür zu entwickeln wie die unterschiedlichen Systeme funktionieren.  
+Wenn du dir sicher bist, dass du verstanden hast wie beides funktioniert, versuche gerne mal ein Programm zu schreiben, welches eine Fakultät berechnet, indem du eine `While-Schleife` verwendest.  
+
+```{pyodide-python}
+#Hier ein Beispiel Code für eine For Schleife
+#Text hinter einem # zählt als Kommentar und wird von Python ignoriert
+def fakultaet_for(n):
+    if n == 0:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        result = result*i
+        #print(result,i) <-- Das kannst du hinzufügen um ein paar mehr Schritte zu sehen 
+    return result
+
+print("Die Fakultät von 5 ist:", fakultaet_for(5)) #Print gibt eine Ausgabe aus
+
+print("Die Fakultät von 0 ist:", fakultaet_for(0))
+
+print("Die Fakultät von 10 ist:", fakultaet_for(10))
+
+```
+
+```{pyodide-python}
+#Versuche dich hier an einer Funktion für eine While Schleife
+def fakultaet_while(n):
+```
+
+- Deine `While-Schleife` wird ein sehr ähnliches Grundgerüst haben, wie die `For-Schleife`
+Auch wirst du die folgenden Dinge benötigen:  
+1. **Initialisierung**  
+   `result = 1` und `i = 1`
+
+2. **Schleifenlogik**  
+   Wiederhole solange `i <= n`, multipliziere jeweils `result = result * i`
+
+3. **Zähler hochzählen!**  
+   `i = i + 1` (→ sonst Endlosschleife)
+
+4. Zusatz: Was passiert bei `n = 0`?
+
+<details>
+<summary> Hier eine mögliche Lösung für eine `While Schleife`, falls du absolut nicht mehr weiter weist </summary>
+
+```{pyodide-python}
+def fakultaet_while(n):
+    if n == 0:
+        return 1
+    result = 1
+    i = 1
+    while i <= n:
+        result = result*i
+        i = i+1
+        #print(result,i) <-- Das kannst du hinzufügen um ein paar mehr Schritte zu sehen 
+    return result
+
+print("Die Fakultät von 5 ist:", fakultaet_while(5))
+```
+
+</details>
+
+
+## Bibliotheken
+
+Eine der größten Stärken von Python ist die riesige Auswahl an **Bibliotheken** (auch Module genannt). Eine Bibliothek ist eine Sammlung von vordefinierten Funktionen und Konstanten, die du in deinem Code verwenden kannst, ohne das Rad neu erfinden zu müssen. 
+
+Um eine Bibliothek zu nutzen, musst du sie mit dem `import`-Befehl am Anfang deines Codes "laden". Für dieses Tutorial sind die `numpy` und `matplotlib` Bibliotheken besonders relevant:  
+_Der Effizienz halber werden Bibliotheken meist nicht vollständig importiert sondern ein gewisser Kernabschnitt der Bibliothek._
+
+**1. `numpy` – Für numerische Berechnungen (unser Hauptwerkzeug!)**  
+`numpy` ist die _wichtigste_ Bibliothek für dieses Tutorial. Sie ist optimiert für die Arbeit mit Vektoren und Matrizen (in NumPy `arrays` genannt). Man importiert sie üblicherweise mit dem Kürzel `np`. Das sorgt dafür, dass im weiteren Verlauf des Programms `np.array` verwendet werden kann anstatt von `numpy.array`.
+
+```{pyodide-python}
+import numpy as np
+
+# Erstelle einen Vektor (ein NumPy-Array)
+vektor = np.array([1, 2, 3, 4])
+print(f"Ein NumPy-Vektor: {vektor}")
+
+# Eine Stärke von NumPy: Operationen auf dem ganzen Array
+print(f"Der doppelte Vektor: {vektor * 2}")
+```
+
+**2. `matplotlib` – Für die Visualisierung von Daten**  
+Mit `matplotlib` können wir unsere Daten und Ergebnisse als Graphen und Diagramme darstellen. Das hilft enorm, um Zusammenhänge zu verstehen.  
+In diesem Fall wird das Kürzel `plt` für `matplotlib.pyplot` verwendet. Das zeigt, wie praktisch Aliase sind, da man statt `matplotlib.pyplot.plot()` einfach `plt.plot()` schreiben kann. Wichtig ist hierbei auch, dass `pyplot` ein spezifisches Untermodul von `matplotlib` ist, das explizit importiert werden muss. Ein einfaches `import matplotlib` würde nicht ausreichen, um auf Funktionen wie `plot()` zuzugreifen.
+
+```{pyodide-python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+x_werte = np.array([0, 1, 2, 3, 4])
+y_werte = x_werte**2 # y = x^2
+
+plt.figure() # Erstellt eine neue "Zeichenfläche"
+plt.plot(x_werte, y_werte, marker='o') # 'marker' fügt Punkte hinzu
+plt.title("Ein einfacher Plot")
+plt.xlabel("X-Achse")
+plt.ylabel("Y-Achse")
+plt.grid(True) # Fügt ein Gitter hinzu
+plt.show() # Zeigt den Plot an
+```
+
+Mithilfe von `matplotlib` können nicht nur Graphen von Funktionen dargestellt werden, sondern auch Datenpunkte graphisch dargestellt werden. 
+
+```{pyodide-python}
+import matplotlib.pyplot as plt
+import numpy as np
+#Betrachten wir eine Liste an Temperaturen
+cvalues = [20.1, 20.8, 21.9, 22.5, 22.7, 
+           21.8, 21.3, 20.9, 20.1]
+C=np.array(cvalues)
+print(C,type(C))
+plt.plot(C)
+plt.show()
+
+```
+
+:::
