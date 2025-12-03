@@ -1098,39 +1098,39 @@ window.Quarto = {
 
 <section id="was-ist-die-krümmung" class="level1">
 <h1>Was ist die Krümmung?</h1>
-<p>Die <strong>Krümmung</strong> einer Funktion beschreibt, wie sich der Graph “krümmt”, bzw. “biegt” d.h. wie weit sich die Funktion von einer Geraden entfernt. Es hilft sich das als Analogie mit Hilfe einer Straße vorzustellen, die Krümmung gibt an, ob die Straße nach rechts oder nach links abknickt und wie stark der Knick ist.<br>
-Die Krümmung eines Funktion wird in dem Graphen der ersten Ableitung, dadurch erkenntlich, dass es die Stellen sind, an denen sich das <strong><a href="./monotonieverhalten.html">Monotonieverhalten</a></strong> verändert.<br>
-<strong>Wichtig</strong> bei Betrachtung des “Monotonieverhaltens” darf nicht außer Acht bleiben, dass hier das Monotonieverhalten der ersten <strong>Ableitung</strong> betrachtet wird. Mathematisch unterscheiden wir <strong>zwei Hauptarten der Krümmung</strong>:</p>
+<p>Die <strong>Krümmung</strong> einer Funktion beschreibt, wie sich der Graph “krümmt”, bzw. “biegt”, das heißt wie weit sich die Funktion von einer Geraden entfernt. Es hilft, sich das als Analogie mit Hilfe einer Straße vorzustellen, die Krümmung gibt an, ob die Straße nach rechts oder nach links abknickt und wie stark der Knick ist.<br>
+Die Krümmung einer Funktion wird in dem Graphen der ersten Ableitung, an den Stellen erkennbar, an denen sich das <strong><a href="./monotonieverhalten.html">Monotonieverhalten</a></strong> verändert.<br>
+<strong>Wichtig</strong>: Bei Betrachtung des “Monotonieverhaltens” darf nicht außer Acht gelassen werden, dass hier das Monotonieverhalten der ersten <strong>Ableitung</strong> betrachtet wird. Mathematisch unterscheiden wir <strong>zwei Hauptarten der Krümmung</strong>:</p>
 <ul>
 <li><strong>Linksgekrümmt (konvex)</strong>: Der Graph “knickt” sich nach oben. Wenn man sich auf dem Graphen bewegt, biegt er sich nach links.</li>
 <li><strong>Rechtsgekrümmt (konkav)</strong>: Der Graph “knickt” sich nach unten. Wenn man sich auf dem Graphen bewegt, biegt er sich nach rechts.</li>
 </ul>
 <section id="krümmungsverhalten-bestimmen" class="level2">
 <h2 class="anchored" data-anchor-id="krümmungsverhalten-bestimmen">Krümmungsverhalten bestimmen</h2>
-<p>Um das Krümmungsverhalten einer Funktion zu bestimmen, nutzen wir die <strong>zweite Ableitung</strong> <span class="math inline">\(f''(x)\)</span>. Da wir dort, wie oben beschrieben die Stellen finden, an denen die Änderungsrate der Steigung Null ist. Die <strong>Schritte zur Bestimmung des Krümmungsverhaltens</strong> sind wie folgt:</p>
+<p>Um das Krümmungsverhalten einer Funktion zu bestimmen, nutzen wir die <strong>zweite Ableitung</strong> <span class="math inline">\(f''(x)\)</span>. Da wir dort, wie oben beschrieben, die Stellen finden, an denen die Änderungsrate der Steigung Null ist. Die <strong>Schritte zur Bestimmung des Krümmungsverhaltens</strong> sind wie folgt:</p>
 <ol type="1">
 <li><strong>Zweite Ableitung bilden:</strong> Berechne die zweite Ableitung <span class="math inline">\(f''(x)\)</span> der Funktion <span class="math inline">\(f(x)\)</span>.</li>
 <li><strong>Dritte Ableitung bilden</strong>: Berechne die dritte Ableitung <span class="math inline">\(f'''(x)\)</span> der Funktion <span class="math inline">\(f(x)\)</span>.</li>
 <li><strong>Nullstellen der zweiten Ableitung finden:</strong> Bestimme die Nullstellen der zweiten Ableitung, indem du die Gleichung <span class="math inline">\(f''(x) = 0\)</span> löst. Diese Nullstellen sind <strong>potenzielle Wendepunkte</strong>, an denen sich das Krümmungsverhalten ändern könnte.</li>
 <li><strong>Intervalle aufstellen:</strong> Die Nullstellen von <span class="math inline">\(f''(x)\)</span> bilden die Grenzen der Intervalle.</li>
-<li><strong>Vorzeichen von <span class="math inline">\(f'''(x)\)</span> prüfen:</strong> Wähle für jedes Intervall einen beliebigen Wert innerhalb des Intervalls aus. Setze diesen Wert in <span class="math inline">\(f''(x)\)</span> ein. Das Vorzeichen des Ergebnisses verrät dir das Krümmungsverhalten in diesem gesamten Intervall:
+<li><strong>Vorzeichen von <span class="math inline">\(f''(x)\)</span> prüfen:</strong> Wähle für jedes Intervall einen beliebigen Wert innerhalb des Intervalls aus. Setze diesen Wert in <span class="math inline">\(f''(x)\)</span> ein. Das Vorzeichen des Ergebnisses verrät dir das Krümmungsverhalten in diesem gesamten Intervall:
 <ul>
-<li><span class="math inline">\(f'''(x) &gt; 0 \implies\)</span> Der Graph ist in diesem Intervall <strong>linksgekrümmt (konvex)</strong>.</li>
-<li><span class="math inline">\(f'''(x) &lt; 0 \implies\)</span> Der Graph ist in diesem Intervall <strong>rechtsgekrümmt (konkav)</strong>.</li>
+<li><span class="math inline">\(f''(x) &gt; 0 \implies\)</span> Der Graph ist in diesem Intervall <strong>linksgekrümmt (konvex)</strong>.</li>
+<li><span class="math inline">\(f''(x) &lt; 0 \implies\)</span> Der Graph ist in diesem Intervall <strong>rechtsgekrümmt (konkav)</strong>.</li>
 </ul></li>
 </ol>
 </section>
 </section>
 <section id="python-implementierung" class="level1">
 <h1>Python Implementierung</h1>
-<p>Wenn die oben kurzgefasste Theorie verstanden ist, kann die betrachtet werden, wie das ganze in Python implementiert werden kann.</p>
+<p>Wenn die oben kurzgefasste Theorie verstanden ist kann betrachtet werden, wie das Ganze in Python implementiert werden kann.</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="aufgabe-krümmungsverhalten-bestimmen" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-krümmungsverhalten-bestimmen">Aufgabe: Krümmungsverhalten bestimmen</h2>
 <p>Der Code oben hat bisher noch keine Ausgabe.<br>
-Um zu testen, dass Du den Code wirklich verstanden hast, versuche eine Ausgabe zu schreiben, welche den entsprechenden Werten, die in der Funktion bestimmt werden, die passende Ausgabe zu ordnet.<br>
-D.h. in welchem Intervall hat die Funktion welche Krümmung?</p>
+Um zu testen, dass du den Code wirklich verstanden hast, versuche eine Ausgabe zu schreiben, welche den entsprechenden Werten, die in der Funktion bestimmt werden, die passende Ausgabe zuordnet.<br>
+Das heißt in welchem Intervall hat die Funktion welche Krümmung?</p>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
@@ -1146,14 +1146,14 @@ D.h. in welchem Intervall hat die Funktion welche Krümmung?</p>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Überleg Dir welcher Abschnitt im Code dafür zuständig ist das Krümmungsverhalten zu berechnen</li>
-<li>Im Anschluss Überleg dir warum di Variablen so heißen wie sie heißen (Was bedeutet jede einzelne)</li>
-<li>Zuletzt was wurde oben im Text erklärt, was muss angegeben werden wenn es darum geht ein Krümmungsverhalten anzugeben.</li>
+<li>Überlege dir welcher Abschnitt im Code dafür zuständig ist das Krümmungsverhalten zu berechnen</li>
+<li>Im Anschluss überlege dir warum die Variablen so heißen wie sie heißen (Was bedeutet jede einzelne)</li>
+<li>Zuletzt was wurde oben im Text erklärt? Was muss angegeben werden, wenn es darum geht ein Krümmungsverhalten anzugeben?</li>
 </ul>
 </div>
 </div>
 </div>
-<p>Wenn Du damit fertig bist, kommt als letzter Teil dieses Kapitels der Abschnitt <strong><a href="./wendepunkte.html">Wendepunkte bestimmten</a></strong>.</p>
+<p>Wenn du damit fertig bist, kommt als letzter Teil dieses Kapitels der Abschnitt <strong><a href="./wendepunkte.html">Wendepunkte bestimmen</a></strong>.</p>
 
 
 <!-- -->
@@ -1635,9 +1635,9 @@ D.h. in welchem Intervall hat die Funktion welche Krümmung?</p>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Was ist die Krümmung?</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Die **Krümmung** einer Funktion beschreibt, wie sich der Graph "krümmt", bzw. "biegt" d.h. wie weit sich die Funktion von einer Geraden entfernt. Es hilft sich das als Analogie mit Hilfe einer Straße vorzustellen, die Krümmung gibt an, ob die Straße nach rechts oder nach links abknickt und wie stark der Knick ist.  </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Die Krümmung eines Funktion wird in dem Graphen der ersten Ableitung, dadurch erkenntlich, dass es die Stellen sind, an denen sich das **[Monotonieverhalten](monotonieverhalten.qmd)** verändert.  </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>**Wichtig** bei Betrachtung des "Monotonieverhaltens" darf nicht außer Acht bleiben, dass hier das Monotonieverhalten der ersten **Ableitung** betrachtet wird.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Die **Krümmung** einer Funktion beschreibt, wie sich der Graph "krümmt", bzw. "biegt", das heißt wie weit sich die Funktion von einer Geraden entfernt. Es hilft, sich das als Analogie mit Hilfe einer Straße vorzustellen, die Krümmung gibt an, ob die Straße nach rechts oder nach links abknickt und wie stark der Knick ist.  </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Die Krümmung einer Funktion wird in dem Graphen der ersten Ableitung, an den Stellen erkennbar, an denen sich das **[Monotonieverhalten](monotonieverhalten.qmd)** verändert.  </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>**Wichtig**: Bei Betrachtung des "Monotonieverhaltens" darf nicht außer Acht gelassen werden, dass hier das Monotonieverhalten der ersten **Ableitung** betrachtet wird.</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Mathematisch unterscheiden wir **zwei Hauptarten der Krümmung**:</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Linksgekrümmt (konvex)**: Der Graph "knickt" sich nach oben. Wenn man sich auf dem Graphen bewegt, biegt er sich nach links.</span>
@@ -1645,20 +1645,20 @@ D.h. in welchem Intervall hat die Funktion welche Krümmung?</p>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Krümmungsverhalten bestimmen</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Um das Krümmungsverhalten einer Funktion zu bestimmen, nutzen wir die **zweite Ableitung** $f''(x)$. Da wir dort, wie oben beschrieben die Stellen finden, an denen die Änderungsrate der Steigung Null ist.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Um das Krümmungsverhalten einer Funktion zu bestimmen, nutzen wir die **zweite Ableitung** $f''(x)$. Da wir dort, wie oben beschrieben, die Stellen finden, an denen die Änderungsrate der Steigung Null ist.</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Die **Schritte zur Bestimmung des Krümmungsverhaltens** sind wie folgt:</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Zweite Ableitung bilden:** Berechne die zweite Ableitung $f''(x)$ der Funktion $f(x)$.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Dritte Ableitung bilden**: Berechne die dritte Ableitung $f'''(x)$ der Funktion $f(x)$.</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Nullstellen der zweiten Ableitung finden:** Bestimme die Nullstellen der zweiten Ableitung, indem du die Gleichung $f''(x) = 0$ löst. Diese Nullstellen sind **potenzielle Wendepunkte**, an denen sich das Krümmungsverhalten ändern könnte.</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Intervalle aufstellen:** Die Nullstellen von $f''(x)$ bilden die Grenzen der Intervalle.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Vorzeichen von $f'''(x)$ prüfen:** Wähle für jedes Intervall einen beliebigen Wert innerhalb des Intervalls aus. Setze diesen Wert in $f''(x)$ ein. Das Vorzeichen des Ergebnisses verrät dir das Krümmungsverhalten in diesem gesamten Intervall:</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>$f'''(x) &gt; 0 \implies$ Der Graph ist in diesem Intervall **linksgekrümmt (konvex)**.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>$f'''(x) &lt; 0 \implies$ Der Graph ist in diesem Intervall **rechtsgekrümmt (konkav)**.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Vorzeichen von $f''(x)$ prüfen:** Wähle für jedes Intervall einen beliebigen Wert innerhalb des Intervalls aus. Setze diesen Wert in $f''(x)$ ein. Das Vorzeichen des Ergebnisses verrät dir das Krümmungsverhalten in diesem gesamten Intervall:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>$f''(x) &gt; 0 \implies$ Der Graph ist in diesem Intervall **linksgekrümmt (konvex)**.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>$f''(x) &lt; 0 \implies$ Der Graph ist in diesem Intervall **rechtsgekrümmt (konkav)**.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python Implementierung</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Wenn die oben kurzgefasste Theorie verstanden ist, kann die betrachtet werden, wie das ganze in Python implementiert werden kann.  </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Wenn die oben kurzgefasste Theorie verstanden ist kann betrachtet werden, wie das Ganze in Python implementiert werden kann.  </span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| read-only: true</span></span>
@@ -1697,20 +1697,20 @@ D.h. in welchem Intervall hat die Funktion welche Krümmung?</p>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aufgabe: Krümmungsverhalten bestimmen</span></span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Der Code oben hat bisher noch keine Ausgabe.  </span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>Um zu testen, dass Du den Code wirklich verstanden hast, versuche eine Ausgabe zu schreiben, welche den entsprechenden Werten, die in der Funktion bestimmt werden, die passende Ausgabe zu ordnet.  </span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>D.h. in welchem Intervall hat die Funktion welche Krümmung?</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>Um zu testen, dass du den Code wirklich verstanden hast, versuche eine Ausgabe zu schreiben, welche den entsprechenden Werten, die in der Funktion bestimmt werden, die passende Ausgabe zuordnet.  </span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Das heißt in welchem Intervall hat die Funktion welche Krümmung?</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Gib hier deinen Code an</span></span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Hinweis" collapse="true"}  </span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Überleg Dir welcher Abschnitt im Code dafür zuständig ist das Krümmungsverhalten zu berechnen</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Im Anschluss Überleg dir warum di Variablen so heißen wie sie heißen (Was bedeutet jede einzelne)</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Zuletzt was wurde oben im Text erklärt, was muss angegeben werden wenn es darum geht ein Krümmungsverhalten anzugeben.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Überlege dir welcher Abschnitt im Code dafür zuständig ist das Krümmungsverhalten zu berechnen</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Im Anschluss überlege dir warum die Variablen so heißen wie sie heißen (Was bedeutet jede einzelne)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Zuletzt was wurde oben im Text erklärt? Was muss angegeben werden, wenn es darum geht ein Krümmungsverhalten anzugeben?</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Wenn Du damit fertig bist, kommt als letzter Teil dieses Kapitels der Abschnitt **[Wendepunkte bestimmten](wendepunkte.qmd)**.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Wenn du damit fertig bist, kommt als letzter Teil dieses Kapitels der Abschnitt **[Wendepunkte bestimmen](wendepunkte.qmd)**.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script type="module">

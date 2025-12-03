@@ -326,7 +326,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"\nimport sympy\n\nx = sympy.symbols('x')\n\nf = x**3 - 3*x**2 + 2\n\nf_prime = sympy.diff(f, x)\n\nprint(f\"Die erste Ableitung ist: f'(x) = {f_prime}\")\n\nextremstellen = sympy.solve(f_prime, x)\nextremstellen.sort() #sortiert die Nullstellen in aufsteigender Reihenfolge\n\npunkte = [-sympy.oo] + extremstellen + [sympy.oo]\n#Addiert die unterschiedlichen \"Listen\" zusammen (würde auch mit mehreren Listen funktionieren)","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"true","results":"markup","warning":"true"}},{"code":"a = 3\nb = 11\nwhile a<b: \n    a = a+1 #ist sehr wichtig, da sonst die Bedingung nie erfüllt würde, heißt es wäre eine ENDLOS-Schleife\n    print(a)","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"a = 5 \nb = 20\nfor i in range(a,b,2): #a,b sind die Grenzen 2 die Schrittgröße\n    print(i+1)","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import sympy\n\nx = sympy.symbols('x')\n\nf = x**3 - 3*x**2 + 2\n\nf_prime = sympy.diff(f, x)\n\nprint(f\"Die erste Ableitung ist: f'(x) = {f_prime}\")\n\nextremstellen = sympy.solve(f_prime, x)\nextremstellen.sort() #sortiert die Nullstellen in aufsteigender Reihenfolge\n\npunkte = [-sympy.oo] + extremstellen + [sympy.oo]\n#Addiert die unterschiedlichen \"Listen\" zusammen (würde auch mit mehreren Listen funktionieren)","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"\nimport sympy\n\nx = sympy.symbols('x')\n\nf = x**3 - 3*x**2 + 2\n\nf_prime = sympy.diff(f, x)\n\nprint(f\"Die erste Ableitung ist: f'(x) = {f_prime}\")\n\nextremstellen = sympy.solve(f_prime, x)\nextremstellen.sort() #sortiert die Nullstellen in aufsteigender Reihenfolge\n\npunkte = [-sympy.oo] + extremstellen + [sympy.oo]\n#Addiert die unterschiedlichen \"Listen\" zusammen (würde auch mit mehreren Listen funktionieren)","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"true","results":"markup","warning":"true"}},{"code":"a = 3\nb = 11\nwhile a<b: \n    a = a+1 #ist sehr wichtig, da sonst die Bedingung nie erfüllt würde, heißt es wäre eine ENDLOS-Schleife\n    print(a)","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"a = 5 \nb = 20\nfor i in range(a,b,2): #a und b sind die Grenzen, 2 die Schrittgröße\n    print(i+1)","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"import sympy\n\nx = sympy.symbols('x')\n\nf = x**3 - 3*x**2 + 2\n\nf_prime = sympy.diff(f, x)\n\nprint(f\"Die erste Ableitung ist: f'(x) = {f_prime}\")\n\nextremstellen = sympy.solve(f_prime, x)\nextremstellen.sort() #sortiert die Nullstellen in aufsteigender Reihenfolge\n\npunkte = [-sympy.oo] + extremstellen + [sympy.oo]\n#Addiert die unterschiedlichen \"Listen\" zusammen (würde auch mit mehreren Listen funktionieren)","id":4,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 /* Set variable for backend 
 for Groq Server: "groq"
@@ -1106,61 +1106,61 @@ window.Quarto = {
 </section>
 <section id="monotonieverhalten" class="level1">
 <h1>Monotonieverhalten</h1>
-<p>Das Monotonieverhalten beschreibt in welchen Bereichen eine Funktion welche Form der Monotonie aufweist. Die Monotonie kann, wie in dem Kapitel <strong><a href="./ableitungen.html">Ableitungen</a></strong> angeteased wurde, mithilfe der Ableitung bestimmt werden, da diese an jedem Punkt die Steigung an dieser Stelle darstellt.</p>
-<p>Um das Monotonieverhalten einer Funktion zu bestimmen gehen wir wie folgt vor:</p>
+<p>Das Monotonieverhalten beschreibt, in welchen Bereichen eine Funktion welche Form der Monotonie aufweist. Die Monotonie kann, wie in dem Kapitel <strong><a href="./ableitungen.html">Ableitungen</a></strong> angedeutet wurde, mithilfe der Ableitung bestimmt werden, da diese an jedem Punkt die Steigung an dieser Stelle darstellt.</p>
+<p>Um das Monotonieverhalten einer Funktion zu bestimmen, gehen wir wie folgt vor:</p>
 <ol type="1">
 <li><strong>Erste Ableitung bilden:</strong><br>
 Berechne die erste Ableitung <span class="math inline">\(f'(x)\)</span> der Funktion <span class="math inline">\(f(x)\)</span>.</li>
 <li><strong>Nullstellen der Ableitung finden:</strong><br>
 Bestimme die Nullstellen der ersten Ableitung, indem du die Gleichung <span class="math inline">\(f'(x) = 0\)</span> löst. Diese Nullstellen markieren die Grenzen der Monotonie-Intervalle.</li>
 <li><strong>Intervalle aufstellen:</strong><br>
-Die Nullstellen von <span class="math inline">\(f'(x)\)</span> teilen den Definitionsbereich in die Intervalle von <span class="math inline">\(-\inf\)</span> bis <span class="math inline">\(F(x_0)\)</span> und von <span class="math inline">\(F(x_n-1)\)</span> bis <span class="math inline">\(\inf\)</span>, wobei <span class="math inline">\(x_0\)</span> bis <span class="math inline">\(x_n-1\)</span> die Nullstellen von <span class="math inline">\(f'(x)\)</span> sind.</li>
+Die Nullstellen von <span class="math inline">\(f'(x)\)</span> teilen den Definitionsbereich in die Intervalle von <span class="math inline">\(-\infty\)</span> bis <span class="math inline">\(F(x_0)\)</span>, von <span class="math inline">\(F(x_0)\)</span> bis <span class="math inline">\(F(x_1)\)</span>, <span class="math inline">\(\dots\)</span> und von <span class="math inline">\(F(x_{n-1})\)</span> bis <span class="math inline">\(\infty\)</span>, wobei <span class="math inline">\(x_0\)</span> bis <span class="math inline">\(x_{n-1}\)</span> die Nullstellen von <span class="math inline">\(f'(x)\)</span> sind.</li>
 <li><strong>Vorzeichen von <span class="math inline">\(f'(x)\)</span> prüfen:</strong><br>
 Wähle für jedes Intervall einen beliebigen Testwert und setze ihn in die erste Ableitung <span class="math inline">\(f'(x)\)</span> ein. Das Vorzeichen des Ergebnisses verrät dir das Monotonieverhalten in diesem gesamten Intervall:
 <ul>
 <li><span class="math inline">\(f'(x) &gt; 0 \implies\)</span> <span class="math inline">\(f\)</span> ist streng monoton steigend.</li>
-<li><span class="math inline">\(f'(x) &lt; 0 \implies\)</span> <span class="math inline">\(f\)</span> ist streng monoton fallend. Falls zwei oder mehr aufeinander folgende Intervalle steigend/fallend sind, so können sie als ein nicht <em>streng</em> monoton, sondern nur monoton steigender/fallender Intervall betrachtet werden.</li>
+<li><span class="math inline">\(f'(x) &lt; 0 \implies\)</span> <span class="math inline">\(f\)</span> ist streng monoton fallend. Falls zwei oder mehr aufeinanderfolgende Intervalle steigend/fallend sind, so können sie als ein nicht <em>streng</em> monoton, sondern nur monoton steigendes/fallendes Intervall betrachtet werden.</li>
 </ul></li>
 </ol>
 </section>
 <section id="python-implementierung" class="level1">
 <h1>Python Implementierung</h1>
-<p>Nun geht es darum diesen ganzen Prozess als Python Programm zu automatisieren. Zuerst einmal brauchen wir die Erkenntnisse die Du die in den <strong><a href="./nullstellen.html">Nullstellen</a></strong>, sowie <strong><a href="./ableitungen.html">Ableitungen</a></strong> Kapiteln gelernten hast.</p>
-<p>Hier ein Teil des Codes, <em>der Teil den du schon kennst</em> und eine kleine Anleitung, damit Du die Ausgabe mithilfe von Schleifen passend gestalten kannst.</p>
+<p>Nun geht es darum, diesen ganzen Prozess als Python Programm zu automatisieren. Zuerst einmal brauchen wir die Erkenntnisse, die du in den <strong><a href="./nullstellen.html">Nullstellen</a></strong>, sowie <strong><a href="./ableitungen.html">Ableitungen</a></strong> Kapiteln gelernt hast.</p>
+<p>Hier ein Teil des Codes, <em>der Teil, den du schon kennst</em> und eine kleine Anleitung, damit du die Ausgabe mithilfe von Schleifen passend gestalten kannst.</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Jetzt ist das Programm schon fast fertig. Bitte lies Dir einmal in Ruhe den bisherigen Teil durch und versuch alles zu verstehen, was da getan wurde.</p>
+<p>Jetzt ist das Programm schon fast fertig. Bitte lies dir einmal in Ruhe den bisherigen Teil durch und versuch alles zu verstehen, was da getan wurde.</p>
 <section id="aufgabe" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe">Aufgabe</h2>
-<p>Jetzt geht es darum den letzten Schritts des Programms zu schreiben. Hierbei ist es hilfreich entweder eine While-Schleife, oder eine For-Schleife zu verwenden.</p>
+<p>Jetzt geht es darum den letzten Schritt des Programms zu schreiben. Hierbei ist es hilfreich, entweder eine While-Schleife, oder eine For-Schleife zu verwenden.</p>
 <details>
 <summary>
 While-/For- Schleifen
 </summary>
 <section id="while-schleife" class="level4">
 <h4 class="anchored" data-anchor-id="while-schleife">While-Schleife</h4>
-<p>Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, is dies vereinfacht mit Hilfe von Schleifen möglich. <code>While-Schleifen</code>wiederholen hierbei den Code solange wie eine gewisse Bedingung erfüllt ist. Ein kleines Bsp.:</p>
+<p>Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, ist dies vereinfacht mit Hilfe von Schleifen möglich. <code>While-Schleifen</code>wiederholen hierbei den Code solange wie eine gewisse Bedingung erfüllt ist. Ein kleines Bsp.:</p>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="for-schleife" class="level4">
 <h4 class="anchored" data-anchor-id="for-schleife">For-Schleife</h4>
-<p><code>For-Schleifen</code>wiederholen sich über einen gewissen Intervall. Das Schlüsselwort <code>range</code> beschreibt hierbei das Intervall von <span class="math inline">\(a\)</span> bis <span class="math inline">\(b\)</span>. Dabei ist <span class="math inline">\(a\)</span> der Start der Iteration und <span class="math inline">\(b\)</span> der Endpunkt der Iteration.</p>
+<p><code>For-Schleifen</code>wiederholen sich über einen gewisses Intervall. Das Schlüsselwort <code>range</code> beschreibt hierbei das Intervall von <span class="math inline">\(a\)</span> bis <span class="math inline">\(b\)</span>. Dabei ist <span class="math inline">\(a\)</span> der Start der Iteration und <span class="math inline">\(b\)</span> der Endpunkt der Iteration.</p>
 <div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section></details>
-<p>Wenn Du die unterschiedlichen Schleifen verstanden hast (teste gerne auch noch ein wenig herum).<br>
-Versuch das obige Programm (hier drunter nochmal in Kopie), so fortzusetzen, dass es die Liste durchgeht und in jedem Intervall einen Wert testet, dessen Vorzeichen bestimmt (also ob die Funktion steigt/fällt) und das nutzt um das Monotonieverhalten passend zu bestimmen.</p>
+<p>Wenn du die unterschiedlichen Schleifen verstanden hast (teste gerne auch noch ein wenig herum).<br>
+Versuch das obige Programm (hier drunter einmal in Kopie) so fortzusetzen, dass es die Liste durchgeht und in jedem Intervall einen Wert testet, dessen Vorzeichen bestimmt (also ob die Funktion steigt/fällt) und das nutzt, um das Monotonieverhalten passend zu bestimmen.</p>
 <div id="qpyodide-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 </section>
 <section id="aufgabe-2" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-2">Aufgabe 2</h2>
-<p>Wenn Du das hinbekommen hast, versuche das Programm noch ein wenig zu verfeinern. Baue in das Programm noch eine Ausgabe ein, welche Nutznießern des Programms ausgibt, was das Monotonieverhalten ist.</p>
-<p>Hier kannst Du an der Ausgabe noch eine Menge stellschrauben drehen, die die Ausgabe direkter machen. D.h. wie oben erwähnt kannst du Abschnitte an denen das gleiche Vorzeichen nacheinander vorkommt zusammen fassen und statt <em>streng</em> monoton, als monoton steigend/fallend bezeichnen.</p>
-<p>Probiere das Ganze am besten mit unterschiedlichen Funktionen aus um zu testen, wie gut dein Programm für sie funktioniert.</p>
-<p>Wenn du mit deinem Ergebnis zufrieden bist, geht es weiter in <strong><a href="./extrempunkte.html">Extrempunkte-Sattelpunkte</a></strong>.</p>
+<p>Wenn du das hinbekommen hast, versuche das Programm noch ein wenig zu verfeinern. Baue in das Programm noch eine Ausgabe ein, welche Nutzenden des Programms ausgibt, was das Monotonieverhalten ist.</p>
+<p>Hier kannst du an der Ausgabe noch eine Menge Stellschrauben drehen, die die Ausgabe direkter machen. Das heißt, wie oben erwähnt, kannst du Abschnitte an denen das gleiche Vorzeichen nacheinander vorkommt zusammenfassen und statt <em>streng</em> monoton, als <strong>monoton</strong> steigend/fallend bezeichnen.</p>
+<p>Probiere das Ganze am besten mit unterschiedlichen Funktionen aus, um zu testen, wie gut dein Programm für sie funktioniert.</p>
+<p>Wenn du mit deinem Ergebnis zufrieden bist, geht es weiter in dem Unterkapitel<strong><a href="./extrempunkte.html">Extrempunkte-Sattelpunkte</a></strong>.</p>
 
 
 <!-- -->
@@ -1649,29 +1649,29 @@ Versuch das obige Programm (hier drunter nochmal in Kopie), so fortzusetzen, das
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu"># Monotonieverhalten</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Das Monotonieverhalten beschreibt in welchen Bereichen eine Funktion welche Form der Monotonie aufweist.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Die Monotonie kann, wie in dem Kapitel **[Ableitungen](ableitungen.qmd)** angeteased wurde, mithilfe der Ableitung bestimmt werden, da diese an jedem Punkt die Steigung an dieser Stelle darstellt.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Das Monotonieverhalten beschreibt, in welchen Bereichen eine Funktion welche Form der Monotonie aufweist.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Die Monotonie kann, wie in dem Kapitel **[Ableitungen](ableitungen.qmd)** angedeutet wurde, mithilfe der Ableitung bestimmt werden, da diese an jedem Punkt die Steigung an dieser Stelle darstellt.</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Um das Monotonieverhalten einer Funktion zu bestimmen gehen wir wie folgt vor:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Um das Monotonieverhalten einer Funktion zu bestimmen, gehen wir wie folgt vor:</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Erste Ableitung bilden:**  </span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Berechne die erste Ableitung $f'(x)$ der Funktion $f(x)$.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Nullstellen der Ableitung finden:**   </span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Bestimme die Nullstellen der ersten Ableitung, indem du die Gleichung $f'(x) = 0$ löst. Diese Nullstellen markieren die Grenzen der Monotonie-Intervalle.</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Intervalle aufstellen:**   </span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Die Nullstellen von $f'(x)$ teilen den Definitionsbereich in die Intervalle von $-\inf$ bis $F(x_0)$ und von $F(x_n-1)$ bis $\inf$, wobei $x_0$ bis $x_n-1$ die Nullstellen von $f'(x)$ sind.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Die Nullstellen von $f'(x)$ teilen den Definitionsbereich in die Intervalle von $-\infty$ bis $F(x_0)$, von $F(x_0)$ bis $F(x_1)$, $\dots$ und von $F(x_{n-1})$ bis $\infty$, wobei $x_0$ bis $x_{n-1}$ die Nullstellen von $f'(x)$ sind.</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Vorzeichen von $f'(x)$ prüfen:**   </span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Wähle für jedes Intervall einen beliebigen Testwert und setze ihn in die erste Ableitung $f'(x)$ ein. Das Vorzeichen des Ergebnisses verrät dir das Monotonieverhalten in diesem gesamten Intervall:</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$f'(x) &gt; 0 \implies$ $f$ ist streng monoton steigend.</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$f'(x) &lt; 0 \implies$ $f$ ist streng monoton fallend.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Falls zwei oder mehr aufeinander folgende Intervalle steigend/fallend sind, so können sie als ein nicht *streng* monoton, sondern nur monoton steigender/fallender Intervall betrachtet werden.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Falls zwei oder mehr aufeinanderfolgende Intervalle steigend/fallend sind, so können sie als ein nicht *streng* monoton, sondern nur monoton steigendes/fallendes Intervall betrachtet werden.</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python Implementierung</span></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Nun geht es darum diesen ganzen Prozess als Python Programm zu automatisieren.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Zuerst einmal brauchen wir die Erkenntnisse die Du die in den **[Nullstellen](nullstellen.qmd)**, sowie **[Ableitungen](ableitungen.qmd)** Kapiteln gelernten hast.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Nun geht es darum, diesen ganzen Prozess als Python Programm zu automatisieren.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Zuerst einmal brauchen wir die Erkenntnisse, die du in den **[Nullstellen](nullstellen.qmd)**, sowie **[Ableitungen](ableitungen.qmd)** Kapiteln gelernt hast.</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Hier ein Teil des Codes, _der Teil den du schon kennst_ und eine kleine Anleitung, damit Du die Ausgabe mithilfe von Schleifen passend gestalten kannst.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Hier ein Teil des Codes, _der Teil, den du schon kennst_ und eine kleine Anleitung, damit du die Ausgabe mithilfe von Schleifen passend gestalten kannst.</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| read-only: true</span></span>
@@ -1695,19 +1695,19 @@ Versuch das obige Programm (hier drunter nochmal in Kopie), so fortzusetzen, das
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Jetzt ist das Programm schon fast fertig. </span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Bitte lies Dir einmal in Ruhe den bisherigen Teil durch und versuch alles zu verstehen, was da getan wurde.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Bitte lies dir einmal in Ruhe den bisherigen Teil durch und versuch alles zu verstehen, was da getan wurde.</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aufgabe </span></span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Jetzt geht es darum den letzten Schritts des Programms zu schreiben.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Hierbei ist es hilfreich entweder eine While-Schleife, oder eine For-Schleife zu verwenden.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Jetzt geht es darum den letzten Schritt des Programms zu schreiben.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Hierbei ist es hilfreich, entweder eine While-Schleife, oder eine For-Schleife zu verwenden.</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> While-/For- Schleifen <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">#### While-Schleife </span></span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, is dies vereinfacht mit Hilfe von Schleifen möglich.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, ist dies vereinfacht mit Hilfe von Schleifen möglich.</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="in">`While-Schleifen`</span>wiederholen hierbei den Code solange wie eine gewisse Bedingung erfüllt ist.</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Ein kleines Bsp.:</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
@@ -1720,19 +1720,19 @@ Versuch das obige Programm (hier drunter nochmal in Kopie), so fortzusetzen, das
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">#### For-Schleife </span></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="in">`For-Schleifen`</span>wiederholen sich über einen gewissen Intervall. Das Schlüsselwort <span class="in">`range`</span> beschreibt hierbei das Intervall von $a$ bis $b$. Dabei ist $a$ der Start der Iteration und $b$ der Endpunkt der Iteration.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="in">`For-Schleifen`</span>wiederholen sich über einen gewisses Intervall. Das Schlüsselwort <span class="in">`range`</span> beschreibt hierbei das Intervall von $a$ bis $b$. Dabei ist $a$ der Start der Iteration und $b$ der Endpunkt der Iteration.</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span> </span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(a,b,<span class="dv">2</span>): <span class="co">#a,b sind die Grenzen 2 die Schrittgröße</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(a,b,<span class="dv">2</span>): <span class="co">#a und b sind die Grenzen, 2 die Schrittgröße</span></span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i<span class="op">+</span><span class="dv">1</span>)</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span> </span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Wenn Du die unterschiedlichen Schleifen verstanden hast (teste gerne auch noch ein wenig herum).  </span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Versuch das obige Programm (hier drunter nochmal in Kopie), so fortzusetzen, dass es die Liste durchgeht und in jedem Intervall einen Wert testet, dessen Vorzeichen bestimmt (also ob die Funktion steigt/fällt) und das nutzt um das Monotonieverhalten passend zu bestimmen. </span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Wenn du die unterschiedlichen Schleifen verstanden hast (teste gerne auch noch ein wenig herum).  </span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Versuch das obige Programm (hier drunter einmal in Kopie) so fortzusetzen, dass es die Liste durchgeht und in jedem Intervall einen Wert testet, dessen Vorzeichen bestimmt (also ob die Funktion steigt/fällt) und das nutzt, um das Monotonieverhalten passend zu bestimmen. </span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
@@ -1755,14 +1755,14 @@ Versuch das obige Programm (hier drunter nochmal in Kopie), so fortzusetzen, das
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu">##  Aufgabe 2</span></span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Wenn Du das hinbekommen hast, versuche das Programm noch ein wenig zu verfeinern. </span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Baue in das Programm noch eine Ausgabe ein, welche Nutznießern des Programms ausgibt, was das Monotonieverhalten ist.  </span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Wenn du das hinbekommen hast, versuche das Programm noch ein wenig zu verfeinern. </span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Baue in das Programm noch eine Ausgabe ein, welche Nutzenden des Programms ausgibt, was das Monotonieverhalten ist.  </span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>Hier kannst Du an der Ausgabe noch eine Menge stellschrauben drehen, die die Ausgabe direkter machen. D.h. wie oben erwähnt kannst du Abschnitte an denen das gleiche Vorzeichen nacheinander vorkommt zusammen fassen und statt _streng_ monoton, als monoton steigend/fallend bezeichnen.  </span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>Hier kannst du an der Ausgabe noch eine Menge Stellschrauben drehen, die die Ausgabe direkter machen. Das heißt, wie oben erwähnt, kannst du Abschnitte an denen das gleiche Vorzeichen nacheinander vorkommt zusammenfassen und statt _streng_ monoton, als **monoton** steigend/fallend bezeichnen.  </span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>Probiere das Ganze am besten mit unterschiedlichen Funktionen aus um zu testen, wie gut dein Programm für sie funktioniert.</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>Probiere das Ganze am besten mit unterschiedlichen Funktionen aus, um zu testen, wie gut dein Programm für sie funktioniert.</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>Wenn du mit deinem Ergebnis zufrieden bist, geht es weiter in **[Extrempunkte-Sattelpunkte](extrempunkte.qmd)**.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>Wenn du mit deinem Ergebnis zufrieden bist, geht es weiter in dem Unterkapitel**[Extrempunkte-Sattelpunkte](extrempunkte.qmd)**.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script type="module">

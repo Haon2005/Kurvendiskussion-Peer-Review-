@@ -326,7 +326,7 @@ globalThis.qpyodideCustomizedPyodideOptions = {
 }
 
 // Store cell data
-globalThis.qpyodideCellDetails = [{"code":"import sympy\nx = sympy.symbols('x')\nf = x**3 - 3*x**2 + 2\nprint(f\"f(x) = {f}\")\n\nf_prime = sympy.diff(f, x) #Erste Ableitung\nprint(f\"f'(x) = {f_prime}\")\n\ncritical_points = sympy.solve(f_prime, x) #Nullstellen der ersten Ableitung\nprint(f\"Die Nullstellen der ersten Ableitung sind: {critical_points}\")\n\nf_double_prime = sympy.diff(f_prime, x) # Zweite Ableitung\nprint(f\"f''(x) = {f_double_prime}\")\n\nprint(\"\\n--- Test für potentielle Extrema ---\")\nfor cp in critical_points: #Die Liste der Punkte in critical_points wird durchlaufen, mit cp als Laufindex\n    f_double_prime_at_cp = f_double_prime.subs(x, cp)\n    y_value = f.subs(x, cp) #setzt cp in ursprüngliche Funktion f ein\n\n    if f_double_prime_at_cp > 0:\n        print(f\"Bei x = {cp} ,y = {y_value} liegt ein Tiefpunkt vor (f''({cp}) = {f_double_prime_at_cp} > 0).\")\n    elif f_double_prime_at_cp < 0: #elif beutetet Else If, also \"falls nicht, wenn, dann...\"\"\n        print(f\"Bei x = {cp} ,y = {y_value} liegt ein Hochpunkt vor (f''({cp}) = {f_double_prime_at_cp} < 0).\")","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"true","results":"markup","warning":"true"}},{"code":"#Gib hier deinen Code an","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Gib hier deinen Code an","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qpyodideCellDetails = [{"code":"import sympy\nx = sympy.symbols('x')\nf = x**3 - 3*x**2 + 2\nprint(f\"f(x) = {f}\")\n\nf_prime = sympy.diff(f, x) #Erste Ableitung\nprint(f\"f'(x) = {f_prime}\")\n\ncritical_points = sympy.solve(f_prime, x) #Nullstellen der ersten Ableitung\nprint(f\"Die Nullstellen der ersten Ableitung sind: {critical_points}\")\n\nf_double_prime = sympy.diff(f_prime, x) # Zweite Ableitung\nprint(f\"f''(x) = {f_double_prime}\")\n\nprint(\"\\n--- Test für potentielle Extrema ---\")\nfor cp in critical_points: #Die Liste der Punkte in critical_points wird durchlaufen, mit cp als Laufindex\n    f_double_prime_at_cp = f_double_prime.subs(x, cp)\n    y_value = f.subs(x, cp) #setzt cp in ursprüngliche Funktion f ein\n\n    if f_double_prime_at_cp > 0:\n        print(f\"Bei x = {cp} ,y = {y_value} liegt ein Tiefpunkt vor (f''({cp}) = {f_double_prime_at_cp} > 0).\")\n    elif f_double_prime_at_cp < 0: #elif bedeutet Else If, also \"falls nicht, wenn, dann...\"\"\n        print(f\"Bei x = {cp} ,y = {y_value} liegt ein Hochpunkt vor (f''({cp}) = {f_double_prime_at_cp} < 0).\")","id":1,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"true","results":"markup","warning":"true"}},{"code":"#Gib hier deinen Code an","id":2,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"#Gib hier deinen Code an","id":3,"options":{"autorun":"","classes":"","comment":"","context":"interactive","dpi":72,"fig-cap":"","fig-height":5,"fig-width":7,"label":"","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 /* Set variable for backend 
 for Groq Server: "groq"
@@ -1103,26 +1103,26 @@ window.Quarto = {
 
 <section id="was-ist-ein-extrempunktsattelpunkt" class="level1">
 <h1>Was ist ein Extrempunkt/Sattelpunkt?</h1>
-<p>Als <strong>Extrempunkt</strong> oder auch <strong>Extremum</strong> wird ein Punkt bezeichnet der “tiefer,höher” als alle anderen Punkte im Umfeld liegt. Als Analogie können ein Berg, bzw. ein Tal betrachtet werden.</p>
+<p>Als <strong>Extrempunkt</strong> oder auch <strong>Extremum</strong> wird ein Punkt bezeichnet, der “tiefer,höher” als alle anderen Punkte im Umfeld liegt. Als Analogie können ein Berg, bzw. ein Tal betrachtet werden.</p>
 <ul>
 <li>Die Spitze des Bergs ist ein <em>Hochpunkt</em>, also ein Extrempunkt, der höher ist als nebenliegende Funktionswerte.<br>
 </li>
 <li>Die tiefste Stelle ist ein <em>Tiefpunkt</em>, also ein Extrempunkt, der niedriger ist als nebenliegende Funktionswerte.<br>
-<em>Im weiteren Verlauf dieses Kapitels wird die Benennung Minimum=Tiefpunkt und Maximum=Hochpunkt genutzt.</em></li>
+<em>Im weiteren Verlauf dieses Kapitels wird die Benennung Minimum = Tiefpunkt und Maximum = Hochpunkt genutzt.</em></li>
 </ul>
 <section id="lokale-vs.-globale-extrema" class="level2">
 <h2 class="anchored" data-anchor-id="lokale-vs.-globale-extrema">Lokale vs.&nbsp;Globale Extrema</h2>
-<p>Die Differenzierung zwischen <em>lokalen- und globalen- Extrempunkten</em> ist nicht so leicht zu verstehen.<br>
+<p>Die Differenzierung zwischen <em>lokalen und globalen Extrempunkten</em> ist nicht so leicht zu verstehen.<br>
 Eine Funktion kann mehrere <em>lokale Extrema</em> haben, jedoch <em>höchstens ein globales Maximum und höchstens ein globales Minimum</em>.<br>
-Damit eine Funktion an der Stelle <span class="math inline">\(x\)</span> <strong>ein Extremum hat</strong> müssen <strong>zwei Bedingungen</strong> erfüllt sein.</p>
+Damit eine Funktion an der Stelle <span class="math inline">\(x\)</span> <strong>ein Extremum hat</strong>, müssen <strong>zwei Bedingungen</strong> erfüllt sein.</p>
 <ol type="1">
-<li><span class="math inline">\(f'(x)=0\)</span> Das bedeutet, dass an der Stelle die Steigung Null ist, d.h. der Wert nicht weiter ansteigen/abfallen kann.<br>
+<li><span class="math inline">\(f'(x)=0\)</span> Das bedeutet, dass an der Stelle die Steigung Null ist, der Wert nicht weiter ansteigt/abfällt.<br>
 </li>
-<li><span class="math inline">\(f''(x) =|= 0\)</span> Das bedeutet, dass an der Stelle die <strong><a href="./kruemmungsverhalten.html">Krümmung</a></strong> entweder positiv, oder negativ ist, das sorgt dafür, dass das Monotonieverhalten ändert.</li>
+<li><span class="math inline">\(f''(x) \neq 0\)</span> Das bedeutet, dass an der Stelle die <strong><a href="./kruemmungsverhalten.html">Krümmung</a></strong> entweder positiv, oder negativ ist. Dies sorgt dafür, dass sich das Monotonieverhalten ändert.</li>
 </ol>
 <p><em>Der 2. Punkt kann auch anders geprüft werden. Falls die zweite Ableitung nicht bestimmt werden soll, kann ein Wert minimal kleiner und minimal größer als <span class="math inline">\(x\)</span> in die Ableitung eingesetzt werden, wenn sich die Vorzeichen unterscheiden, so ist dort ein Extremum.<br>
-Falls für den kleineren <span class="math inline">\(x\)</span> Wert das Vorzeichen Minus, und für den größeren Plus ist, handelt es sich um einen <strong>Tiefpunkt</strong>,<br>
-Falls für den kleineren <span class="math inline">\(x\)</span> Wert das Vorzeichen Plus, und für den größeren Minus ist, handelt es sich um einen <strong>Hochpunkt</strong>.</em></p>
+Falls für den kleineren <span class="math inline">\(x\)</span>-Wert das Vorzeichen Minus, und für den größeren Plus ist, handelt es sich um einen <strong>Tiefpunkt</strong>,<br>
+Falls für den kleineren <span class="math inline">\(x\)</span>-Wert das Vorzeichen Plus und für den größeren Minus ist, handelt es sich um einen <strong>Hochpunkt</strong>.</em></p>
 <section id="globale-extrema" class="level3">
 <h3 class="anchored" data-anchor-id="globale-extrema">Globale Extrema</h3>
 <p>Damit ein <em>lokales Maximum/Minimum</em> ein <em>globales Maximum/Minimum</em> ist, muss eine weitere Bedingung gelten:<br>
@@ -1132,32 +1132,32 @@ Für ein <em>globales Minimum</em> <span class="math inline">\(x_{min}\)</span> 
 </section>
 <section id="sattelpunkte" class="level2">
 <h2 class="anchored" data-anchor-id="sattelpunkte">Sattelpunkte</h2>
-<p><strong>Sattelpunkt</strong> wird ein potentielles Extremum genannt, welches jedoch keins ist.<br>
-Potentiell in soweit, als dass für einen Sattelpunkt <strong>gilt, dass:</strong> <span class="math inline">\(f'(x_{sat})=0\)</span> ABER im Gegensatz zum Extremum muss für die zweite Ableitung gelten, dass <span class="math inline">\(f''(x_{sat})=0\)</span>.<br>
-Ein <em>Sattelpunkt</em> ist also ein Punkt in einer Funktion an dem die Steigung Null ist sich vorher und nachher in ihrer Ausrichtung jedoch nicht ändert.</p>
+<p>Als <strong>Sattelpunkt</strong> wird ein potentielles Extremum bezeichnet, welches jedoch keines ist.<br>
+Potentiell insoweit, als dass für einen Sattelpunkt <strong>gilt, dass:</strong> <span class="math inline">\(f'(x_{sat})=0\)</span> <strong>aber</strong> im Gegensatz zum Extremum muss für die zweite Ableitung gelten, dass <span class="math inline">\(f''(x_{sat})=0\)</span>.<br>
+Ein <em>Sattelpunkt</em> ist also ein Punkt in einer Funktion an dem die Steigung Null ist, sich vorher und nachher in der Ausrichtung der Funktion jedoch nichts ändert.</p>
 </section>
 </section>
 <section id="python-implementierung" class="level1">
 <h1>Python Implementierung</h1>
-<p>Nachdem Dir nun klar sein sollte, was noch mal ein Extrempunkt/Sattelpunkt ist, wird die Implementierung bei Python betrachtet.</p>
+<p>Nachdem dir nun klar sein sollte, was noch mal ein Extrempunkt/Sattelpunkt ist, wird die Implementierung in Python betrachtet.</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="aufgabe-bestimmung-sattelpunkt" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe-bestimmung-sattelpunkt">Aufgabe: Bestimmung Sattelpunkt</h2>
-<p>Eine leichte Aufgabe zum reinkommen.<br>
-Mithilfe der Erklärung oben sollte es hoffentlich nicht all zu schwer sein einen Code zu verfassen, welcher Eine Funktion testet, ob sie einen Sattelpunkt hat.<br>
-<em>Ideal wäre natürlich ein Code der nach Hochpunkt/Tiefpunkt, und Sattelpunkt überprüft</em></p>
+<p>Eine leichte Aufgabe zum Reinkommen.<br>
+Mithilfe der Erklärung oben sollte es hoffentlich nicht allzu schwer sein einen Code zu verfassen, welcher Eine Funktion testet, ob sie einen Sattelpunkt hat.<br>
+<em>Ideal wäre natürlich ein Code, der nach Hochpunkt/Tiefpunkt und Sattelpunkt überprüft</em></p>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="aufgabe2-bestimmung-extrema-ohne-2.-ableitung" class="level2">
 <h2 class="anchored" data-anchor-id="aufgabe2-bestimmung-extrema-ohne-2.-ableitung">Aufgabe2: Bestimmung Extrema ohne 2. Ableitung</h2>
 <p>Nach der Einstiegsaufgabe nun eine etwas kniffligere Aufgabe.<br>
-Wie in dem Erklärtext bereits erklärt wurde, gibt es nicht nur die bereits gecodete Variante der Extrema Prüfung, sondern noch mindestens eine weitere, welche keine 2. Ableitung benötigt.<br>
-Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob Extrema hat und wenn wo diese sind.</p>
+Wie in dem Erklärtext bereits erklärt wurde, gibt es nicht nur die bereits gecodete Variante der Extrema-Prüfung, sondern noch mindestens eine weitere, welche keine 2. Ableitung benötigt.<br>
+Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob die Funktion Extrema hat und wenn ja, wo diese sind.</p>
 <div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Wenn Du damit fertig bist geht es weiter mit <strong><a href="./kruemmungsverhalten.html">Krümmungsverhalten</a></strong>.</p>
+<p>Wenn Du damit fertig bist, geht es weiter mit <strong><a href="./kruemmungsverhalten.html">Krümmungsverhalten</a></strong>.</p>
 
 
 <!-- -->
@@ -1639,23 +1639,23 @@ Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Was ist ein Extrempunkt/Sattelpunkt?</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Als **Extrempunkt** oder auch **Extremum** wird ein Punkt bezeichnet der "tiefer,höher" als alle anderen Punkte im Umfeld liegt. Als Analogie können ein Berg, bzw. ein Tal betrachtet werden.  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Als **Extrempunkt** oder auch **Extremum** wird ein Punkt bezeichnet, der "tiefer,höher" als alle anderen Punkte im Umfeld liegt. Als Analogie können ein Berg, bzw. ein Tal betrachtet werden.  </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Die Spitze des Bergs ist ein *Hochpunkt*, also ein Extrempunkt, der höher ist als nebenliegende Funktionswerte.  </span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Die tiefste Stelle ist ein *Tiefpunkt*, also ein Extrempunkt, der niedriger ist als nebenliegende Funktionswerte.  </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>_Im weiteren Verlauf dieses Kapitels wird die Benennung Minimum=Tiefpunkt und Maximum=Hochpunkt genutzt._</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>_Im weiteren Verlauf dieses Kapitels wird die Benennung Minimum = Tiefpunkt und Maximum = Hochpunkt genutzt._</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lokale vs. Globale Extrema</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Die Differenzierung zwischen *lokalen- und globalen- Extrempunkten* ist nicht so leicht zu verstehen.  </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Die Differenzierung zwischen *lokalen und globalen Extrempunkten* ist nicht so leicht zu verstehen.  </span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Eine Funktion kann mehrere *lokale Extrema* haben, jedoch *höchstens ein globales Maximum und höchstens ein globales Minimum*.   </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Damit eine Funktion an der Stelle $x$ **ein Extremum hat** müssen **zwei Bedingungen** erfüllt sein.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Damit eine Funktion an der Stelle $x$ **ein Extremum hat**, müssen **zwei Bedingungen** erfüllt sein.</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>$f'(x)=0$ Das bedeutet, dass an der Stelle die Steigung Null ist, d.h. der Wert nicht weiter ansteigen/abfallen kann.  </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>$f''(x) =|= 0$ Das bedeutet, dass an der Stelle die **[Krümmung](kruemmungsverhalten.qmd)** entweder positiv, oder negativ ist, das sorgt dafür, dass das Monotonieverhalten ändert.  </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>$f'(x)=0$ Das bedeutet, dass an der Stelle die Steigung Null ist, der Wert nicht weiter ansteigt/abfällt.  </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>$f''(x) \neq 0$ Das bedeutet, dass an der Stelle die **[Krümmung](kruemmungsverhalten.qmd)** entweder positiv, oder negativ ist. Dies sorgt dafür, dass sich das Monotonieverhalten ändert.  </span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>_Der 2. Punkt kann auch anders geprüft werden. Falls die zweite Ableitung nicht bestimmt werden soll, kann ein Wert minimal kleiner und minimal größer als $x$ in die Ableitung eingesetzt werden, wenn sich die Vorzeichen unterscheiden, so ist dort ein Extremum.  </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Falls für den kleineren $x$ Wert das Vorzeichen Minus, und für den größeren Plus ist, handelt es sich um einen **Tiefpunkt**,   </span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Falls für den kleineren $x$ Wert das Vorzeichen Plus, und für den größeren Minus ist, handelt es sich um einen **Hochpunkt**._  </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Falls für den kleineren $x$-Wert das Vorzeichen Minus, und für den größeren Plus ist, handelt es sich um einen **Tiefpunkt**,   </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Falls für den kleineren $x$-Wert das Vorzeichen Plus und für den größeren Minus ist, handelt es sich um einen **Hochpunkt**._  </span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Globale Extrema </span></span>
@@ -1665,13 +1665,13 @@ Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sattelpunkte</span></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>**Sattelpunkt** wird ein potentielles Extremum genannt, welches jedoch keins ist.  </span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Potentiell in soweit, als dass für einen Sattelpunkt **gilt, dass:** $f'(x_{sat})=0$ ABER im Gegensatz zum Extremum muss für die zweite Ableitung gelten, dass $f''(x_{sat})=0$.  </span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Ein *Sattelpunkt* ist also ein Punkt in einer Funktion an dem die Steigung Null ist sich vorher und nachher in ihrer Ausrichtung jedoch nicht ändert.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Als **Sattelpunkt** wird ein potentielles Extremum bezeichnet, welches jedoch keines ist.  </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Potentiell insoweit, als dass für einen Sattelpunkt **gilt, dass:** $f'(x_{sat})=0$ **aber** im Gegensatz zum Extremum muss für die zweite Ableitung gelten, dass $f''(x_{sat})=0$.  </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Ein *Sattelpunkt* ist also ein Punkt in einer Funktion an dem die Steigung Null ist, sich vorher und nachher in der Ausrichtung der Funktion jedoch nichts ändert.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python Implementierung</span></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Nachdem Dir nun klar sein sollte, was noch mal ein Extrempunkt/Sattelpunkt ist, wird die Implementierung bei Python betrachtet.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Nachdem dir nun klar sein sollte, was noch mal ein Extrempunkt/Sattelpunkt ist, wird die Implementierung in Python betrachtet.</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">#| read-only: true</span></span>
@@ -1696,15 +1696,15 @@ Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> f_double_prime_at_cp <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Bei x = </span><span class="sc">{</span>cp<span class="sc">}</span><span class="ss"> ,y = </span><span class="sc">{</span>y_value<span class="sc">}</span><span class="ss"> liegt ein Tiefpunkt vor (f''(</span><span class="sc">{</span>cp<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>f_double_prime_at_cp<span class="sc">}</span><span class="ss"> &gt; 0)."</span>)</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> f_double_prime_at_cp <span class="op">&lt;</span> <span class="dv">0</span>: <span class="co">#elif beutetet Else If, also "falls nicht, wenn, dann...""</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> f_double_prime_at_cp <span class="op">&lt;</span> <span class="dv">0</span>: <span class="co">#elif bedeutet Else If, also "falls nicht, wenn, dann...""</span></span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Bei x = </span><span class="sc">{</span>cp<span class="sc">}</span><span class="ss"> ,y = </span><span class="sc">{</span>y_value<span class="sc">}</span><span class="ss"> liegt ein Hochpunkt vor (f''(</span><span class="sc">{</span>cp<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>f_double_prime_at_cp<span class="sc">}</span><span class="ss"> &lt; 0)."</span>)</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aufgabe: Bestimmung Sattelpunkt</span></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Eine leichte Aufgabe zum reinkommen.  </span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Mithilfe der Erklärung oben sollte es hoffentlich nicht all zu schwer sein einen Code zu verfassen, welcher Eine Funktion testet, ob sie einen Sattelpunkt hat.  </span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>_Ideal wäre natürlich ein Code der nach Hochpunkt/Tiefpunkt, und Sattelpunkt überprüft_  </span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Eine leichte Aufgabe zum Reinkommen.  </span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Mithilfe der Erklärung oben sollte es hoffentlich nicht allzu schwer sein einen Code zu verfassen, welcher Eine Funktion testet, ob sie einen Sattelpunkt hat.  </span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>_Ideal wäre natürlich ein Code, der nach Hochpunkt/Tiefpunkt und Sattelpunkt überprüft_  </span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="co">#Gib hier deinen Code an</span></span>
@@ -1713,13 +1713,13 @@ Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aufgabe2: Bestimmung Extrema ohne 2. Ableitung</span></span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Nach der Einstiegsaufgabe nun eine etwas kniffligere Aufgabe.  </span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Wie in dem Erklärtext bereits erklärt wurde, gibt es nicht nur die bereits gecodete Variante der Extrema Prüfung, sondern noch mindestens eine weitere, welche keine 2. Ableitung benötigt.  </span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob Extrema hat und wenn wo diese sind.  </span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Wie in dem Erklärtext bereits erklärt wurde, gibt es nicht nur die bereits gecodete Variante der Extrema-Prüfung, sondern noch mindestens eine weitere, welche keine 2. Ableitung benötigt.  </span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob die Funktion Extrema hat und wenn ja, wo diese sind.  </span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co">#Gib hier deinen Code an</span></span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>Wenn Du damit fertig bist geht es weiter mit **[Krümmungsverhalten](kruemmungsverhalten.qmd)**.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>Wenn Du damit fertig bist, geht es weiter mit **[Krümmungsverhalten](kruemmungsverhalten.qmd)**.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script type="module">

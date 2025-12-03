@@ -108,6 +108,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -532,16 +561,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="der-definitionsbereich" class="level1">
 <h1>Der Definitionsbereich</h1>
-<p>Der <strong><a href="./definitionsbereich.html">Definitionsbereich</a></strong> (auch Definitionsmenge genannt) einer Funktion <strong>(f)</strong> ist die Menge aller Werte, für die die Funktion definiert ist, d.h., für die ein gültiger Funktionswert berechnet werden kann. Mit Python und der Bibliothek <code>SymPy</code> können wir versuchen, den Definitionsbereich für verschiedene Arten von Funktionen zu bestimmen. <code>SymPy</code> erlaubt uns, mit mathematischen Symbolen und Ausdrücken zu arbeiten. Also Gleichungen zu lösen.</p>
-<p>Es gibt zwei Gründe, warum eine Funktion eine Definitionslücke hat, beide hängen von den jeweiligen Begrenzungen unser Begriffe ab.<br>
+<p>Der <strong><a href="./definitionsbereich.html">Definitionsbereich</a></strong> (auch Definitionsmenge genannt) einer Funktion <strong>(f)</strong> ist die Menge aller Werte, für die die Funktion definiert ist, das heißt für die ein gültiger Funktionswert berechnet werden kann. Mit Python und der Bibliothek <code>SymPy</code> können wir versuchen, den Definitionsbereich für verschiedene Arten von Funktionen zu bestimmen. <code>SymPy</code> erlaubt uns, mit mathematischen Symbolen und Ausdrücken zu arbeiten. Also um Gleichungen zu lösen.</p>
+<p>Es gibt zwei Gründe, warum eine Funktion eine Definitionslücke hat, beide hängen von den jeweiligen Begrenzungen unserer Begriffe ab.<br>
 Zum einen <strong><a href="./definitionsbereich.html#gebrochen-rationale-funktionen">gebrochen-rationale Funktionen</a></strong> bzw. Brüche. Die Division durch Null ist nicht definiert, daher hat jede Funktion eine Definitionslücke, wenn sonst durch 0 geteilt werden würde an der Stelle.<br>
-Zum anderen <strong><a href="./definitionsbereich.html#funktionen-mit-Wurzeln">Funktionen mit Wurzeln</a></strong> gerade Wurzeln (2te-,4te-,Wurzel) sind für negative Zahlen nicht definiert (Es sei denn man befindet sich in ℂ). Da negative Werte innerhalb eine Wurzel nicht definiert sind, gibt es auch hier eine Definitionslücke, für alle Werte an denen Die Funktion einen negativen Wert der Wurzel wiedergeben würde.</p>
-<p>Wir betrachten die unterschiedlichen Untersuchungen getrennt, natürlich können die beiden Untersuchungen auch in einem Python Programm abgearbeitet werden.</p>
+Zum anderen <strong><a href="./definitionsbereich.html#funktionen-mit-Wurzeln">Funktionen mit Wurzeln</a></strong> gerade Wurzeln (2.,4.,<span class="math inline">\(\dots\)</span> Wurzel) sind für negative Zahlen nicht definiert (Es sei denn man befindet sich in ℂ). Da negative Werte innerhalb einer Wurzel nicht definiert sind, gibt es auch hier eine Definitionslücke, für alle Werte an denen die Funktion einen negativen Wert der Wurzel wiedergeben würde.</p>
+<p>Wir betrachten die unterschiedlichen Untersuchungen getrennt, natürlich können die beiden Untersuchungen auch in einem Python-Programm abgearbeitet werden.</p>
 </section>
 <section id="der-wertebereich" class="level1">
 <h1>Der Wertebereich</h1>
-<p>Der <strong><a href="./definitionsbereich.html">Wertebereich</a></strong> (auch Wertemenge genannt) einer Funktion <strong>(f)</strong> ist die Menge aller Werte, die diese Funktion annehmen kann, d.h. die Menge aller Werte welche durch einsetzen aller Elemente aus dem Definitionsbereich bestimmt werden. Der Wertebereich einer Funktion kann aus verschiedenen Gründen eingeschränkt sein, es gibt den trivialen Fall der auch untersucht werden kann, denn wir hier aber der Übersichtlichkeit wegen wegfallen lassen. Obendrein wird empfohlen erst die anderen Kapitel durchzuarbeiten, da das Kapitel Wertebereich unteranderem <strong><a href="./extrempunkte.html">Extremwerte</a></strong> wichtig ist, aber auch <strong><a href="./asymptoten.html">Asymptoten</a></strong> und <strong><a href="./globalverhalten.html">Verhalten der Funktion an Grenzen oder im Unendlichen</a></strong> beinhaltet.</p>
-<p>Es gibt zum einen <strong>strukturelle Eigenschaften der Funktion</strong> welche den Wertebereich einschränken können. Darunter fällt das vorhanden Sein von <strong>globalen Extremwerten</strong> und <strong>natürliche Wertegrenzen bestimmter Funktionstypen</strong> (Exponentialfunktionen, Wurzelfunktionen, Betragsfunktionen, Trigonometrische Funktion, Periodische Funktionen) Auch spielt das <strong>Verhalten der Funktion an Grenzen oder im Unendlichen</strong> einen Rollen, dies bezieht sich vor allem auf <strong>horizontale Asymptoten</strong>, da diese den Wertbereich einschränken.</p>
+<p>Der <strong><a href="./definitionsbereich.html">Wertebereich</a></strong> (auch Wertemenge genannt) einer Funktion <strong>(f)</strong> ist die Menge aller Werte, die diese Funktion annehmen kann, das heißt die Menge aller Werte welche durch Einsetzen aller Elemente aus dem Definitionsbereich bestimmt werden. Der Wertebereich einer Funktion kann aus verschiedenen Gründen eingeschränkt sein, es gibt den trivialen Fall, der auch untersucht werden kann, den wir hier aber der Übersichtlichkeit wegen wegfallen lassen. Obendrein wird empfohlen erst die anderen Kapitel durchzuarbeiten, da für das Kapitel Wertebereich unter anderem <strong><a href="./extrempunkte.html">Extremwerte</a></strong> wichtig sind, aber auch <strong><a href="./asymptoten.html">Asymptoten</a></strong> und <strong><a href="./globalverhalten.html">Verhalten der Funktion an Grenzen oder im Unendlichen</a></strong> beinhaltet.</p>
+<p>Es gibt zum einen <strong>strukturelle Eigenschaften der Funktion</strong> welche den Wertebereich einschränken können. Darunter fällt das Vorhandensein von <strong>globalen Extremwerten</strong> und <strong>natürliche Wertegrenzen bestimmter Funktionstypen</strong> (Exponentialfunktionen, Wurzelfunktionen, Betragsfunktionen, Trigonometrische Funktion, Periodische Funktionen) Auch spielt das <strong>Verhalten der Funktion an Grenzen oder im Unendlichen</strong> eine Rollen, dies bezieht sich vor allem auf <strong>horizontale Asymptoten</strong>, da diese den Wertebereich einschränken.</p>
 
 
 <!-- -->
@@ -1021,24 +1050,24 @@ Zum anderen <strong><a href="./definitionsbereich.html#funktionen-mit-Wurzeln">F
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Der Definitionsbereich</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Der **[Definitionsbereich](definitionsbereich.qmd)** (auch Definitionsmenge genannt) einer Funktion **\(f\)** ist die Menge aller Werte, für die die Funktion definiert ist, d.h., für die ein gültiger Funktionswert berechnet werden kann.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Mit Python und der Bibliothek <span class="in">`SymPy`</span> können wir versuchen, den Definitionsbereich für verschiedene Arten von Funktionen zu bestimmen. <span class="in">`SymPy`</span> erlaubt uns, mit mathematischen Symbolen und Ausdrücken zu arbeiten. Also Gleichungen zu lösen.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Der **[Definitionsbereich](definitionsbereich.qmd)** (auch Definitionsmenge genannt) einer Funktion **\(f\)** ist die Menge aller Werte, für die die Funktion definiert ist, das heißt für die ein gültiger Funktionswert berechnet werden kann.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Mit Python und der Bibliothek <span class="in">`SymPy`</span> können wir versuchen, den Definitionsbereich für verschiedene Arten von Funktionen zu bestimmen. <span class="in">`SymPy`</span> erlaubt uns, mit mathematischen Symbolen und Ausdrücken zu arbeiten. Also um Gleichungen zu lösen.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Es gibt zwei Gründe, warum eine Funktion eine Definitionslücke hat, beide hängen von den jeweiligen Begrenzungen unser Begriffe ab.  </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Es gibt zwei Gründe, warum eine Funktion eine Definitionslücke hat, beide hängen von den jeweiligen Begrenzungen unserer Begriffe ab.  </span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Zum einen **[gebrochen-rationale Funktionen](definitionsbereich.qmd#gebrochen-rationale-funktionen)** bzw. Brüche. Die Division durch Null ist nicht definiert, daher hat jede Funktion eine Definitionslücke, wenn sonst durch 0 geteilt werden würde an der Stelle.  </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Zum anderen **[Funktionen mit Wurzeln](definitionsbereich.qmd#funktionen-mit-Wurzeln)** gerade Wurzeln (2te-,4te-,\dots Wurzel) sind für negative Zahlen nicht definiert (Es sei denn man befindet sich in ℂ). Da negative Werte innerhalb eine Wurzel nicht definiert sind, gibt es auch hier eine Definitionslücke, für alle Werte an denen Die Funktion einen negativen Wert der Wurzel wiedergeben würde.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Zum anderen **[Funktionen mit Wurzeln](definitionsbereich.qmd#funktionen-mit-Wurzeln)** gerade Wurzeln (2.,4.,$\dots$ Wurzel) sind für negative Zahlen nicht definiert (Es sei denn man befindet sich in ℂ). Da negative Werte innerhalb einer Wurzel nicht definiert sind, gibt es auch hier eine Definitionslücke, für alle Werte an denen die Funktion einen negativen Wert der Wurzel wiedergeben würde.</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Wir betrachten die unterschiedlichen Untersuchungen getrennt, natürlich können die beiden Untersuchungen auch in einem Python Programm abgearbeitet werden.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Wir betrachten die unterschiedlichen Untersuchungen getrennt, natürlich können die beiden Untersuchungen auch in einem Python-Programm abgearbeitet werden.</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># Der Wertebereich</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Der **[Wertebereich](definitionsbereich.qmd)** (auch Wertemenge genannt) einer Funktion **\(f\)** ist die Menge aller Werte, die diese Funktion annehmen kann, d.h. die Menge aller Werte welche durch einsetzen aller Elemente aus dem Definitionsbereich bestimmt werden.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Der Wertebereich einer Funktion kann aus verschiedenen Gründen eingeschränkt sein, es gibt den trivialen Fall der auch untersucht werden kann, denn wir hier aber der Übersichtlichkeit wegen wegfallen lassen. </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Obendrein wird empfohlen erst die anderen Kapitel durchzuarbeiten, da das Kapitel Wertebereich unteranderem **[Extremwerte](extrempunkte.qmd)** wichtig ist, aber auch **[Asymptoten](asymptoten.qmd)** und **[Verhalten der Funktion an Grenzen oder im Unendlichen](globalverhalten.qmd)** beinhaltet.  </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Der **[Wertebereich](definitionsbereich.qmd)** (auch Wertemenge genannt) einer Funktion **\(f\)** ist die Menge aller Werte, die diese Funktion annehmen kann, das heißt die Menge aller Werte welche durch Einsetzen aller Elemente aus dem Definitionsbereich bestimmt werden.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Der Wertebereich einer Funktion kann aus verschiedenen Gründen eingeschränkt sein, es gibt den trivialen Fall, der auch untersucht werden kann, den wir hier aber der Übersichtlichkeit wegen wegfallen lassen. </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Obendrein wird empfohlen erst die anderen Kapitel durchzuarbeiten, da für das Kapitel Wertebereich unter anderem **[Extremwerte](extrempunkte.qmd)** wichtig sind, aber auch **[Asymptoten](asymptoten.qmd)** und **[Verhalten der Funktion an Grenzen oder im Unendlichen](globalverhalten.qmd)** beinhaltet.  </span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Es gibt zum einen **strukturelle Eigenschaften der Funktion** welche den Wertebereich einschränken können. </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Darunter fällt das vorhanden Sein von **globalen Extremwerten** und **natürliche Wertegrenzen bestimmter Funktionstypen** (Exponentialfunktionen, Wurzelfunktionen, Betragsfunktionen, Trigonometrische Funktion, Periodische Funktionen)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Auch spielt das **Verhalten der Funktion an Grenzen oder im Unendlichen** einen Rollen, dies bezieht sich vor allem auf **horizontale Asymptoten**, da diese den Wertbereich einschränken. </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Darunter fällt das Vorhandensein von **globalen Extremwerten** und **natürliche Wertegrenzen bestimmter Funktionstypen** (Exponentialfunktionen, Wurzelfunktionen, Betragsfunktionen, Trigonometrische Funktion, Periodische Funktionen)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Auch spielt das **Verhalten der Funktion an Grenzen oder im Unendlichen** eine Rollen, dies bezieht sich vor allem auf **horizontale Asymptoten**, da diese den Wertebereich einschränken. </span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>

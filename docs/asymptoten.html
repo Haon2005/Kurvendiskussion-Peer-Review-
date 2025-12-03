@@ -1107,12 +1107,12 @@ window.Quarto = {
 
 <section id="was-ist-eine-asymptote" class="level1">
 <h1>Was ist eine Asymptote?</h1>
-<p>Bevor es um die Python-Implementierung geht, ist es wichtig zu wissen, was eine Asymptote im Allgemeinen ist. Eine <strong>Asymptote</strong> eine Kurve der sich die Funktion <strong>im Unendlichen</strong> immer weiter annähert.</p>
+<p>Bevor es um die Python-Implementierung geht, ist es wichtig zu wissen, was eine Asymptote im Allgemeinen ist. Eine <strong>Asymptote ist</strong> eine Kurve, der sich die Funktion <strong>im Unendlichen</strong> immer weiter annähert.</p>
 <p><strong>Wichtig</strong>: Das heißt nicht, dass sich die Funktion und die Kurve (meistens handelt es sich um eine Gerade) nie treffen. Es gibt hier unterschiedliche Möglichkeiten.</p>
 <ol type="1">
 <li>Sie treffen sich nie, z.B.: <span class="math inline">\(f(x)=\frac{1}{x}\)</span></li>
 <li>Sie treffen sich endlich oft, bevor sie sich im Unendlichen nicht mehr treffen, z.B.: <span class="math inline">\(f(x) = \frac{x^3 + 2x^2 + 1}{x^2 + 1}\)</span></li>
-<li>Sie treffen sich unendlich oft, da die Funktion um die Asymptote oszilliert (d.h. in Form einer Schwingung) also diese auch unendlich oft nicht schneidet, aber bei jeder Schwingung einmal schneidet z.B.: <span class="math inline">\(f(x) = \frac{\sin(x)}{x}\)</span></li>
+<li>Sie treffen sich unendlich oft, da die Funktion um die Asymptote oszilliert (d.h. in Form einer Schwingung), also diese auch unendlich oft nicht schneidet, aber bei jeder Schwingung einmal schneidet, z.B.: <span class="math inline">\(f(x) = \frac{\sin(x)}{x}\)</span>.</li>
 </ol>
 <ul>
 <li><strong><a href="#lineare-asymptoten">Lineare Asymptoten:</a></strong>
@@ -1133,13 +1133,13 @@ window.Quarto = {
 <p><strong>Der Graph der Funktion <span class="math inline">\(f(x)\)</span> hat bei <span class="math inline">\(x=a\)</span> eine vertikale Asymptote, wenn mindestens einer der folgenden Grenzwerte gilt:</strong> <span class="math display">\[ \lim_{x \to a^+} f(x) = \pm\infty \quad \text{oder} \quad \lim_{x \to a^-} f(x) = \pm\infty \]</span></p>
 <section id="python-implementierung-vertikale-asymptoten-finden" class="level3">
 <h3 class="anchored" data-anchor-id="python-implementierung-vertikale-asymptoten-finden">Python-Implementierung: Vertikale Asymptoten finden</h3>
-<p>Um die Vertikale Asymptote zu finden muss also wie im <strong><a href="./definitionsbereich.html#gebrochen-rationalen-Funktionen">Definitionsbereich</a></strong> Abschnitt vorgegangen werden. Eine kleine Erinnerung an die Grundlagen aus dem Abschnitt:</p>
+<p>Um die Vertikale Asymptote zu finden, muss also wie im Abschnitt <strong><a href="./definitionsbereich.html#gebrochen-rationalen-Funktionen">Definitionsbereich</a></strong> vorgegangen werden. Eine kleine Erinnerung an die Grundlagen aus dem Abschnitt:</p>
 <div id="qpyodide-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="aufgabe" class="level4">
 <h4 class="anchored" data-anchor-id="aufgabe">Aufgabe</h4>
 <p>Erstelle einen Code, der für eine beliebige Funktion die vertikalen Asymptoten bestimmt und ausgibt.<br>
-Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der <span class="math inline">\(\text{der Nenner}=0 \text{ ist und der Zähler } \neq 0\)</span>.</p>
+Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden, an der <span class="math inline">\(\text{der Nenner}=0 \text{ ist und der Zähler } \neq 0\)</span>.</p>
 <div id="qpyodide-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note callout-titled" title="Tipps 1:">
@@ -1155,10 +1155,10 @@ Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der <span cla
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Du musst zu erst wie in dem Abschnitt oben Deine Variable und Funktion definieren<br>
+<li>Du musst zuerst wie in dem Abschnitt oben deine Variable und Funktion definieren<br>
 </li>
-<li>Dann kannst Du Zähler und Nenner bestimmen (if Abfrage, da es möglicherweise keinen Nenner gibt)</li>
-<li>Jetzt kannst du den Nenner gleich Null setzten.</li>
+<li>Dann kannst du Zähler und Nenner bestimmen (if Abfrage, da es möglicherweise keinen Nenner gibt)</li>
+<li>Jetzt kannst du den Nenner gleich Null setzen.</li>
 <li>Die Werte dafür sind deine potentiellen Nullstellen</li>
 </ul>
 </div>
@@ -1177,8 +1177,8 @@ Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der <span cla
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Nun musst Du die potentiellen Nullstellen, noch darauf testen, ob evtl. der Zähler an der Stelle auch Null ist, falls nicht gibt es für die X Werte Asymptoten</li>
-<li>Überleg wie du die Bedingungen überprüfst (was musst du Gleichsetzen?)</li>
+<li>Nun musst du die potentiellen Nullstellen, noch darauf testen, ob evtl. der Zähler an der Stelle auch Null ist. Falls nicht, gibt es für die <span class="math inline">\(X\)</span>-Werte Asymptoten.</li>
+<li>Überlege, wie du die Bedingungen überprüfst (was musst du gleichsetzen?).</li>
 <li>Gib die Asymptoten dem Nutzer aus.</li>
 </ul>
 </div>
@@ -1194,7 +1194,7 @@ Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der <span cla
 <p><strong>Die Gerade <span class="math inline">\(y=a\)</span> ist eine horizontale Asymptote von <span class="math inline">\(f(x)\)</span>, wenn für <span class="math inline">\(a\in \mathbb{R}\)</span> gilt:</strong> <span class="math display">\[ \lim_{x \to \infty} f(x) = a \quad \text{oder} \quad \lim_{x \to -\infty} f(x) = a \]</span></p>
 <section id="python-implementierung-horizontale-asymptoten-finden" class="level3">
 <h3 class="anchored" data-anchor-id="python-implementierung-horizontale-asymptoten-finden">Python-Implementierung: Horizontale Asymptoten finden</h3>
-<p>Hier wird wie in <strong><a href="./globalverhalten.html">Globalverhalten untersuchen</a></strong> vor, d.h. es es werden die <code>sympy.limit</code>’s bestimmt, es benötigt jedoch noch einen Schritt der bisher noch nicht genutzt wurde, es existiert nur eine horizontale Asymptote, falls der Wert reel ist.</p>
+<p>Hier wird wie in <strong><a href="./globalverhalten.html">Globalverhalten untersuchen</a></strong> vorgegangen, das heißt es es werden die <code>sympy.limit</code>’s bestimmt, es benötigt jedoch noch einen Schritt, der bisher noch nicht genutzt wurde, es existiert nur eine horizontale Asymptote, falls der Wert reell ist.</p>
 <div id="qpyodide-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note callout-titled" title="Tipp:">
@@ -1210,7 +1210,7 @@ Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der <span cla
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Die Funktion <code>.is_finite</code> kann bestimmten, ob ein Wert endlich ist oder nicht.</li>
+<li>Die Funktion <code>.is_finite</code> kann bestimmen, ob ein Wert endlich ist oder nicht.</li>
 <li>D.h. mit Hilfe dieser Funktion kann eine passende Ausgabe generiert werden.</li>
 </ul>
 </div>
@@ -1244,14 +1244,14 @@ Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der <span cla
 </section>
 <section id="schiefe-asymptoten" class="level2">
 <h2 class="anchored" data-anchor-id="schiefe-asymptoten">Schiefe Asymptoten</h2>
-<p>Eine <strong>schiefe (oder schräge) Asymptote</strong> ist eine Gerade der Form <span class="math inline">\(y = mx + b\)</span>, der sich die Funktion annähert.<br>
-Sie tritt bei gebrochen-rationalen Funktionen auf, wenn der Grad des Zählerpolynoms genau um eins größer ist als der Grad des Nennerpolynoms UND bei der Polynomdivision ein Rest existiert. Das Ergebnis der Polynomdivision ist die Geradengleichung der Asymptote.<br>
+<p>Eine <strong>schiefe (oder schräge) Asymptote</strong> ist eine Gerade der Form <span class="math inline">\(y = mx + b\)</span>, an die sich die Funktion annähert.<br>
+Sie tritt bei gebrochen-rationalen Funktionen auf, wenn der Grad des Zählerpolynoms genau um eins größer ist als der Grad des Nennerpolynoms und bei der Polynomdivision ein Rest existiert. Das Ergebnis der Polynomdivision ist die Geradengleichung der Asymptote.<br>
 <strong>Die Funktion <span class="math inline">\(f\)</span> hat eine <em>schiefe</em> Asymptote <span class="math inline">\(f_a\)</span>, wenn gilt:</strong> <span class="math display">\[ \lim_{x \to \infty} f(x) = f_a(x) \quad \text{oder} \quad \lim_{x \to -\infty} f(x) = f_a(x) \]</span></p>
 <p>Beziehungsweise: <span class="math display">\[ \lim_{x \to \infty} | f(x) - f_a(x) | = 0 \quad \text{oder} \quad \lim_{x \to -\infty} | f(x) - f_a(x) | = 0 \]</span></p>
 <section id="python-implementierung-schiefe-asymptoten-finden" class="level3">
 <h3 class="anchored" data-anchor-id="python-implementierung-schiefe-asymptoten-finden">Python-Implementierung: Schiefe Asymptoten finden</h3>
-<p>Die Polynomdivision kann in Python wie viele der Rechnungen, die wir in anderen Kapiteln bereits getätigt haben mit der <code>sympy</code> Bibliothek durchführen.<br>
-Die passende Funktion heißt <code>sympy.div()</code>. Der Grad einer Funktion kann mit <code>sympy.degree</code></p>
+<p>Die Polynomdivision kann in Python wie viele der Rechnungen, die wir in anderen Kapiteln bereits getätigt haben, mit der <code>sympy</code> Bibliothek durchführen.<br>
+Die passende Funktion heißt <code>sympy.div()</code>. Der Grad einer Funktion kann mit <code>sympy.degree</code> bestimmt werden.</p>
 <div id="qpyodide-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note callout-titled" title="Tipp:">
@@ -1267,8 +1267,8 @@ Die passende Funktion heißt <code>sympy.div()</code>. Der Grad einer Funktion k
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Überlege zuerst, was musst du alles überprüfen?</li>
-<li>Gehe dafür noch einmal in Ruhe durch was oben steht, wie eine schiefe Asymptote bestimmt wird, wann sie existiert.</li>
+<li>Überlege zuerst, was du alles überprüfen musst.</li>
+<li>Gehe dafür noch einmal in Ruhe durch, was oben steht, wie eine schiefe Asymptote bestimmt wird, wann sie existiert.</li>
 </ul>
 </div>
 </div>
@@ -1286,9 +1286,9 @@ Die passende Funktion heißt <code>sympy.div()</code>. Der Grad einer Funktion k
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Zuerst solltest Du, so wie immer <code>sympy</code>importieren</li>
+<li>Zuerst solltest Du, so wie immer <code>sympy</code> importieren</li>
 <li>Dann die Variable und die Funktion definieren (Denk dran die Funktion in ein <code>sympy</code> Objekt mit sympy.sympify zu verwandeln)</li>
-<li>Danach solltest Du Zähler, Nenner auslesen</li>
+<li>Danach solltest Du Zähler und Nenner auslesen</li>
 </ol>
 </div>
 </div>
@@ -1307,7 +1307,7 @@ Die passende Funktion heißt <code>sympy.div()</code>. Der Grad einer Funktion k
 <div class="callout-body-container callout-body">
 <ol start="4" type="1">
 <li>Dann kannst Du den Grad auslesen, lies am besten den Grad des Zählers und des Nenners aus.</li>
-<li>Dann bist Du praktisch fertig, es fehlt nur noch eine passende Ausgabe für den Nutzer zu gestalten indem du testest, ób die Bedingung für eine schiefe Asymptote erfüllt ist.</li>
+<li>Dann bist Du praktisch fertig, es fehlt nur noch eine passende Ausgabe für den Nutzer zu gestalten indem du testest, ob die Bedingung für eine schiefe Asymptote erfüllt ist.</li>
 </ol>
 </div>
 </div>
@@ -1318,14 +1318,14 @@ Die passende Funktion heißt <code>sympy.div()</code>. Der Grad einer Funktion k
 </section>
 <section id="nicht-lineare-asymptoten" class="level1">
 <h1>Nicht-lineare Asymptoten</h1>
-<p><em>In der Schule wird sich meist nur mit geraden Asymptoten beschäftigt. Es gibt jedoch auch nicht-lineare oder nicht-gerade Asymptoten. Diese <strong>Kurve</strong> der sich die Funktion <strong>im Unendlichen</strong> annähert wird auch <strong>Näherungskurve</strong> oder <strong>kurvenförmigen Asymptote</strong> genannt.</em></p>
-<p>Eine solche Asymptote entsteht ähnlich, wie schiefe Asymptoten durch eine gebrochen-rational Funktion, nur dass in diesem Fall der Grad des Zählerpolynoms <strong>mehr als eins größer</strong> ist als der Grad des Nennerpolynoms <span class="math inline">\((Zählergrad &gt; Nennergrad + 1)\)</span>.<br>
-Ähnlich wie bei den schiefen Asymptoten ist es auch hier die <strong>Existenz eines Rest bei der Polynomdivision wichtig</strong>. Wenn sie keinen hat, nähert sich die Funktion der <strong>Näherungskurve</strong> im Unendlichen nicht an, sondern ist durchgehend mit ihr identisch, wodurch es sich nicht um eine Asymptote handelt!<br>
+<p><em>In der Schule wird sich meist nur mit geraden Asymptoten beschäftigt. Es gibt jedoch auch nicht-lineare oder nicht-gerade Asymptoten. Diese <strong>Kurve</strong> an die sich die Funktion <strong>im Unendlichen</strong> annähert wird auch <strong>Näherungskurve</strong> oder <strong>kurvenförmige Asymptote</strong> genannt.</em></p>
+<p>Eine solche Asymptote entsteht ähnlich wie schiefe Asymptoten durch eine gebrochen-rationale Funktion, nur dass in diesem Fall der Grad des Zählerpolynoms <strong>mehr als eins größer</strong> ist als der Grad des Nennerpolynoms <span class="math inline">\((Zählergrad &gt; Nennergrad + 1)\)</span>.<br>
+Ähnlich wie bei den schiefen Asymptoten ist es auch hier die <strong>Existenz eines Rests bei der Polynomdivision wichtig</strong>. Wenn sie keinen hat, nähert sich die Funktion der <strong>Näherungskurve</strong> im Unendlichen nicht an, sondern ist durchgehend mit ihr identisch, wodurch es sich nicht um eine Asymptote handelt!<br>
 Auch hier findet man die Näherungskurve durch <strong>Polynomdivision</strong>.</p>
 <section id="python-implementierung-und-visualisierung" class="level4">
 <h4 class="anchored" data-anchor-id="python-implementierung-und-visualisierung">Python-Implementierung und Visualisierung</h4>
 <p>Im Prinzip ist die Idee zur Berechnung einer nicht-linearen Asymptoten der Berechnung einer schiefen Asymptoten <em>sehr</em> ähnlich.<br>
-Daher ist das eine Aufgabe</p>
+Daher ist das eine Aufgabe:</p>
 <div id="qpyodide-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note callout-titled" title="Tipp:">
@@ -1345,7 +1345,7 @@ Daher ist das eine Aufgabe</p>
 </div>
 </div>
 </div>
-<p>Wenn Du diesen Code Block beendet hast hast du das Kapitel <strong>Globalverhalten und Asymptoten</strong> erfolgreich abgeschlossen, weiter geht es mit dem Kapitel <a href="./uebersicht_monotonie_kruemmung.html">Monotonie und Krümmungsverhalten</a>.</p>
+<p>Wenn Du diesen Code Block beendet hast, hast du das Kapitel <strong>Globalverhalten und Asymptoten</strong> erfolgreich abgeschlossen. Weiter geht es mit dem Kapitel <a href="./uebersicht_monotonie_kruemmung.html">Monotonie und Krümmungsverhalten</a>.</p>
 
 
 <!-- -->
@@ -1828,13 +1828,13 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Was ist eine Asymptote?</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Bevor es um die Python-Implementierung geht, ist es wichtig zu wissen, was eine Asymptote im Allgemeinen ist.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Eine **Asymptote** eine Kurve der sich die Funktion **im Unendlichen** immer weiter annähert.  </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Eine **Asymptote ist** eine Kurve, der sich die Funktion **im Unendlichen** immer weiter annähert.  </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**Wichtig**: Das heißt nicht, dass sich die Funktion und die Kurve (meistens handelt es sich um eine Gerade) nie treffen. Es gibt hier unterschiedliche Möglichkeiten.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Sie treffen sich nie, z.B.: $f(x)=\frac{1}{x}$</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Sie treffen sich endlich oft, bevor sie sich im Unendlichen nicht mehr treffen, z.B.: $f(x) = \frac{x^3 + 2x^2 + 1}{x^2 + 1}$</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Sie treffen sich unendlich oft, da die Funktion um die Asymptote oszilliert (d.h. in Form einer Schwingung) also diese auch unendlich oft nicht schneidet, aber bei jeder Schwingung einmal schneidet z.B.: $f(x) = \frac{\sin(x)}{x}$</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Sie treffen sich unendlich oft, da die Funktion um die Asymptote oszilliert (d.h. in Form einer Schwingung), also diese auch unendlich oft nicht schneidet, aber bei jeder Schwingung einmal schneidet, z.B.: $f(x) = \frac{\sin(x)}{x}$.</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**[Lineare Asymptoten:](#lineare-asymptoten)**  </span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">  *   </span>**[Vertikale Asymptoten](#vertikale-asymptoten)**</span>
@@ -1855,7 +1855,7 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Python-Implementierung: Vertikale Asymptoten finden</span></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Um die Vertikale Asymptote zu finden muss also wie im **[Definitionsbereich](definitionsbereich.qmd#gebrochen-rationalen-Funktionen)** Abschnitt vorgegangen werden.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Um die Vertikale Asymptote zu finden, muss also wie im Abschnitt **[Definitionsbereich](definitionsbereich.qmd#gebrochen-rationalen-Funktionen)** vorgegangen werden.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Eine kleine Erinnerung an die Grundlagen aus dem Abschnitt:</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| read-only: true</span></span>
@@ -1871,7 +1871,7 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Aufgabe</span></span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Erstelle einen Code, der für eine beliebige Funktion die vertikalen Asymptoten bestimmt und ausgibt.  </span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der $\text{der Nenner}=0 \text{ ist und der Zähler } \neq 0$.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden, an der $\text{der Nenner}=0 \text{ ist und der Zähler } \neq 0$.</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
@@ -1880,14 +1880,14 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Tipps 1:" collapse="true"}</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Du musst zu erst wie in dem Abschnitt oben Deine Variable und Funktion definieren  </span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Dann kannst Du Zähler und Nenner bestimmen (if Abfrage, da es möglicherweise keinen Nenner gibt)</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Jetzt kannst du den Nenner gleich Null setzten.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Du musst zuerst wie in dem Abschnitt oben deine Variable und Funktion definieren  </span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Dann kannst du Zähler und Nenner bestimmen (if Abfrage, da es möglicherweise keinen Nenner gibt)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Jetzt kannst du den Nenner gleich Null setzen.</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Die Werte dafür sind deine potentiellen Nullstellen</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Tipps 2:" collapse="true"}</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Nun musst Du die potentiellen Nullstellen, noch darauf testen, ob evtl. der Zähler an der Stelle auch Null ist, falls nicht gibt es für die X Werte Asymptoten</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Überleg wie du die Bedingungen überprüfst (was musst du Gleichsetzen?)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Nun musst du die potentiellen Nullstellen, noch darauf testen, ob evtl. der Zähler an der Stelle auch Null ist. Falls nicht, gibt es für die $X$-Werte Asymptoten.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Überlege, wie du die Bedingungen überprüfst (was musst du gleichsetzen?).</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Gib die Asymptoten dem Nutzer aus.</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>---</span>
@@ -1901,7 +1901,7 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="fu">### Python-Implementierung: Horizontale Asymptoten finden</span></span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Hier wird wie in **[Globalverhalten untersuchen](globalverhalten.qmd)** vor, d.h. es es werden die <span class="in">`sympy.limit`</span>'s bestimmt, es benötigt jedoch noch einen Schritt der bisher noch nicht genutzt wurde, es existiert nur eine horizontale Asymptote, falls der Wert reel ist.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Hier wird wie in **[Globalverhalten untersuchen](globalverhalten.qmd)** vorgegangen, das heißt es es werden die <span class="in">`sympy.limit`</span>'s bestimmt, es benötigt jedoch noch einen Schritt, der bisher noch nicht genutzt wurde, es existiert nur eine horizontale Asymptote, falls der Wert reell ist.</span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co">#Gib hier deinen Code ein</span></span>
@@ -1909,7 +1909,7 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Tipp:" collapse="true"}</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Die Funktion <span class="in">`.is_finite`</span> kann bestimmten, ob ein Wert endlich ist oder nicht.</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Die Funktion <span class="in">`.is_finite`</span> kann bestimmen, ob ein Wert endlich ist oder nicht.</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>D.h. mit Hilfe dieser Funktion kann eine passende Ausgabe generiert werden.</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
@@ -1926,8 +1926,8 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Schiefe Asymptoten</span></span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>Eine **schiefe (oder schräge) Asymptote** ist eine Gerade der Form $y = mx + b$, der sich die Funktion annähert.  </span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Sie tritt bei gebrochen-rationalen Funktionen auf, wenn der Grad des Zählerpolynoms genau um eins größer ist als der Grad des Nennerpolynoms UND bei der Polynomdivision ein Rest existiert.</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>Eine **schiefe (oder schräge) Asymptote** ist eine Gerade der Form $y = mx + b$, an die sich die Funktion annähert.  </span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Sie tritt bei gebrochen-rationalen Funktionen auf, wenn der Grad des Zählerpolynoms genau um eins größer ist als der Grad des Nennerpolynoms und bei der Polynomdivision ein Rest existiert.</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>Das Ergebnis der Polynomdivision ist die Geradengleichung der Asymptote.  </span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>**Die Funktion $f$ hat eine *schiefe* Asymptote $f_a$, wenn gilt:** </span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>$$ \lim_{x \to \infty} f(x) = f_a(x) \quad \text{oder} \quad \lim_{x \to -\infty} f(x) = f_a(x) $$ </span>
@@ -1937,9 +1937,9 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### Python-Implementierung: Schiefe Asymptoten finden</span></span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Die Polynomdivision kann in Python wie viele der Rechnungen, die wir in anderen Kapiteln bereits getätigt haben mit der <span class="in">`sympy`</span> Bibliothek durchführen.  </span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Die Polynomdivision kann in Python wie viele der Rechnungen, die wir in anderen Kapiteln bereits getätigt haben, mit der <span class="in">`sympy`</span> Bibliothek durchführen.  </span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>Die passende Funktion heißt <span class="in">`sympy.div()`</span>.</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>Der Grad einer Funktion kann mit <span class="in">`sympy.degree`</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>Der Grad einer Funktion kann mit <span class="in">`sympy.degree`</span> bestimmt werden.</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
@@ -1948,35 +1948,35 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Tipp:" collapse="true"}</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Überlege zuerst, was musst du alles überprüfen? </span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Gehe dafür noch einmal in Ruhe durch was oben steht, wie eine schiefe Asymptote bestimmt wird, wann sie existiert.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Überlege zuerst, was du alles überprüfen musst. </span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>Gehe dafür noch einmal in Ruhe durch, was oben steht, wie eine schiefe Asymptote bestimmt wird, wann sie existiert.</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Tipp2:" collapse="true"}</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Zuerst solltest Du, so wie immer <span class="in">`sympy`</span>importieren</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Zuerst solltest Du, so wie immer <span class="in">`sympy`</span> importieren</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Dann die Variable und die Funktion definieren (Denk dran die Funktion in ein <span class="in">`sympy`</span> Objekt mit sympy.sympify zu verwandeln)</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Danach solltest Du Zähler, Nenner auslesen</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Danach solltest Du Zähler und Nenner auslesen</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Tipp3:" collapse="true"}</span>
 <span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Dann kannst Du den Grad auslesen, lies am besten den Grad des Zählers und des Nenners aus.</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Dann bist Du praktisch fertig, es fehlt nur noch eine passende Ausgabe für den Nutzer zu gestalten indem du testest, ób die Bedingung für eine schiefe Asymptote erfüllt ist.</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Dann bist Du praktisch fertig, es fehlt nur noch eine passende Ausgabe für den Nutzer zu gestalten indem du testest, ob die Bedingung für eine schiefe Asymptote erfüllt ist.</span>
 <span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="fu"># Nicht-lineare Asymptoten </span></span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>_In der Schule wird sich meist nur mit geraden Asymptoten beschäftigt. Es gibt jedoch auch nicht-lineare oder nicht-gerade Asymptoten. Diese **Kurve** der sich die Funktion **im Unendlichen** annähert wird auch **Näherungskurve** oder **kurvenförmigen Asymptote** genannt._</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>_In der Schule wird sich meist nur mit geraden Asymptoten beschäftigt. Es gibt jedoch auch nicht-lineare oder nicht-gerade Asymptoten. Diese **Kurve** an die sich die Funktion **im Unendlichen** annähert wird auch **Näherungskurve** oder **kurvenförmige Asymptote** genannt._</span>
 <span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>Eine solche Asymptote entsteht ähnlich, wie schiefe Asymptoten durch eine gebrochen-rational Funktion, nur dass in diesem Fall der Grad des Zählerpolynoms **mehr als eins größer** ist als der Grad des Nennerpolynoms $(Zählergrad &gt; Nennergrad + 1)$.  </span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>Ähnlich wie bei den schiefen Asymptoten ist es auch hier die **Existenz eines Rest bei der Polynomdivision wichtig**. Wenn sie keinen hat, nähert sich die Funktion der **Näherungskurve** im Unendlichen nicht an, sondern ist durchgehend mit ihr identisch, wodurch es sich nicht um eine Asymptote handelt!  </span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>Eine solche Asymptote entsteht ähnlich wie schiefe Asymptoten durch eine gebrochen-rationale Funktion, nur dass in diesem Fall der Grad des Zählerpolynoms **mehr als eins größer** ist als der Grad des Nennerpolynoms $(Zählergrad &gt; Nennergrad + 1)$.  </span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>Ähnlich wie bei den schiefen Asymptoten ist es auch hier die **Existenz eines Rests bei der Polynomdivision wichtig**. Wenn sie keinen hat, nähert sich die Funktion der **Näherungskurve** im Unendlichen nicht an, sondern ist durchgehend mit ihr identisch, wodurch es sich nicht um eine Asymptote handelt!  </span>
 <span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Auch hier findet man die Näherungskurve durch **Polynomdivision**.</span>
 <span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Python-Implementierung und Visualisierung</span></span>
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>Im Prinzip ist die Idee zur Berechnung einer nicht-linearen Asymptoten der Berechnung einer schiefen Asymptoten _sehr_ ähnlich.  </span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>Daher ist das eine Aufgabe</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>Daher ist das eine Aufgabe:</span>
 <span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
@@ -1988,7 +1988,7 @@ Daher ist das eine Aufgabe</p>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>Überlege was die beiden Codes voneinander unterscheidet und bestimme dann mit Hilfe des Codes von oben den Code hier.</span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>Wenn Du diesen Code Block beendet hast hast du das Kapitel **Globalverhalten und Asymptoten** erfolgreich abgeschlossen, weiter geht es mit dem Kapitel <span class="co">[</span><span class="ot">Monotonie und Krümmungsverhalten</span><span class="co">](uebersicht_monotonie_kruemmung.qmd)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>Wenn Du diesen Code Block beendet hast, hast du das Kapitel **Globalverhalten und Asymptoten** erfolgreich abgeschlossen. Weiter geht es mit dem Kapitel <span class="co">[</span><span class="ot">Monotonie und Krümmungsverhalten</span><span class="co">](uebersicht_monotonie_kruemmung.qmd)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script type="module">
