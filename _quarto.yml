@@ -1,6 +1,5 @@
 project:
   type: website
-  output-dir: docs
 
 website:
   title: "Kurvendiskussion mit Python"
@@ -8,7 +7,7 @@ website:
   navbar: 
     right:
       - icon: github
-        #href: "Hier Link zum GitHub Repository einfügen" 
+        #href: "Hier Link zum GitHub einfügen" 
   sidebar:
     collapse-level: 1
     style: "floating"

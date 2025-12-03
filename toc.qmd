@@ -5,20 +5,20 @@ filters:
   - pyodide
 ---
 
-Auf dieser Seite gibt es eine kurze Beschreibung dessen was in den unterschiedlichen Kapiteln geschehen soll. 
+Auf dieser Seite gibt es eine kurze Beschreibung dessen, was in den unterschiedlichen Kapiteln geschehen soll. 
 
 # Kapitelübersicht
 
 *   **[Startseite](index.qmd#kurven-diskussion-mit-python-realisieren)**
     *   *Kurzbeschreibung:*  
-    Dieser Abschnitt soll dir erklären wie diese Website funktioniert und dir die Möglichkeiten zeigen, die durch die Python-Codeblöcken gegeben werden. Auch kannst du hier sehen, wie du neue Python Blöcke erzeugst.
+    Dieser Abschnitt soll dir erklären, wie diese Website funktioniert und dir die Möglichkeiten zeigen, die durch die Python-Codeblöcke gegeben werden. Auch kannst du hier sehen, wie du neue Python-Blöcke erzeugst.
 
 ---
 
 
 *   **[Definitionsbereiche und Wertebereiche](uebersicht_definition_werte.qmd)**
     *   *Kurzbeschreibung:*  
-    Dieser Abschnitt teilt sich in Definitionsbereich und Wertebereich Untersuchung auf. In den jeweiligen Abschnitten wird gezeigt, wie die jeweiligen Bereiche einer Funktion mit Hilfe von Python bestimmt werden können.
+    Dieser Abschnitt teilt sich in Definitionsbereich und Wertebereichuntersuchung auf. In den jeweiligen Abschnitten wird gezeigt, wie die jeweiligen Bereiche einer Funktion mit Hilfe von Python bestimmt werden können.
 
 ---
 
@@ -31,7 +31,7 @@ Auf dieser Seite gibt es eine kurze Beschreibung dessen was in den unterschiedli
 *   **[Globalverhalten und Asymptoten](uebersicht_global_asymptoten.qmd)**
     *   *Kurzbeschreibung:*  
     Dieser Teil des Tutorials zeigt dir, wie du das Verhalten einer Funktion im Unendlichen mit Python bestimmst.
-    Auch wird dir hier gezeigt, wie eine Funktion auf die unterschiedliche Asymptoten (waagerecht, senkrecht, schief) untersuchst und wie du das ganze von Python ausgeben lassen kannst.
+    Auch wird dir hier gezeigt, wie eine Funktion auf (die) unterschiedliche(-n) Asymptoten (waagerecht, senkrecht, schief) untersuchst und wie du das Ganze von Python ausgeben lassen kannst.
 
 ---
 
@@ -44,6 +44,6 @@ Auf dieser Seite gibt es eine kurze Beschreibung dessen was in den unterschiedli
 *   **[Graphen zeichnen](uebersicht_graphen_zeichnen.qmd)**
     *   *Kurzbeschreibung:*  
     Als Abschluss des Tutorials geht es um die Visualisierung.
-    In diesem Kapitel geht es darum zu beschreiben, wie ein Graph i.A. dargestellt werden kann, aber auch wie in einer Darstellung Punkte markiert und beschriftet werden können (Extrem-, Wendestellen, Asymptoten).
+    In diesem Kapitel geht es darum, zu beschreiben, wie ein Graph i.A. dargestellt werden kann, aber auch, wie in einer Darstellung Punkte markiert und beschriftet werden können (Extrem-, Wendestellen, Asymptoten).
 
 ---

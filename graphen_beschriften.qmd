@@ -8,7 +8,7 @@ filters:
 # Graphen beschriften
 
 Willkommen zum **Abschlusskapitel!**  
- Hier wird alles aus den vorherigen Abschnitten zusammengefasst und verarbeitet. Unser Ziel ist es, ein einziges, leistungsfähiges Python-Programm zu entwickeln, das eine Funktion umfassend analysiert und alle wichtigen Merkmale – Achsenschnittpunkte, Extrema, Wendepunkte und Asymptoten – in einem einzigen, übersichtlichen Graphen darstellt.
+Hier wird alles aus den vorherigen Abschnitten zusammengefasst und verarbeitet. Unser Ziel ist es, ein einziges, leistungsfähiges Python-Programm zu entwickeln, das eine Funktion umfassend analysiert und alle wichtigen Merkmale – Achsenschnittpunkte, Extrema, Wendepunkte und Asymptoten – in einem einzigen, übersichtlichen Graphen darstellt.
 
 ---
 
@@ -19,7 +19,7 @@ Alles beginnt mit der Fähigkeit, eine Funktion grafisch darzustellen. Hier kann
 ::: {.callout-note title="Erinnerung: Graphen erstellen" collapse="true"}
 Im Abschnitt [Graphen erstellen](graphen.qmd) haben wir gelernt, wie man eine Funktion mit `numpy` und `matplotlib` plottet. Der grundlegende Ablauf war:
 
-1.  Variablen/ Funktion mit `sympy` definieren.
+1.  Variablen/Funktion mit `sympy` definieren.
 3.  Mit `numpy.linspace` eine Reihe von x-Werten erzeugen.
 4.  Die y-Werte berechnen.
 5.  Mit `matplotlib.pyplot.plot` den Graphen zeichnen.
@@ -29,10 +29,10 @@ Im Abschnitt [Graphen erstellen](graphen.qmd) haben wir gelernt, wie man eine Fu
 
 ### Plotten der Basisfunktion
 
-Ein kleiner Startcode von dem aus Du den Rest des Kapitels erarbeiten sollst (mit Tipps natürlich!).
+Ein kleiner Startcode von dem aus du den Rest des Kapitels erarbeiten sollst (mit Tipps natürlich!).
 
 <details>
-<summary> Hier klicken um den Startcode anzuzeigen </summary>
+<summary> Hier klicken, um den Startcode anzuzeigen! </summary>
 
 ```{pyodide-python}
 import numpy as np
@@ -58,37 +58,38 @@ plt.show()
 </details>
 
 ::: {.callout-note title="Hinweis zu unterschiedlichen Objektformen in Python" collapse="true"}
-Im obigen Code sind alle in diesem Tutorial vorgekommenen Varianten eine Funktion in Python einzuspeisen nochmal aufgeschrieben.  
-Ein Überblick was die unterschiedlichen Objekte für Vor-/Nachteile haben.  
+Im obigen Code sind alle in diesem Tutorial vorgekommenen Varianten eine Funktion in Python einzuspeisen, noch einmal aufgeführt.  
+Ein Überblick, was die unterschiedlichen Objekte für Vor-/Nachteile haben.  
 
-*   `String Objekt:` Ein String ist eine Aneinanderreihung von Zeichen, d.h. wenn die Funktion angegeben wird, ist sie wie ein beliebiges Wort für Python. 
-     * Dies ist vor allem (was leider in diesem Tutorial nicht gemacht werden kann) wichtig, wenn es darum geht eine Eingabe des Nutzers außerhalb des Codes abzufragen. D.h. wenn ich will das der Nutzer vom Programm die Frage gestellt bekommt "Welche Funktion willst du untersuchen?" Der Nutzer kann dann die Funktion im Terminal eingeben und diese Eingabe kann als String in Python ausgelesen werden und dem Nutzer nach Durchlauf des Programms alle relevanten Eigenschaften der Funktion anzeigen. 
-*   `Sympy Objekt:` Mit einer Funktion die so in Python gespeichert ist kann algebraisch gearbeitet werden, heißt damit können Nullstellen berechnet, Ableitungen bestimmt etc. werden.
-*   `Numpy Objekt:`  Mit einer so gespeicherten Funktion kann sehr gut gerechnet werden, hier wird die Funktion in effektiver vektorschreibweise gespeichert damit Rechnungen möglichst effektiv durchgeführt werden können.
+*   `String-Objekt:` Ein String ist eine Aneinanderreihung von Zeichen. Das heißt wenn die Funktion angegeben wird, ist sie wie ein beliebiges Wort für Python. 
+     * Dies ist vor allem (**was leider in diesem Tutorial nicht gemacht werden kann**) wichtig, wenn es darum geht eine Eingabe des Nutzers außerhalb des Codes abzufragen. Das heißt, wenn ich will, dass die Nutzenden vom Programm die Frage gestellt bekommen "Welche Funktion willst du untersuchen?" 
+     * Die Nutzenden könnten dann die zu untersuchende Funktion in den Terminal eingeben, diese würde als String von Python ausgelesen und nach dem Durchlauf des Programms würden alle relevanten Eigenschaften der Funktion angezeigt. (**Funktioniert nicht in der Web-Umgebung**)
+*   `Sympy-Objekt:` Mit einer Funktion die so in Python gespeichert ist kann algebraisch gearbeitet werden, heißt damit können Nullstellen berechnet, Ableitungen bestimmt werden können.
+*   `Numpy-Objekt:`  Mit einer so gespeicherten Funktion kann sehr gut gerechnet werden, hier wird die Funktion in effektiver Vektorschreibweise gespeichert damit Rechnungen möglichst effektiv durchgeführt werden können.
 
 ```{pyodide-python}
 x = sympy.symbols('x') 
 f = x**3 - 6*x**2 + 9*x
 ```
 
-Diese Variante wurde häufig im Tutorial genutzt, f ist hierbei ein sympy Objekt, da in der Variable f eine Variable vorkommt die vorher explizit als Sympy Variable definiert wird.  
+Diese Variante wurde häufig im Tutorial genutzt, $f$ ist hierbei ein `Sympy-Objekt`, da in der Variable $f$ eine Variable vorkommt, die vorher explizit als `Sympy-Variable` definiert wird.  
 
 ```{pyodide-python}
 f_str="x**3 - 6*x**2 + 9*x"
 ```
 
-In diesem Fall ist f_str eine Funktion die als String gespeichert ist.
+In diesem Fall ist f_str eine Funktion, die als `String-Objekt` gespeichert ist.
 ```{pyodide-python}
 f_str="x**3 - 6*x**2 + 9*x"
 f_sym = sympy.sympify(f_str) 
 ```
 
-Durch `sympy.sympify` wird aus dem String ein Sympy Objekt (identisch mit dem ersten Beispiel) erstellt.
+Durch `sympy.sympify` wird aus dem String ein `Sympy-Objekt` (identisch mit dem ersten Beispiel) erstellt.
 ```{pyodide-python}
 f_np = sympy.lambdify(x, f_sym, 'numpy')  
 ```
 
-`sympy.lambdify` ist eine Art Übersetzer mit dem Objekte in einen anderen Objekttypen verwandelt werden, in diesem Fall wird $f_{sym}$ basierend auf der Variable x in `numpy` übersetzt, dass heißt $f_{np}$ ist ein `numpy-Objekt`.  
+`sympy.lambdify` ist eine Art Übersetzer mit dem Objekte in einen anderen Objekttypen verwandelt werden, in diesem Fall wird $f_{sym}$ basierend auf der Variable $x$ in `numpy` übersetzt, das heißt $f_{np}$ ist ein `Numpy-Objekt`.
 
 :::
 
@@ -96,11 +97,11 @@ f_np = sympy.lambdify(x, f_sym, 'numpy')
 
 ## Schritt 2: Besondere Punkte berechnen und einzeichnen
 
-Das Ziel dieses Abschnittes ist es in einem Graphen alle relevanten Punkte automatisch einzuzeichnen, so dass idealerweise der Nutzer nur seine Funktion eingeben muss und der Rest automatisch vom Programm gemacht wird.  
-Das heißt vor allem auch, dass Nullstellen, Extrempunkte/ Sattelpunkte und Wendepunkte und der y-Achsenabschnitt eingezeichnet werden sollen.  
+Das Ziel dieses Abschnittes ist es, in einem Graphen alle relevanten Punkte automatisch einzuzeichnen, so dass idealerweise die Nutzenden nur die Funktion eingeben müssen und der Rest automatisch vom Programm gemacht wird.  
+Das heißt vor allem auch, dass Nullstellen, Extrempunkte/Sattelpunkte und Wendepunkte und der y-Achsenabschnitt eingezeichnet werden sollen.  
 
 ::: {.callout-note title="Hinweis Schritt 2" collapse="true"}
-**Hinweis**, bei allen Teilen des Schritt 2 gilt, es kann ein relevanter x-Wert berechnet werden und dann mit $f(x_{relevanter Wert})$ der y-Wert bestimmt werden. Alle relevanten Punkte einer Gattung können in die gleiche Variablen Liste reingeschrieben werden und geplottet werden, so dass in deren Label und der Legende auch der passende Begriff angegeben wird.   
+**Hinweis**, bei allen Teilen des Schritt 2 gilt. Es kann ein relevanter x-Wert berechnet werden und dann mit $f(x_{relevanter Wert})$ der y-Wert bestimmt werden. Alle relevanten Punkte einer Gattung können in die gleiche Variablenliste reingeschrieben werden und geplottet werden, so dass in deren Label und der Legende auch der passende Begriff angegeben wird.   
 Z.B. sollten $x_{nullstelle} ={x_1,...,x_n} \quad \text{und} \quad y_{nullstelle} ={f(x_1),...,f(x_n)}$ derart sein, dass $\forall \quad x_i \in x_{nullstelle}$ gilt $f(x_i)=0$.  
 
 _Bei allen Programmen soll $f(x)= x^3 - 6*x^2 + 9*x$ nur als Beispiel fungieren, natürlich sollten die Programme möglichst für alle Funktionen, oder mindestens sehr viele unterschiedliche Funktionen funktionieren._
@@ -108,10 +109,10 @@ _Bei allen Programmen soll $f(x)= x^3 - 6*x^2 + 9*x$ nur als Beispiel fungieren,
 
 ### Nullstellen
 
-Zuerst solltest Du, auch wenn Du es bereits gesehen hast den Abschnitt [Nullstellen bestimmen](nullstellen.qmd) betrachten.  
-Im Prinzip kannst Du den Code von dort mit dem Code von hier kombinieren.  
-D.h. im folgenden Block sollst Du versuchen zusammen mit Deinem Wissen aus [Graphen](graphen.qmd) ein Programm zu schreiben, welches Die Nullstellen von $f(x)= x^3 - 6*x^2 + 9*x$ zum einen berechnet, aber auch in einem Plot markiert.  
-Wenn es Dir einfacher fällt kannst Du dafür auch erstmal nicht die Funktion plotten, Ziel sollte jedoch sein die Funktion und den Nullstellen Plot in ein Programm zu integrieren, am besten so, dass beides in der Legende erscheint.
+Zuerst solltest du, auch wenn du es bereits gesehen hast den Abschnitt [Nullstellen bestimmen](nullstellen.qmd) betrachten.  
+Im Prinzip kannst du den Code von dort mit dem Code von hier kombinieren.  
+Das heißt im folgenden Block sollst du versuchen zusammen mit deinem Wissen aus [Graphen](graphen.qmd) ein Programm zu schreiben, welches die Nullstellen von $f(x)= x^3 - 6*x^2 + 9*x$ zum einen berechnet, aber auch in einem Plot markiert.  
+Wenn es dir einfacher fällt, kannst du dafür auch erstmal nicht die Funktion plotten, Ziel sollte jedoch sein, die Funktion und den Nullstellen-Plot in ein Programm zu integrieren, am besten so, dass beides in der Legende erscheint.
 
 ```{pyodide-python}
 #Füge hier Deinen Code ein.
@@ -119,13 +120,13 @@ Wenn es Dir einfacher fällt kannst Du dafür auch erstmal nicht die Funktion pl
 
 ::: {.callout-note title="Tipp: Nullstellen" collapse="true"}
 Der wichtige Befehl des [Nullstellen bestimmen](nullstellen.qmd) Abschnittes war:  
-*  `sympy.solveset(f, x, domain=sympy.S.Reals)` damit ließen sich die Nullstellen von f bzgl. der Variable x bestimmen und es werden nur Lösungen angegeben, welche in der Domäne der Reellen Zahlen liegen.
+*  `sympy.solveset(f, x, domain=sympy.S.Reals)` damit ließen sich die Nullstellen von f bzgl. der Variable x bestimmen und es werden nur Lösungen angegeben, welche in der Domäne der reellen Zahlen liegen.
 :::
 
 ### Extrempunkte/ Sattelpunkte
 
-Bevor Du das bearbeitest, solltest Du den Abschnitt [Extrempunkte](extrempunkte.qmd) anschauen.  
-Hier sollst Du nämlich den Inhalt von dem Abschnitt zusammen mit dem Inhalt des [Graphen](graphen.qmd) verarbeiten mit dem Ziel ein Programm zu entwickeln, welches die Extremstellen von $f(x)= x^3 - 6*x^2 + 9*x$ bestimmt und diese auch im Graphen als solche einzeichnet.  
+Bevor du das bearbeitest, solltest du den Abschnitt [Extrempunkte](extrempunkte.qmd) anschauen.  
+Hier sollst du nämlich den Inhalt von dem Abschnitt zusammen mit dem Inhalt des [Graphen](graphen.qmd) verarbeiten mit dem Ziel, ein Programm zu entwickeln, welches die Extremstellen von $f(x)= x^3 - 6*x^2 + 9*x$ bestimmt und diese auch im Graphen als solche einzeichnet.  
 
 _Optimal wäre natürlich, wenn Tiefpunkte und Hochpunkte jeweils als solche ausgezeichnet werden würden._
 
@@ -142,7 +143,7 @@ Die wichtigen Funktionen aus dem [Extrempunkte](extrempunkte.qmd) Abschnitt ware
 
 ### Wendepunkte
 
-Bevor Du diesen Abschnitt bearbeitest sei geraten den Abschnitt [Wendepunkte](wendepunkte.qmd) anschauen, da es hier darum geht ein Programm zu erstellen, welches mithilfe des [Graphen](graphen.qmd) Wissens in der Lage ist die Wendepunkte von der Funktion $f(x)= x^3 - 6*x^2 + 9*x$ zu berechnen und diese in einem Plot einzuzeichnen, so dass diese auch in der Legende erscheinen.
+Bevor Du diesen Abschnitt bearbeitest sei geraten, den Abschnitt [Wendepunkte](wendepunkte.qmd) anschauen, da es hier darum geht ein Programm zu erstellen, welches mithilfe des [Graphen](graphen.qmd) Wissens in der Lage ist die Wendepunkte von der Funktion $f(x)= x^3 - 6*x^2 + 9*x$ zu berechnen und diese in einem Plot einzuzeichnen, sodass diese auch in der Legende erscheinen.
 ```{pyodide-python}
 #Füge hier Deinen Code ein.
 ```
@@ -157,22 +158,22 @@ Die wichtigen Funktionen aus dem [Wendepunkte](wendepunkte.qmd) Abschnitt waren:
 ### Y-Achsenabschnitt
 
 Beim Bearbeiten dieses Teils wird dir Vorwissen aus dem Abschnitt [Achsenschnittpunkte](achsenschnittpunkte.qmd) immens weiterhelfen.  
-Mithilfe des Abschnittes [Graphen](graphen.qmd) ist deine Aufgabe einen Code zu schreiben welcher in der Lage ist den Achsenschnittpunkt der Funktion $f(x)= x^3 - 6*x^2 + 9*x $ zu bestimmen und passend in dem Plot zu markieren.
+Mithilfe des Abschnittes [Graphen](graphen.qmd) ist deine Aufgabe einen Code zu schreiben, welcher in der Lage ist den Achsenschnittpunkt der Funktion $f(x)= x^3 - 6*x^2 + 9*x $ zu bestimmen und passend in dem Plot zu markieren.
 
 ```{pyodide-python}
 #Füge hier Deinen Code ein.
 ```
 
-::: {.callout-note title="Tipp: Wendepunkte" collapse="true"}
+::: {.callout-note title="Tipp: Y-Achsenabschnitt" collapse="true"}
 Als Tipp kann hier gegeben werden, dass der Y-Achsenabschnitt einer jeden Funktion an der Stelle ist, an der $x=0$ ist, heißt $f(0)=y-Achsenabschnitt$.  
 
 :::
 
 ### Kombination aus allem bisherigen.
 
-Versuche nun alles bisherige in einem einzelnen Code unterzubringen, denk dran der Übersicht und der Funktion des Programmes halber jeweils eigen indizierte Variablen zu nutzen, welche zum Zweck passen.  
+Versuche nun alles bisherige in einem einzelnen Code unterzubringen, denk dran der Übersicht und der Funktion des Programms halber jeweils eigens indizierte Variablen zu nutzen, welche zum Zweck passen.  
 
-_In deinem Code solle auch eine Ausgabe der Werte im Textformat, so wie in den Kapiteln zuvor stattfinden, somit hat der Anwender die Möglichkeit es einmal graphisch und als Liste die Informationen zu bekommen, einige Informationen wie später die Monotonieintervalle sind auch ein wenig trickreich einzuzeichnen._
+_In deinem Code sollte auch eine Ausgabe der Werte im Textformat, so wie in den Kapiteln zuvor stattfinden, somit haben Nutzende die Möglichkeit es einmal graphisch und als Liste der Informationen zu bekommen, einige Informationen wie später die Monotonieintervalle sind auch ein wenig trickreich einzuzeichnen._
 
 ```{pyodide-python}
 #Füge hier Deinen Code ein.
@@ -210,8 +211,8 @@ wendepunkte_x = [float(wx) for wx in sympy.solveset(f_double_prime, x, domain=sy
 wendepunkte_y = [float(f_sym.subs(x, wx)) for wx in wendepunkte_x]
 
 # Y-Achsenabschnitt
-y-achsenabschnitt_x = [0.0]
-y-achsenabschnitt_y = [float(f_sym.subs(x, 0))]
+y_achsenabschnitt_x = [0.0]
+y_achsenabschnitt_y = [float(f_sym.subs(x, 0))]
 
 # --- 3. Plotten ---
 # Funktionsgraph
@@ -226,7 +227,7 @@ plt.plot(x_vals, y_vals, label=f'f(x) = {f_sym}')
 plt.scatter(nullstellen_x, nullstellen_y, color='red', label='Nullstellen')
 plt.scatter(extrema_x, extrema_y, color='green', label='Extrempunkte')
 plt.scatter(wendepunkte_x, wendepunkte_y, color='purple', label='Wendepunkte')
-plt.scatter(y-achsenabschnitt_x, y-achsenabschnitt_y, color='blue', label='Y-Achsenabschnitt')
+plt.scatter(y_achsenabschnitt_x, y_achsenabschnitt_y, color='blue', label='Y-Achsenabschnitt')
 
 # --- 4. Layout ---
 plt.title('Simple Lösung')
@@ -243,7 +244,7 @@ plt.show()
 
 ## Schritt 3: Asymptoten einzeichnen
 
-Wie im Abschnitt [Asymptoten](asymptoten.qmd), bzw. [Globalverhalten](globalverhalten.qmd) bereits geklärt haben einige Funktionen Asymptoten, für diesen Teil des Tutorials sollte sich daher diese Abschnitte unbedingt angeschaut werden.
+Wie im Abschnitt [Asymptoten](asymptoten.qmd), bzw. [Globalverhalten](globalverhalten.qmd) bereits geklärt, haben einige Funktionen Asymptoten, für diesen Teil des Tutorials solltest du dir daher diese Abschnitte unbedingt anschauen.
 
 ::: {.callout-note title="Erinnerung: Asymptoten finden" collapse="true"}
 *   **Vertikale Asymptoten:** Nennernullstellen, die keine Zählernullstellen sind. (`sympy.fraction`, `sympy.solve`)
@@ -253,11 +254,11 @@ Wie im Abschnitt [Asymptoten](asymptoten.qmd), bzw. [Globalverhalten](globalverh
 
 ### Asymptoten berechnen und darstellen
 
-Da die oben als Test benutzte Funktion keine Asymptoten hat denen sie sich annähert wird hier die Funktion $g(x) = \frac{2x^2 - 1}{x^2 - 4}$ betrachtet.  
+Da die oben als Test benutzte Funktion keine Asymptoten hat, denen sie sich annähert wird hier die Funktion $g(x) = \frac{2x^2 - 1}{x^2 - 4}$ betrachtet.  
 Deine Aufgabe ist jetzt ein Programm zu schreiben, welches die folgenden Schritte ausführt:
 
 1.  **Berechne** die vertikalen und horizontalen Asymptoten.
-2.  **Zeichne** die Asymptoten ein _nutze gestrichelte Linien o.ä. um sie zu differenzieren_
+2.  **Zeichne** die Asymptoten ein _nutze gestrichelte Linien o.ä. um sie zu unterscheiden_
 3.  **Bonus:** Sorge dafür, dass der Graph an den vertikalen Asymptoten eine Lücke aufweist und keine verbindende Linie gezeichnet wird.
  
 ```{pyodide-python}
@@ -272,14 +273,14 @@ Vielleicht bist Du Dir des Problems schon gewahr geworden und guckst daher in di
 <details>
 <summary> Tipps für das Plotten von Asymptoten </summary>
 
-Es nicht trivial die Asymptoten einzuzeichnen und gibt mehrere Möglichkeiten  
+Es ist nicht trivial die Asymptoten einzuzeichnen und gibt mehrere Möglichkeiten  
 
-1.  Die Asymptoten Funktion berechnen und dann als Funktion plotten.
+1.  Die Asymptotenfunktion berechnen und dann als Funktion plotten.
 2.  Horizontale/Vertikale Linien einzeichnen mit `plt.axhline()` und `plt.axvline()` an den richtigen Stellen. 
 
-Warum sollte man 2. machen? Es gibt leider vor allem bei der vertikalen Asymptote ein Problem mit dem plotting per `matplotlib`, $x=a$ kann nicht so ohne weiteres geplottet werden, eine vertikale Linie (`plt.axvline()`) lässt jedoch recht leicht plotten.  
+Warum sollte man 2. machen? Es gibt leider vor allem bei der vertikalen Asymptote ein Problem mit dem plotting per `matplotlib`, $x=a$ kann nicht so ohne weiteres geplottet werden, eine vertikale Linie (`plt.axvline()`) lässt sich jedoch recht leicht plotten.  
 
-Bei der schiefen Asymptote lässt sich nun aber 2. nicht anwenden, da hier keine horizontale/vertikale Linie gesucht wird, sondern entweder eine schiefe Gerade oder eine Kurve, bei beiden Möglichkeiten hilft nur die Asymptoten Funktion tatsächlich zu plotten.
+Bei der schiefen Asymptote lässt sich nun aber 2. nicht anwenden, da hier keine horizontale/vertikale Linie gesucht wird, sondern entweder eine schiefe Gerade oder eine Kurve, bei beiden Möglichkeiten hilft nur die Asymptotenfunktion tatsächlich zu plotten.
 
 </details>
 
@@ -306,30 +307,30 @@ _Der Code sorgt dafür, dass die Y-Werte in einem Betragsabstand von 0,1 um den 
 
 # Abschlussprojekt: Dein eigenes Analyse-Tool
 
-Zielgerade! Du hast dir in diesem Tutorial jetzt alle Fähigkeiten erarbeitet, die Du benötigst um Dir im folgenden ein einzelnes Python Programm zu schreiben, welches eine komplette Kurvendiskussion (wie sie meist in der Schule durchgeführt wird) durchzuführen.
+Zielgerade! du hast dir in diesem Tutorial jetzt alle Fähigkeiten erarbeitet, die du benötigst um dir im Folgenden ein einzelnes Python-Programm zu schreiben, welches eine komplette Kurvendiskussion (wie sie meist in der Schule durchgeführt wird) durchführt.
 
 ## Erstelle Dein Analyse-Tool
 
-Nun geht's an dir Arbeit!  
-Wichtig ist, dass Du Dir einen Überblick machst davon, was du alles in dem Programm bearbeiten willst, und dir die Kapitel die Du dafür benötigst nebenbei vielleicht in einem anderen Tab aufmachst.  
+Nun geht's an die Arbeit!  
+Wichtig ist, dass du dir einen Überblick verschaffst darüber, was du alles in dem Programm bearbeiten willst, und dir die Kapitel die du dafür benötigst nebenbei vielleicht in einem anderen Tab aufmachst.  
 
-Wichtig ist, du solltest Dir überlegen, welche Bereiche du mit in den Graphen einzeichnen kannst. Dennoch solltest du einmal alle Angaben zur Funktion auch Schriftlich ausgeben lassen, die Werte sind so oder so berechnet.  
+Wichtig ist, du solltest dir überlegen, welche Bereiche du mit in den Graphen einzeichnen kannst. Dennoch solltest du einmal alle Angaben zur Funktion auch schriftlich ausgeben lassen, die Werte sind so oder so berechnet.  
 
 ```{pyodide-python}
 #Füge Dein Analyse-Tool hier ein.
 ```
 
 ::: {.callout-note title="Dein Analyse Tool: Tipp 1" collapse="true"}
-Wenn es darum geht einen großen Code zu  erstellen sollte zur eigenen Übersicht, aber auch der Übersicht anderer der Code systematisiert werden.  
+Wenn es darum geht einen großen Code zu erstellen, sollte zur eigenen Übersicht, aber auch der Übersicht anderer der Code systematisiert werden.  
 
 In diesem Fall heißt das also z.B.:  
 
 1.  **Import der relevanten Bibliotheken**
 2.  **Definition der Variablen/der Objekte oder noch besser der `function`**
-     * Functions sind in diesem Tutorial schon erschienen, dennoch eine kurze Zusammenfassung. Eine der elegantesten Lösungen wäre, das Programm als eine function zu schreiben, so dass unten an den Python Code angefügt werden kann function($x^2+3x-7$) und dann eine Kurvendiskussion von $x^2+3x-7$ durchgeführt wird.   
+     * Funktionen (`functions`) sind in diesem Tutorial schon erschienen, dennoch eine kurze Zusammenfassung. Eine der elegantesten Lösungen wäre, das Programm als eine Funktion zu schreiben, so dass unten an den Python Code angefügt werden kann `function("x^2+3x-7")` und dann eine Kurvendiskussion von $x^2+3x-7$ durchgeführt wird.   
 3.  **Berechnung der relevanten Werte**
-     * Hierbei kann gerne auch jeder der Werte differenziert werden, also über einer Gruppe von Rechnungen steht #Wendepunkte z.B.
-     * x_Wendepunkte, y_Wendepunkte hilft auch enorm dabei eine Übersicht zu haben, also die passenden Wertepaare in ihrer Definition mit ihrem Ursprung benennen
+     * Hierbei kann gerne auch jeder der Werte unterschieden werden, also über einer Gruppe von Rechnungen steht #Wendepunkte z.B.
+     * x_wendepunkte, y_wendepunkte hilft auch enorm dabei eine Übersicht zu haben, also die passenden Wertepaare in ihrer Definition mit ihrem Ursprung benennen
 4.  **Plotten der relevanten Werte**
      * Hier gilt das gleiche wie oben (beides hilft stark bei der Fehlerbehebung)
 5.  **Eigenschaften des Graphen bestimmen**
@@ -372,11 +373,11 @@ print(f"Die Fakultät von {zahl} ist: {fakultaet_berechnen(zahl)}")
 Ein gutes Programm zeichnet sich durch Details und Robustheit aus. Hier sind einige Ideen, wie du dein Tool noch besser machen kannst:
 
 *   **Unterscheide zwischen Hoch- und Tiefpunkten:**
-    *   Anstatt alle Extrema in eine Liste zu packen, durchlaufe die gefundenen x-Werte der Extrema in einer Schleife die die Bedingungen überprüft.
+    *   Anstatt alle Extrema in eine Liste zu packen, durchlaufe die gefundenen x-Werte der Extrema in einer Schleife, die die Bedingungen überprüft.
     *   Sortiere die Punkte in separate Listen (z.B. `x_hochpunkte`,  `x_tiefpunkte`,  `y_tiefpunkte`, `x_sattelpunkte`, `y_sattelpunkte`) und plotte sie mit unterschiedlichen Farben oder Markern _Um sie deutlich zu unterscheiden_
 
 *   **Umgang mit möglichen Fehlern:**
-    *   Dein Code sollte idealerweise eine Ausgabe haben, welche einen Fehler ausgibt, wenn die Funktion von deinem Programm nicht bearbeitet werden kann:
+    *   Dein Code sollte idealerweise eine Ausgabe haben, die einen Fehler ausgibt, wenn die Funktion von deinem Programm nicht bearbeitet werden kann:
 
 <details>
 
@@ -398,7 +399,7 @@ except sympy.SympifyError as e:
 </details>
 
 *   **Saubere Textausgabe:**
-    *   Es hilft beim erstellen eines eigenen Codes eine Menge die berechneten Werte ausgeben zulassen, dadurch fällt Dir schneller auf wo der Fehler liegen könnte.
+    *   Es hilft beim Erstellen eines eigenen Codes sehr, die berechneten Werte ausgeben zu lassen, dadurch fällt dir schneller auf, wo der Fehler liegen könnte.
 :::
 
 ::: {.callout-note title="Dein Analyse Tool: Tipp 3" collapse="true"}
@@ -412,7 +413,7 @@ Zielgerade! Die Grundfunktion steht vermutlich bereits, hier sind noch ein paar 
     *   **Idee:** Sammle alle relevanten x-Werte (Nullstellen, Extrema, Wendepunkte). Finde den kleinsten und größten dieser Werte und füge auf beiden Seiten einen kleinen Puffer hinzu (z.B. 20 % des Gesamtbereichs). So stellst du sicher, dass alle wichtigen Merkmale immer gut sichtbar sind, egal welche Funktion analysiert wird.
 
 <details>
-<summary> Ein Beispiel für einen Code der den X-Bereich dynamisch bestimmt </summary>
+<summary> Ein Beispiel für einen Code, der den X-Bereich dynamisch bestimmt </summary>
 
 ```{pyodide-python}
 # Angenommen, du hast diese Listen mit x-Werten:
@@ -450,6 +451,6 @@ GRATULATIONEN, wenn du hier angekommen bist, hast du das gesamte Tutorial durchg
 1.  Eine kleine Erinnerung an die Schulmathematik gehabt haben
 2.  Die Grundmechaniken von Python verstanden haben
 3.  In der Lage sein eine Kurvendiskussion in Python durchzuführen
-4.  Auch andere Probleme in Python lösen können indem du die Systeme die du hier kennen gelernt hast dort da anwendest!
+4.  Auch andere Probleme in Python lösen können indem du die Systeme, die du hier kennengelernt hast, dort anwendest!
 
-Wenn du nicht mal alle Tipps aufmachen musstest, oder beim öffnen des ein oder anderen Tipps dachtest, "Ach das habe ich doch schon..." dann kannst du Dir getrost auf die Schulter klopfen, dass hast du außerordentlich gut gemacht!
+Wenn du nicht mal alle Tipps aufmachen musstest, oder beim Öffnen des ein oder anderen Tipps dachtest, "Ach das habe ich doch schon..." dann kannst du Dir getrost auf die Schulter klopfen, das hast du außerordentlich gut gemacht!

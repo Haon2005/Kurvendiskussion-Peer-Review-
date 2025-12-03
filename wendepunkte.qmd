@@ -7,10 +7,10 @@ filters:
 
 # Wendepunkt
 
-Als **Wendepunkt** wird ein Punkt einer Funktion bezeichnet an dem sich das Krümmungsverhalten der Funktion ändert.
-Das heißt ähnlich wie bei den **Extremwerten** und dem **Monotonieverhalten** verhält es sich auch bei den **Wendepunkten** und dem **Krümmungsverhalten**.
+Als **Wendepunkt** wird ein Punkt einer Funktion bezeichnet, an dem sich das Krümmungsverhalten der Funktion ändert.
+Das heißt, ähnlich wie bei den **Extremwerten** und dem **Monotonieverhalten** verhält es sich auch bei den **Wendepunkten** und dem **Krümmungsverhalten**.
 
-Falls Du also noch nicht den Abschnitt **[Krümmungsverhalten](kruemmungsverhalten.qmd)** kannst du das über den Link nachholen. Wissen aus dem Abschnitt wird hier vorausgesetzt.
+Falls du also noch nicht den Abschnitt **[Krümmungsverhalten](kruemmungsverhalten.qmd)** bearbeitet hast, kannst du das über den Link nachholen. Wissen aus dem Abschnitt wird hier vorausgesetzt.
 
 Als kleine Erinnerung an den anderen Abschnitt:
 ```{pyodide-python}
@@ -33,7 +33,7 @@ print(f"Die Nullstellen der zweiten Ableitung sind: {potentielle_wendepunkte}")
 ## Aufgabe: Wendepunkte bestimmen
 
 Der Code oben bestimmt bisher noch keine Wendepunkte, sondern bietet nur eine sehr gute Grundlage dafür.  
-Nutze dein Wissen aus den vergangenen Abschnitten um einen Code zu erarbeiten der die Wendepunkte einer Funktion bestimmt.
+Nutze dein Wissen aus den vergangenen Abschnitten, um einen Code zu erarbeiten, der die Wendepunkte einer Funktion bestimmt.
 
 ```{pyodide-python}
 # Gib hier deinen Code an 
@@ -41,10 +41,10 @@ Nutze dein Wissen aus den vergangenen Abschnitten um einen Code zu erarbeiten de
 
 ## Bonusaufgabe 
 
-Wenn Dir alle Aufgaben bisher zu einfach waren kannst Du im folgenden ein Programm schreiben, welches alle Abschnitte des Kapitels miteinander verbindet.
+Wenn dir alle Aufgaben bisher zu einfach waren, kannst du im folgenden ein Programm schreiben, welches alle Abschnitte des Kapitels miteinander verbindet.
 
 ```{pyodide-python}
 # Gib hier deinen Code an
 ```
 
-Wenn Du damit fertig bist ist dieses Kapitel abgeschlossen.
+Wenn du damit fertig bist ist dieses Kapitel abgeschlossen.

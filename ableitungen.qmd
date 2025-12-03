@@ -5,12 +5,11 @@ filters:
   - pyodide
 ---
 # Was sind Ableitungen?
-Eine Ableitung ist eine Funktion, die den Differenzenquotienten bzw. die Steigung einer Funktion an jeder Stelle angibt. Für eine Ableitung sind nur nicht-konstante Werte relevant, da diese keinen Einfluss auf die Steigung haben können.  
-Die allgemeinen Ableitungsregeln sollten Dir bekannt sein, aber falls sie vergessen wurden, folgt hier eine kurze Zusammenfassung.
+Eine Ableitung ist eine Funktion, die den Differentialquotient bzw. die Steigung einer Funktion an jeder Stelle angibt. Für eine Ableitung sind nur nicht-konstante Werte relevant, da diese keinen Einfluss auf die Steigung haben können.  
+Die allgemeinen Ableitungsregeln sollten dir bekannt sein, aber falls sie gerade nicht präsent sind folgt hier eine kurze Zusammenfassung.
 
 # Allgemeine Ableitungsregeln
-Mir ging es tat
-Um Funktionen abzuleiten, gibt es grundlegende Regeln, die Du kennen solltest. Diese Regeln ermöglichen es Dir, fast jede Funktion abzuleiten, indem Du sie in kleinere, handhabbare Teile zerlegst.
+Um Funktionen abzuleiten, gibt es grundlegende Regeln, die du kennen solltest. Diese Regeln ermöglichen es dir, fast jede Funktion abzuleiten, indem du sie in kleinere, handhabbare Teile zerlegst.
 
 Hier sind die wichtigsten allgemeinen Ableitungsregeln:
 
@@ -36,13 +35,13 @@ Hier sind die wichtigsten allgemeinen Ableitungsregeln:
     $f'(x) = u'(v(x)) \cdot v'(x)$
 
 *   **Quotientenregel:** 
-    _Im Prinzip ist die Quotientenregel keine eigenständige Regel, sondern eine Folgerung aus der Produkt und der Kettenregel und wird daher hier nur kurz angeschnitten._
+    _Im Prinzip ist die Quotientenregel keine eigenständige Regel, sondern eine Folgerung aus der Produkt- und der Kettenregel und wird daher hier nur kurz angeschnitten._
     Für einen Quotienten zweier Funktionen $f(x) = \frac{u(x)}{v(x)}$:
     $f'(x) = \frac{u'(x) \cdot v(x) - u(x) \cdot v'(x)}{(v(x))^2}$
 
 ## Spezifische Funktionen und ihre Ableitungen
 
-Neben diesen allgemeinen Regeln gibt es bestimmte Funktionen, deren Ableitungen fest definiert sind und die du auswendig kennen solltest. Wenn diese Funktionen in Kombination mit anderen Termen auftreten, wendest Du die oben genannten allgemeinen Regeln an.
+Neben diesen allgemeinen Regeln gibt es bestimmte Funktionen, deren Ableitungen fest definiert sind und die du auswendig kennen solltest. Wenn diese Funktionen in Kombination mit anderen Termen auftreten, wendest du die oben genannten allgemeinen Regeln an.
 
 *   **Exponentialfunktion:** 
     Die Ableitung der Exponentialfunktion ist:
@@ -55,15 +54,8 @@ Neben diesen allgemeinen Regeln gibt es bestimmte Funktionen, deren Ableitungen 
 
 # Ableitung berechnen
 
-Um die Ableitung einer beliebigen Funktion zu berechnen müssen wir eventuell mehrere der obigen Regeln kombinieren, also betrachten wir zuerst alle nicht trivialen Regeln einzeln bevor wir sie kombinieren.
-
-    *   $f(x) = \sin(x) \implies f'(x) = \cos(x)$
-    *   $f(x) = \cos(x) \implies f'(x) = -\sin(x)$
-
-# Ableitung berechnen
-
-Die Bibliothek `sympy` ist derart ausgefeilt, dass `sympy.diff` eigentlich alle Formen von Ableitung in der Lage ist zu berechnen.
-Das heißt der folgende Block reicht meist bereits um die gewünschte Ableitung zu bestimmen:
+Die Bibliothek `sympy` ist derart ausgefeilt, dass `sympy.diff` eigentlich alle Formen von Ableitungen in der Lage ist zu berechnen.
+Das heißt, der folgende Block reicht meist bereits, um die gewünschte Ableitung zu bestimmen:
 
 ```{pyodide-python}
 import sympy
@@ -72,7 +64,7 @@ import sympy
 x=sympy.symbols('x')
 f=x**4+27*x**2-50
 
-print("Die 1.Ableitung der Funktion ist:",sympy.diff(f,x))
+print("Die 1. Ableitung der Funktion ist:",sympy.diff(f,x))
 
 ```
 
@@ -82,8 +74,8 @@ Da dieses Kapitel durch die Funktion `sympy.diff` recht einfach ist, eine schwie
 
 Erstelle einen Code, welcher nicht nur die erste, sondern auch die zweite und dritte Ableitung einer beliebigen Funktion bestimmt.   
 Versuche hierbei den Code so **effizient** wie möglich zu schreiben.  
-D.h. nur weil Du einen funktionierenden Code hast, heißt das nicht, dass er effizient ist.  
-Probier Dich ein bisschen aus.  
+Das heißt, nur weil du einen funktionierenden Code hast, heißt das nicht, dass er effizient ist.  
+Probier dich ein bisschen aus.  
 _Denk dabei daran, dass es auch eine passende Ausgabe geben sollte._
 
 ```{pyodide-python}
@@ -91,5 +83,5 @@ _Denk dabei daran, dass es auch eine passende Ausgabe geben sollte._
 
 ```
 
-Nachdem Du jetzt einen Code zum Ableitungen bestimmen hast, betrachten wir, was wir an den Ableitungen erkennen können.
-Als nächstes sei **[Monotonieverhalten untersuchen](monotonieverhalten.qmd)** empfohlen.
+Nachdem du jetzt einen Code zum Ableitungen bestimmen hast, betrachten wir, was wir an den Ableitungen erkennen können.
+Als Nächstes sei **[Monotonieverhalten untersuchen](monotonieverhalten.qmd)** empfohlen.

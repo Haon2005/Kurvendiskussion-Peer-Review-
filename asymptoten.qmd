@@ -8,13 +8,13 @@ filters:
 # Was ist eine Asymptote?
 
 Bevor es um die Python-Implementierung geht, ist es wichtig zu wissen, was eine Asymptote im Allgemeinen ist.
-Eine **Asymptote** eine Kurve der sich die Funktion **im Unendlichen** immer weiter annähert.  
+Eine **Asymptote ist** eine Kurve, der sich die Funktion **im Unendlichen** immer weiter annähert.  
 
 **Wichtig**: Das heißt nicht, dass sich die Funktion und die Kurve (meistens handelt es sich um eine Gerade) nie treffen. Es gibt hier unterschiedliche Möglichkeiten.
 
 1.  Sie treffen sich nie, z.B.: $f(x)=\frac{1}{x}$
 2.  Sie treffen sich endlich oft, bevor sie sich im Unendlichen nicht mehr treffen, z.B.: $f(x) = \frac{x^3 + 2x^2 + 1}{x^2 + 1}$
-3.  Sie treffen sich unendlich oft, da die Funktion um die Asymptote oszilliert (d.h. in Form einer Schwingung) also diese auch unendlich oft nicht schneidet, aber bei jeder Schwingung einmal schneidet z.B.: $f(x) = \frac{\sin(x)}{x}$
+3.  Sie treffen sich unendlich oft, da die Funktion um die Asymptote oszilliert (d.h. in Form einer Schwingung), also diese auch unendlich oft nicht schneidet, aber bei jeder Schwingung einmal schneidet, z.B.: $f(x) = \frac{\sin(x)}{x}$.
 
 * **[Lineare Asymptoten:](#lineare-asymptoten)**  
   *   **[Vertikale Asymptoten](#vertikale-asymptoten)**
@@ -35,7 +35,7 @@ $$ \lim_{x \to a^+} f(x) = \pm\infty \quad \text{oder} \quad \lim_{x \to a^-} f(
 
 ### Python-Implementierung: Vertikale Asymptoten finden
 
-Um die Vertikale Asymptote zu finden muss also wie im **[Definitionsbereich](definitionsbereich.qmd#gebrochen-rationalen-Funktionen)** Abschnitt vorgegangen werden.
+Um die Vertikale Asymptote zu finden, muss also wie im Abschnitt **[Definitionsbereich](definitionsbereich.qmd#gebrochen-rationalen-Funktionen)** vorgegangen werden.
 Eine kleine Erinnerung an die Grundlagen aus dem Abschnitt:
 ```{pyodide-python}
 #| read-only: true
@@ -51,7 +51,7 @@ print(f"Die potentiellen Asymptoten sind: {potenzielle_asymptoten}")
 #### Aufgabe
 
 Erstelle einen Code, der für eine beliebige Funktion die vertikalen Asymptoten bestimmt und ausgibt.  
-Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der $\text{der Nenner}=0 \text{ ist und der Zähler } \neq 0$.
+Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden, an der $\text{der Nenner}=0 \text{ ist und der Zähler } \neq 0$.
 
 
 ```{pyodide-python}
@@ -60,14 +60,14 @@ Beachte dabei, eine Asymptote ist nur an einer Stelle vorhanden an der $\text{de
 ```
 
 ::: {.callout-note title="Tipps 1:" collapse="true"}
-*   Du musst zu erst wie in dem Abschnitt oben Deine Variable und Funktion definieren  
-*   Dann kannst Du Zähler und Nenner bestimmen (if Abfrage, da es möglicherweise keinen Nenner gibt)
-*   Jetzt kannst du den Nenner gleich Null setzten.
+*   Du musst zuerst wie in dem Abschnitt oben deine Variable und Funktion definieren  
+*   Dann kannst du Zähler und Nenner bestimmen (if Abfrage, da es möglicherweise keinen Nenner gibt)
+*   Jetzt kannst du den Nenner gleich Null setzen.
 *   Die Werte dafür sind deine potentiellen Nullstellen
 :::
 ::: {.callout-note title="Tipps 2:" collapse="true"}
-*   Nun musst Du die potentiellen Nullstellen, noch darauf testen, ob evtl. der Zähler an der Stelle auch Null ist, falls nicht gibt es für die X Werte Asymptoten
-*   Überleg wie du die Bedingungen überprüfst (was musst du Gleichsetzen?)
+*   Nun musst du die potentiellen Nullstellen, noch darauf testen, ob evtl. der Zähler an der Stelle auch Null ist. Falls nicht, gibt es für die $X$-Werte Asymptoten.
+*   Überlege, wie du die Bedingungen überprüfst (was musst du gleichsetzen?).
 *   Gib die Asymptoten dem Nutzer aus.
 :::
 ---
@@ -81,7 +81,7 @@ $$ \lim_{x \to \infty} f(x) = a \quad \text{oder} \quad \lim_{x \to -\infty} f(x
 
 ### Python-Implementierung: Horizontale Asymptoten finden
 
-Hier wird wie in **[Globalverhalten untersuchen](globalverhalten.qmd)** vor, d.h. es es werden die `sympy.limit`'s bestimmt, es benötigt jedoch noch einen Schritt der bisher noch nicht genutzt wurde, es existiert nur eine horizontale Asymptote, falls der Wert reel ist.
+Hier wird wie in **[Globalverhalten untersuchen](globalverhalten.qmd)** vorgegangen, das heißt es es werden die `sympy.limit`'s bestimmt, es benötigt jedoch noch einen Schritt, der bisher noch nicht genutzt wurde, es existiert nur eine horizontale Asymptote, falls der Wert reell ist.
 
 ```{pyodide-python}
 #Gib hier deinen Code ein
@@ -89,7 +89,7 @@ Hier wird wie in **[Globalverhalten untersuchen](globalverhalten.qmd)** vor, d.h
 ```
 
 ::: {.callout-note title="Tipp:" collapse="true"}
-*   Die Funktion `.is_finite` kann bestimmten, ob ein Wert endlich ist oder nicht.
+*   Die Funktion `.is_finite` kann bestimmen, ob ein Wert endlich ist oder nicht.
 *   D.h. mit Hilfe dieser Funktion kann eine passende Ausgabe generiert werden.
 :::
 
@@ -106,8 +106,8 @@ if limit_pos.is_finite:
 
 ## Schiefe Asymptoten
 
-Eine **schiefe (oder schräge) Asymptote** ist eine Gerade der Form $y = mx + b$, der sich die Funktion annähert.  
-Sie tritt bei gebrochen-rationalen Funktionen auf, wenn der Grad des Zählerpolynoms genau um eins größer ist als der Grad des Nennerpolynoms UND bei der Polynomdivision ein Rest existiert.
+Eine **schiefe (oder schräge) Asymptote** ist eine Gerade der Form $y = mx + b$, an die sich die Funktion annähert.  
+Sie tritt bei gebrochen-rationalen Funktionen auf, wenn der Grad des Zählerpolynoms genau um eins größer ist als der Grad des Nennerpolynoms und bei der Polynomdivision ein Rest existiert.
 Das Ergebnis der Polynomdivision ist die Geradengleichung der Asymptote.  
 **Die Funktion $f$ hat eine *schiefe* Asymptote $f_a$, wenn gilt:** 
 $$ \lim_{x \to \infty} f(x) = f_a(x) \quad \text{oder} \quad \lim_{x \to -\infty} f(x) = f_a(x) $$ 
@@ -117,9 +117,9 @@ $$ \lim_{x \to \infty} | f(x) - f_a(x) | = 0 \quad \text{oder} \quad \lim_{x \to
 
 ### Python-Implementierung: Schiefe Asymptoten finden
 
-Die Polynomdivision kann in Python wie viele der Rechnungen, die wir in anderen Kapiteln bereits getätigt haben mit der `sympy` Bibliothek durchführen.  
+Die Polynomdivision kann in Python wie viele der Rechnungen, die wir in anderen Kapiteln bereits getätigt haben, mit der `sympy` Bibliothek durchführen.  
 Die passende Funktion heißt `sympy.div()`.
-Der Grad einer Funktion kann mit `sympy.degree`
+Der Grad einer Funktion kann mit `sympy.degree` bestimmt werden.
 
 
 ```{pyodide-python}
@@ -128,35 +128,35 @@ Der Grad einer Funktion kann mit `sympy.degree`
 ```
 
 ::: {.callout-note title="Tipp:" collapse="true"}
-*   Überlege zuerst, was musst du alles überprüfen? 
-*   Gehe dafür noch einmal in Ruhe durch was oben steht, wie eine schiefe Asymptote bestimmt wird, wann sie existiert.
+*   Überlege zuerst, was du alles überprüfen musst. 
+*   Gehe dafür noch einmal in Ruhe durch, was oben steht, wie eine schiefe Asymptote bestimmt wird, wann sie existiert.
 :::
 
 ::: {.callout-note title="Tipp2:" collapse="true"}
-1.  Zuerst solltest Du, so wie immer `sympy`importieren
+1.  Zuerst solltest Du, so wie immer `sympy` importieren
 2.  Dann die Variable und die Funktion definieren (Denk dran die Funktion in ein `sympy` Objekt mit sympy.sympify zu verwandeln)
-3.  Danach solltest Du Zähler, Nenner auslesen
+3.  Danach solltest Du Zähler und Nenner auslesen
 :::
 
 ::: {.callout-note title="Tipp3:" collapse="true"}
 4.  Dann kannst Du den Grad auslesen, lies am besten den Grad des Zählers und des Nenners aus.
-5.  Dann bist Du praktisch fertig, es fehlt nur noch eine passende Ausgabe für den Nutzer zu gestalten indem du testest, ób die Bedingung für eine schiefe Asymptote erfüllt ist.
+5.  Dann bist Du praktisch fertig, es fehlt nur noch eine passende Ausgabe für den Nutzer zu gestalten indem du testest, ob die Bedingung für eine schiefe Asymptote erfüllt ist.
 :::
 
 ---
 
 # Nicht-lineare Asymptoten 
 
-_In der Schule wird sich meist nur mit geraden Asymptoten beschäftigt. Es gibt jedoch auch nicht-lineare oder nicht-gerade Asymptoten. Diese **Kurve** der sich die Funktion **im Unendlichen** annähert wird auch **Näherungskurve** oder **kurvenförmigen Asymptote** genannt._
+_In der Schule wird sich meist nur mit geraden Asymptoten beschäftigt. Es gibt jedoch auch nicht-lineare oder nicht-gerade Asymptoten. Diese **Kurve** an die sich die Funktion **im Unendlichen** annähert wird auch **Näherungskurve** oder **kurvenförmige Asymptote** genannt._
 
-Eine solche Asymptote entsteht ähnlich, wie schiefe Asymptoten durch eine gebrochen-rational Funktion, nur dass in diesem Fall der Grad des Zählerpolynoms **mehr als eins größer** ist als der Grad des Nennerpolynoms $(Zählergrad > Nennergrad + 1)$.  
-Ähnlich wie bei den schiefen Asymptoten ist es auch hier die **Existenz eines Rest bei der Polynomdivision wichtig**. Wenn sie keinen hat, nähert sich die Funktion der **Näherungskurve** im Unendlichen nicht an, sondern ist durchgehend mit ihr identisch, wodurch es sich nicht um eine Asymptote handelt!  
+Eine solche Asymptote entsteht ähnlich wie schiefe Asymptoten durch eine gebrochen-rationale Funktion, nur dass in diesem Fall der Grad des Zählerpolynoms **mehr als eins größer** ist als der Grad des Nennerpolynoms $(Zählergrad > Nennergrad + 1)$.  
+Ähnlich wie bei den schiefen Asymptoten ist es auch hier die **Existenz eines Rests bei der Polynomdivision wichtig**. Wenn sie keinen hat, nähert sich die Funktion der **Näherungskurve** im Unendlichen nicht an, sondern ist durchgehend mit ihr identisch, wodurch es sich nicht um eine Asymptote handelt!  
 Auch hier findet man die Näherungskurve durch **Polynomdivision**.
 
 #### Python-Implementierung und Visualisierung
 
 Im Prinzip ist die Idee zur Berechnung einer nicht-linearen Asymptoten der Berechnung einer schiefen Asymptoten _sehr_ ähnlich.  
-Daher ist das eine Aufgabe
+Daher ist das eine Aufgabe:
 
 ```{pyodide-python}
 import sympy
@@ -168,4 +168,4 @@ Wie schon erwähnt ist die Bestimmung der Berechnung der schiefen Asymptote sehr
 Überlege was die beiden Codes voneinander unterscheidet und bestimme dann mit Hilfe des Codes von oben den Code hier.
 :::
 
-Wenn Du diesen Code Block beendet hast hast du das Kapitel **Globalverhalten und Asymptoten** erfolgreich abgeschlossen, weiter geht es mit dem Kapitel [Monotonie und Krümmungsverhalten](uebersicht_monotonie_kruemmung.qmd).
+Wenn Du diesen Code Block beendet hast, hast du das Kapitel **Globalverhalten und Asymptoten** erfolgreich abgeschlossen. Weiter geht es mit dem Kapitel [Monotonie und Krümmungsverhalten](uebersicht_monotonie_kruemmung.qmd).

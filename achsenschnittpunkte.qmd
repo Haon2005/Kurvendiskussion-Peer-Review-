@@ -7,17 +7,17 @@ filters:
 
 # Y-Achsenschnittpunkte ermitteln
 
-Der Titel ist ein wenig provokant gewählt, da für eine Funktion gilt, dass es für jeden $X$ Wert nur genau einen $Y$ Wert gibt, der diesem zugeordnet wird! 
-Dementsprechend heißt das, dass es genau Einen Y-Achsenabschnittspunkt gibt.
-Dies ist hierbei der Wert, welcher dem X Wert 0 zugeordnet wird.
+Der Titel ist ein wenig provokant gewählt, da für eine Funktion gilt, dass es für jeden $X$-Wert nur genau einen $Y$-Wert gibt, der diesem zugeordnet wird! 
+Dementsprechend heißt das, dass es genau einen Y-Abschnitt gibt.
+Dies ist hierbei der Wert, welcher dem $X$-Wert 0 zugeordnet wird.
 
 ## Bestimmung des Y-Achsenabschnitts
 
-Davon ausgehend, dass die Funktion bei $x=0$ definiert ist, ist es nicht all zu schwierig den Y-Achsenabschnitt zu bestimmen.
+Davon ausgehend, dass die Funktion bei $x=0$ definiert ist, ist es nicht allzu schwierig, den Y-Achsenabschnitt zu bestimmen.
 
-Hierfür können wir wie bei der **[Symmetrieverhalten Untersuchung](symmetrieverhalten.qmd#wie-teste-ich-eine-funktion-auf-achsensymmetrie-zur-y-achse)** die Funktion `.subs` nutzen um die passenden Einträge der Funktion zu verändern.
+Hierfür können wir wie bei der **[Untersuchung des Symmetrieverhaltens](symmetrieverhalten.qmd#wie-teste-ich-eine-funktion-auf-achsensymmetrie-zur-y-achse)** die Funktion `.subs` nutzen, um die passenden Einträge der Funktion zu verändern.
 
-Gib im folgenden Code Block einen Code an, der den Y-Achsenschnittpunkt berechnet und ausgibt für die Beispielfunktion: $f(x)=x^2+4x+7$
+Gib im folgenden Codeblock einen Code an, der den Y-Achsenschnittpunkt berechnet und ausgibt für die Beispielfunktion: $f(x)=x^2+4x+7$
 
 ```{pyodide-python}
 #Füge hier deinen Code ein (Viel Erfolg) 
@@ -26,4 +26,4 @@ Gib im folgenden Code Block einen Code an, der den Y-Achsenschnittpunkt berechne
 ```
 
 
-Wenn dir das gelungen ist, gibt es hier nichts mehr zu tun, versuche Dich gerne an einem der anderen Kapitel. 
+Wenn dir das gelungen ist, gibt es hier nichts mehr zu tun, versuche dich gerne an einem der anderen Kapitel. 

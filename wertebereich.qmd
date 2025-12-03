@@ -9,7 +9,7 @@ filters:
 
 Der Wertebereich (oder die Wertemenge) einer Funktion \(f\) ist die Menge aller möglichen Ausgabewerte \(f(x)\), die entstehen, wenn man alle erlaubten Eingabewerte \(x\) aus dem Definitionsbereich einsetzt.
 
-Dieser Abschnitt ist ein recht komplexer, da die Existenz von Extrempunkten, bzw. das Verhalten im Unendlichen, oder das existieren von Asymptoten hierfür relevant ist, wird geraten diesen Abschnitt erst nach den Kapiteln **[Globalverhalten und Asymptoten](uebersicht_global_asymptoten.qmd)**, so wie **[Extrempunkte/Sattelpunkte](extrempunkte.qmd)** zu betrachten.
+Dieser Abschnitt ist ein recht komplexer, da die Existenz von Extrempunkten, beziehungsweise das Verhalten im Unendlichen, oder das Existieren von Asymptoten hierfür relevant ist, wird geraten, diesen Abschnitt erst nach den Kapiteln **[Globalverhalten und Asymptoten](uebersicht_global_asymptoten.qmd)**, sowie **[Extrempunkte/Sattelpunkte](extrempunkte.qmd)** zu betrachten.
 
 # Wie bestimmt man den Wertebereich?
 
@@ -22,26 +22,26 @@ Um den Wertebereich zu bestimmen, müssen wir verschiedene Eigenschaften der Fun
 
 ## Python-Implementierung: Wertebereich bestimmen
 
-Wie gerade gesehen ist das bestimmen des Wertebereich durch sehr viele Faktoren recht schwierig.  
+Wie gerade gesehen ist das Bestimmen des Wertebereichs durch sehr viele Faktoren recht schwierig.  
 
 1.  Es muss bestimmt werden, ob es [Definitionslücken](definitionsbereich.qmd#gebrochen-rationalen-Funktionen) gibt.
-2.  Dann muss untersucht werden, ist die Funktion linear oder nicht-linear
+2.  Dann muss untersucht werden: Ist die Funktion linear oder nicht-linear?
 3.  Falls linear, hat sie eine Steigung? 
-4.  Falls nicht linear hat sie ein [globales Minimum, Maximum](extrempunkte.qmd#extremwerte)?
+4.  Falls nicht linear, hat sie ein [globales Minimum, Maximum](extrempunkte.qmd#extremwerte)?
 5.  Gibt es eine horizontale [Asymptote](asymptoten.html#horizontale-asymptoten)?
-6.  Falls eine solche existiert schränkt diese im [Globalverhalten](globalverhalten.qmd) die Funktionswerte ein.  
+6.  Falls eine solche existiert, schränkt diese im [Globalverhalten](globalverhalten.qmd) die Funktionswerte ein.  
 
-`sympy` hat dankenswerterweise eine Untermodul `sympy.calculus.util` welches die Funktion `function_range` beinhaltet.  
-Die Funktion berechnet genau das was im Namen steckt, die Range der Funktion, also alle Werte die die Funktion annehmen kann zu gut Deutsch den **Wertebereich der Funktion**.
+`sympy` hat dankenswerterweise ein Untermodul `sympy.calculus.util` welches die Funktion `function_range` beinhaltet.  
+Die Funktion berechnet genau das, was im Namen steckt, die Range der Funktion, also alle Werte, die die Funktion annehmen kann, auf gut Deutsch den **Wertebereich der Funktion**.
 
 ```{pyodide-python}
 # Gib hier Deinen Code ein.
 ```
 
 ::: {.callout-note title="Tipp 1" collapse="true"}
-* Wie schon oben erklärt geht es mehr oder minder nur darum die Funktion `function_range` anzuwenden.
+* Wie schon oben erklärt, geht es mehr oder minder nur darum die Funktion `function_range` anzuwenden.
 * Diese Funktion befindet sich aber in einem Untermodul von `sympy`
-* D.h. es reicht nicht von sympy zu importieren, es muss auch das Untermodul `sympy.calculus.util` importiert werden.
+* Das heißt, es reicht nicht von sympy zu importieren, es muss auch das Untermodul `sympy.calculus.util` importiert werden.
 * Wenn das importiert ist, sollte der Rest des Programms relativ leicht zu schreiben sein (davon ausgehend, dass dieses Kapitel wie empfohlen als vorletztes gemacht wird.)
 :::
 
@@ -52,8 +52,8 @@ import sympy
 from sympy.calculus.util import function_range
 ```
 
-* Wichtig ist, dass `function_range` jetzt genutzt werden kann, ohne ein sympy. davor, oder gar einem sympy.calculus.util. davor!
-* Denk dran eine Ausgabe zu formulieren in der der bestimmte Wertebereich ausgegeben wird. 
+* Wichtig ist, dass `function_range` jetzt genutzt werden kann, ohne ein `sympy.` davor, oder gar einem `sympy.calculus.util.` davor!
+* Denke daran, eine Ausgabe zu formulieren, in der der bestimmte Wertebereich ausgegeben wird. 
 :::
 
 ::: {.callout-note title="Eine mögliche Minimallösung" collapse="true"}
@@ -66,8 +66,10 @@ def bestimme_wertebereich(funktion_str):
     print(f"Untersuchung der Funktion: f(x) = {funktion_str}")    
     try:
         f = sympy.sympify(funktion_str)         
-        wertebereich = function_range(f, x, S.Reals)        
-        print(f"Der berechnete Wertebereich ist: {wertebereich}")    
+        wertebereich = function_range(f, x, sympy.S.Reals)        
+        print(f"Der berechnete Wertebereich ist: {wertebereich}")
+    except: (sympy.SympifyError, TypeError, ValueError) as e:
+        print(f"Fehler bei Berechnung: {e}")
     print("-" * 50)
 
 # Test Funktionen
@@ -78,7 +80,7 @@ bestimme_wertebereich("1 / (x**2 + 1)")
 # 3. Eine trigonometrische Funktion mit beschränktem Wertebereich
 bestimme_wertebereich("sin(x)")
 # 4. Eine Funktion, deren Wertebereich alle reellen Zahlen umfasst
-bestimme_wertebereich("x**3")"
+bestimme_wertebereich("x**3")
 ```
 
 :::

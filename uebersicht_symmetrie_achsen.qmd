@@ -5,22 +5,22 @@ filters:
   - pyodide
 ---
 
-Es geht in diesem Abschnitt darum allgemeine Eigenschaften der Funktion zu bestimmen, 
+Es geht in diesem Abschnitt darum, allgemeine Eigenschaften der Funktion zu bestimmen, 
 dazu gehören: 
 
 *   **[Symmetrieverhalten](symmetrieverhalten.qmd)**
-    * In diesem Abschnitt geht es darum zu bestimmen ob die Funktion Achsen-, oder Punktsymmetrisch ist.
-    Oder ob nichts von beidem der Fall ist.
+    * In diesem Abschnitt geht es darum, zu bestimmen, ob die Funktion achsen-, oder punktsymmetrisch ist.
+    Oder ob keines von beiden der Fall ist.
 
 ---
 
 *   **[Nullstellen](nullstellen.qmd)**  
-    * In diesem Kapitel geht es darum herauszufinden, wie mithilfe von Python Nullstellen bestimmt werden können.
+    * In diesem Kapitel geht es darum, herauszufinden, wie mithilfe von Python Nullstellen bestimmt werden können.
 
 ---
 
 *   **[Schnittpunkte mit der Y-Achse](achsenschnittpunkte.qmd)**
-    * In diesem Teil des Tutorials sollst Du lernen, wie Du den Y-Achsenabschnitt einer Funktion mithilfe von Python ausgeben kannst.
+    * In diesem Teil des Tutorials sollst du lernen, wie du den Y-Achsenabschnitt einer Funktion mithilfe von Python ausgeben kannst.
 
 ---
 

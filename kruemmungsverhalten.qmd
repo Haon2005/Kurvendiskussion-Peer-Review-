@@ -7,9 +7,9 @@ filters:
 
 # Was ist die Krümmung?
 
-Die **Krümmung** einer Funktion beschreibt, wie sich der Graph "krümmt", bzw. "biegt" d.h. wie weit sich die Funktion von einer Geraden entfernt. Es hilft sich das als Analogie mit Hilfe einer Straße vorzustellen, die Krümmung gibt an, ob die Straße nach rechts oder nach links abknickt und wie stark der Knick ist.  
-Die Krümmung eines Funktion wird in dem Graphen der ersten Ableitung, dadurch erkenntlich, dass es die Stellen sind, an denen sich das **[Monotonieverhalten](monotonieverhalten.qmd)** verändert.  
-**Wichtig** bei Betrachtung des "Monotonieverhaltens" darf nicht außer Acht bleiben, dass hier das Monotonieverhalten der ersten **Ableitung** betrachtet wird.
+Die **Krümmung** einer Funktion beschreibt, wie sich der Graph "krümmt", bzw. "biegt", das heißt wie weit sich die Funktion von einer Geraden entfernt. Es hilft, sich das als Analogie mit Hilfe einer Straße vorzustellen, die Krümmung gibt an, ob die Straße nach rechts oder nach links abknickt und wie stark der Knick ist.  
+Die Krümmung einer Funktion wird in dem Graphen der ersten Ableitung, an den Stellen erkennbar, an denen sich das **[Monotonieverhalten](monotonieverhalten.qmd)** verändert.  
+**Wichtig**: Bei Betrachtung des "Monotonieverhaltens" darf nicht außer Acht gelassen werden, dass hier das Monotonieverhalten der ersten **Ableitung** betrachtet wird.
 Mathematisch unterscheiden wir **zwei Hauptarten der Krümmung**:
 
 *   **Linksgekrümmt (konvex)**: Der Graph "knickt" sich nach oben. Wenn man sich auf dem Graphen bewegt, biegt er sich nach links.
@@ -17,20 +17,20 @@ Mathematisch unterscheiden wir **zwei Hauptarten der Krümmung**:
 
 ## Krümmungsverhalten bestimmen
 
-Um das Krümmungsverhalten einer Funktion zu bestimmen, nutzen wir die **zweite Ableitung** $f''(x)$. Da wir dort, wie oben beschrieben die Stellen finden, an denen die Änderungsrate der Steigung Null ist.
+Um das Krümmungsverhalten einer Funktion zu bestimmen, nutzen wir die **zweite Ableitung** $f''(x)$. Da wir dort, wie oben beschrieben, die Stellen finden, an denen die Änderungsrate der Steigung Null ist.
 Die **Schritte zur Bestimmung des Krümmungsverhaltens** sind wie folgt:
 
 1.  **Zweite Ableitung bilden:** Berechne die zweite Ableitung $f''(x)$ der Funktion $f(x)$.
 2.  **Dritte Ableitung bilden**: Berechne die dritte Ableitung $f'''(x)$ der Funktion $f(x)$.
 3.  **Nullstellen der zweiten Ableitung finden:** Bestimme die Nullstellen der zweiten Ableitung, indem du die Gleichung $f''(x) = 0$ löst. Diese Nullstellen sind **potenzielle Wendepunkte**, an denen sich das Krümmungsverhalten ändern könnte.
 4.  **Intervalle aufstellen:** Die Nullstellen von $f''(x)$ bilden die Grenzen der Intervalle.
-5.  **Vorzeichen von $f'''(x)$ prüfen:** Wähle für jedes Intervall einen beliebigen Wert innerhalb des Intervalls aus. Setze diesen Wert in $f''(x)$ ein. Das Vorzeichen des Ergebnisses verrät dir das Krümmungsverhalten in diesem gesamten Intervall:
-    *   $f'''(x) > 0 \implies$ Der Graph ist in diesem Intervall **linksgekrümmt (konvex)**.
-    *   $f'''(x) < 0 \implies$ Der Graph ist in diesem Intervall **rechtsgekrümmt (konkav)**.
+5.  **Vorzeichen von $f''(x)$ prüfen:** Wähle für jedes Intervall einen beliebigen Wert innerhalb des Intervalls aus. Setze diesen Wert in $f''(x)$ ein. Das Vorzeichen des Ergebnisses verrät dir das Krümmungsverhalten in diesem gesamten Intervall:
+    *   $f''(x) > 0 \implies$ Der Graph ist in diesem Intervall **linksgekrümmt (konvex)**.
+    *   $f''(x) < 0 \implies$ Der Graph ist in diesem Intervall **rechtsgekrümmt (konkav)**.
 
 # Python Implementierung
 
-Wenn die oben kurzgefasste Theorie verstanden ist, kann die betrachtet werden, wie das ganze in Python implementiert werden kann.  
+Wenn die oben kurzgefasste Theorie verstanden ist kann betrachtet werden, wie das Ganze in Python implementiert werden kann.  
 
 ```{pyodide-python}
 #| read-only: true
@@ -69,17 +69,17 @@ for i in range(len(intervall_grenzen) - 1):
 ## Aufgabe: Krümmungsverhalten bestimmen
 
 Der Code oben hat bisher noch keine Ausgabe.  
-Um zu testen, dass Du den Code wirklich verstanden hast, versuche eine Ausgabe zu schreiben, welche den entsprechenden Werten, die in der Funktion bestimmt werden, die passende Ausgabe zu ordnet.  
-D.h. in welchem Intervall hat die Funktion welche Krümmung?
+Um zu testen, dass du den Code wirklich verstanden hast, versuche eine Ausgabe zu schreiben, welche den entsprechenden Werten, die in der Funktion bestimmt werden, die passende Ausgabe zuordnet.  
+Das heißt in welchem Intervall hat die Funktion welche Krümmung?
 
 ```{pyodide-python}
 # Gib hier deinen Code an
 ```
 
 ::: {.callout-note title="Hinweis" collapse="true"}  
-*   Überleg Dir welcher Abschnitt im Code dafür zuständig ist das Krümmungsverhalten zu berechnen
-*   Im Anschluss Überleg dir warum di Variablen so heißen wie sie heißen (Was bedeutet jede einzelne)
-*   Zuletzt was wurde oben im Text erklärt, was muss angegeben werden wenn es darum geht ein Krümmungsverhalten anzugeben.
+*   Überlege dir welcher Abschnitt im Code dafür zuständig ist das Krümmungsverhalten zu berechnen
+*   Im Anschluss überlege dir warum die Variablen so heißen wie sie heißen (Was bedeutet jede einzelne)
+*   Zuletzt was wurde oben im Text erklärt? Was muss angegeben werden, wenn es darum geht ein Krümmungsverhalten anzugeben?
 :::
 
-Wenn Du damit fertig bist, kommt als letzter Teil dieses Kapitels der Abschnitt **[Wendepunkte bestimmten](wendepunkte.qmd)**.
+Wenn du damit fertig bist, kommt als letzter Teil dieses Kapitels der Abschnitt **[Wendepunkte bestimmen](wendepunkte.qmd)**.

@@ -6,29 +6,29 @@ filters:
 ---
 
 In diesem Kapitel des Tutorials sollst Du lernen, wie Du mithilfe von Python das Symmetrieverhalten einer Funktion untersuchen kannst.  
-_Hierbei gilt wie in anderen Kapiteln, dass in der Python Umgebung auf dieser Website leider keine Input Abfragen, also Eingabeforderungen genutzt werden können, also betrachten wir hier Programme, an denen an einer Stelle eine Funktion eingegeben werden kann._
+_Hierbei gilt wie in anderen Kapiteln, dass in der Python-Umgebung auf dieser Website leider keine Input-Abfragen, also Eingabeforderungen genutzt werden können, also betrachten wir hier Programme, an denen an einer Stelle eine Funktion eingegeben werden kann._
 
 # Welche Formen von Symmetrie gibt es?
 
 Im Allgemeinen wird zwischen **Punkt- und Achsensymmetrie** unterschieden.
-In diesem Tutorial wird ähnlich wie in der Schule vor allem die Achsensymmetrie zur Y-Achse und die Punktsymmetrie zum Ursprung behandelt.
+In diesem Tutorial wird, ähnlich wie in der Schule, vor allem die Achsensymmetrie zur Y-Achse und die Punktsymmetrie zum Ursprung behandelt.
 Wichtig ist zu beachten, dass nicht jede Funktion eine Form von Symmetrie aufzeigt.
-Es gibt Funktionen die achsensymmetrisch sind, deren Symmetrieachse aber nicht die Y-Achse ist (z.B. Polynomfunktionen mit geradem Exponenten).
-Es gibt auch Funktionen die punktsymmetrisch sind, aber nicht punktsymmetrisch zum Ursprung.
+Es gibt Funktionen, die achsensymmetrisch sind, deren Symmetrieachse aber nicht die Y-Achse ist (z.B. Polynomfunktionen mit geradem Exponenten).
+Es gibt auch Funktionen, die punktsymmetrisch sind, aber nicht punktsymmetrisch zum Ursprung.
 
-Eine kleine Erinnerung der Symmetrieformen die in diesem Tutorial betrachtet werden:
+Eine kleine Erinnerung an die Symmetrieformen die in diesem Tutorial betrachtet werden:
 
-1.  **Achsensymmetrie zur y-Achse:**  
-Eine Funktion $f(x)$ ist achsensymmetrisch zur y-Achse, wenn für alle $x$ im Definitionsbereich gilt: $f(x) = f(-x)$.
+1.  **Achsensymmetrie zur Y-Achse:**  
+Eine Funktion $f(x)$ ist achsensymmetrisch zur Y-Achse, wenn für alle $x$ im Definitionsbereich gilt: $f(x) = f(-x)$.
 
-2.  **Punktsymmetrie zum Ursprung**   
+2.  **Punktsymmetrie zum Ursprung:**   
 Eine Funktion $f(x)$ ist punktsymmetrisch zum Ursprung, wenn für alle $x$ im Definitionsbereich gilt: $f(-x) = -f(x)$ (oder analog $-f(-x) = f(x)$). 
 
 ## Wie teste ich eine Funktion auf Achsensymmetrie zur Y-Achse?
 
 Die Grundidee ist ähnlich wie in anderen Kapiteln. 
-Wir nutzen `sympy`, mit dieser Bibliothek können wir Funktionen als mathematische Objekte betrachten, deren Eigenschaften wir untersuchen können.
-Zuvor müssen wir unsere Variable als **Symbol** definieren, damit das Programm diese Variable anders als andere Python Variablen nutzt.
+Wir nutzen `sympy`. Mit dieser Bibliothek können wir Funktionen als mathematische Objekte betrachten, deren Eigenschaften wir untersuchen können.
+Zuvor müssen wir unsere Variable als **Symbol** definieren, damit das Programm diese Variable anders als andere Python-Variablen nutzt.
 
 ```{pyodide-python}
 import sympy
@@ -50,9 +50,9 @@ ist_symmetrisch = pruefe_achsensymmetrie(f1)
 print(f"Die Funktion f(x) = {f1} wird auf Achsensymmetrie zur Y-Achse untersucht ...")
 
 if ist_symmetrisch:
-    print("Ergebnis: Die Funktion ist achsensymmetrisch zur y-Achse.")
+    print("Ergebnis: Die Funktion ist achsensymmetrisch zur Y-Achse.")
 else:
-    print("Ergebnis: Die Funktion ist NICHT achsensymmetrisch zur y-Achse.")
+    print("Ergebnis: Die Funktion ist NICHT achsensymmetrisch zur Y-Achse.")
 
 
 ```
@@ -63,16 +63,16 @@ Da der Code für diesem Test sehr ähnlich ist, ist das eine Aufgabe für Dich.
 Schreibe einen Code, der eine Funktion auf Punktsymmetrie zum Ursprung testet.
 
 ``` {pyodide-python}
-#Gib in dieser Zelle ein Python Programm an, welches in der Lage ist zu erkennen ob  eine Funktion punktsymmetrisch zum Ursprung ist.
+#Gib in dieser Zelle ein Python Programm an, welches in der Lage ist zu erkennen, ob  eine Funktion punktsymmetrisch zum Ursprung ist.
 
 
 ```
 
 # Ein Test für zwei Arten von Symmetrie
 
-Nachdem bekannt ist, wie eine Funktion auf Achsensymmetrie zur Y-Achse oder Punktsymmetrie zum Ursprung untersucht werden kann gilt nun sich zu überlegen wie ein Programm geschrieben werden kann, welches beide Tests auf einmal durchführt.
+Nachdem bekannt ist, wie eine Funktion auf Achsensymmetrie zur Y-Achse oder Punktsymmetrie zum Ursprung untersucht werden kann, gilt es nun, sich zu überlegen, wie ein Programm geschrieben werden kann, welches beide Tests auf einmal durchführt.
 
 ``` {pyodide-python}
-#Versuche in diesem Block die beiden If-Schleifen zusammen zu führen.
+#Versuche in diesem Block die beiden If-Abfragen zusammen zu führen.
 ```
 

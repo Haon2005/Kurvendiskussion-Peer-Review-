@@ -5,7 +5,7 @@ filters:
   - pyodide
 ---
 
-Diese Seite dient als Erinnerung an die Grundlagen von Python, **wenn die Inhalte dieser Seite nicht bearbeitet und oder bekannt sind ist die Weiterarbeit im Tutorial schwierig**.
+Diese Seite dient als Erinnerung an die Grundlagen von Python, **wenn die Inhalte dieser Seite nicht bearbeitet und/oder bekannt sind, ist die Weiterarbeit im Tutorial schwierig**.
 
 ::: {.panel-tabset}
 
@@ -43,7 +43,7 @@ print(a/2)
 print(a-b)
 ```
 
-Wie du siehst können sich Variablen verändern bzw. neu zugewiesen werden. In Python hat eine Variable immer den Wert, der ihr zuletzt zugewiesen worden ist.
+Wie du siehst, können sich Variablen verändern bzw. neu zugewiesen werden. In Python hat eine Variable immer den Wert, der ihr zuletzt zugewiesen worden ist.
 
 Statt einzelner Anweisungen wollen wir uns jetzt ein ganzes Programm ansehen. Stellen wir uns vor, wir fahren mit dem Auto eine längere Strecke und notieren uns dabei den Kilometerstand des Fahrzeugs zu Beginn der Fahrt sowie zu gewissen Zeitpunkten während der Fahrt gemeinsam mit der bisherigen Fahrtdauer. 
 Diese Informationen können wir nutzen, um uns die Durchschnittsgeschwindigkeit der ganzen Fahrt sowie in den Teilintervallen zu berechnen. 
@@ -77,8 +77,8 @@ Es können in Python auch Variablen durch ganze Wörter definiert werden, was zu
 ### Aufgabe zu Variablen
 
 Probiere einmal den Code so zu verändern, dass die Berechnung durch eine 4. und 5. Messung erweitert wird. 
-Bei der vierten Messung war der Kilometerstand bei 13281km und 75 Minuten nach Fahrtbeginn. 
-Bei der fünften Messung betrug der Kilometerstand 13334km und 119 Minuten nach Fahrtbeginn.
+Bei der vierten Messung war der Kilometerstand bei 13281 km und 75 Minuten nach Fahrtbeginn. 
+Bei der fünften Messung betrug der Kilometerstand 13334 km und 119 Minuten nach Fahrtbeginn.
 Diese Berechnungen sollen auch mit dem Befehl print() ausgegeben werden. 
 
 ```{pyodide-python}
@@ -105,7 +105,8 @@ print("Durchschnitt: {} km/h".format(v_durchschnitt))
 
 
 Bei den Datentypen haben wir bereits eine Fallunterscheidung gesehen. Bei einer Fallunterscheidung möchte man zwei oder mehr Fälle unterscheiden. 
-Übersetzt heißt dies wenn "x", mache "y", ansonsten mache "z". Betrachte das folgende Beispiel: 
+Übersetzt heißt dies: Wenn "x", mache "y", ansonsten mache "z".  
+Betrachte das folgende Beispiel: 
 
 ```{pyodide-python}
 #| read-only: true
@@ -117,7 +118,7 @@ else:
     print("b ist größer als a")
 ```
 
-Probiere es selbst aus und schreibe einen Code, in dem du zwischen a und b unterscheidest. Wenn a gleich b ist soll ein entsprechender Text ausgegeben werden und wenn sie unterschiedlich sind ein entsprechend anderer Text. 
+Probiere es selbst aus und schreibe einen Code, in dem du zwischen a und b unterscheidest. Wenn a gleich b ist soll ein entsprechender Text ausgegeben werden und wenn sie unterschiedlich sind, ein entsprechend anderer Text. 
 
 ```{pyodide-python}
 ```
@@ -153,7 +154,7 @@ if a==b:
 
 
 Es gibt verschiedene Datentypen, die in Python unterschieden werden. Ganzzahlen heißen Integer. Dezimalzahlen werden "Float" genannt. 
-Sobald in einer Berechnung eine Dezimalzahl vorkommt, ist das Ergebnis ebenfalls ein Float, auch, wenn es eigentlich zu einer Ganzzahl ist. Im folgenden Beispiel kannst du dies sehen: 
+Sobald in einer Berechnung eine Dezimalzahl vorkommt, ist das Ergebnis ebenfalls ein Float, auch, wenn es eigentlich eine Ganzzahl ist. Im folgenden Beispiel kannst du dies sehen: 
 
 ```{pyodide-python}
 #| read-only: true
@@ -195,7 +196,7 @@ Wenn dies der Fall ist, schreibe "wahr", wenn nicht, schreibe "falsch".
 
 ## Listen
 
-Neben den numerischen Datentypen, gibt es weitere, worin sich mehrere Zahlen in einer Menge darstellen lassen. Diese nennen sich Listen und können sowohl direkt mit Zahlen erstellt werden, als auch zunächst leer gelassen werden. 
+Neben den numerischen Datentypen gibt es weitere, worin sich mehrere Zahlen in einer Menge darstellen lassen. Diese nennen sich Listen und können sowohl direkt mit Zahlen erstellt werden, als auch zunächst leer gelassen werden. 
 Betrachte die folgenden Beispiele:
 
 ```{pyodide-python}
@@ -222,7 +223,7 @@ print(Liste)
 
 ### Aufgabe zu Listen
 
-Versuch es einmal selbst und erstelle eine Liste mit den Einträgen 2, -13, 6 und 4. Gib die Liste aus. Verändere denn den zweiten Eintrag zu einer 4 und gib die neue Liste aus. 
+Versuch es einmal selbst und erstelle eine Liste mit den Einträgen 2, -13, 6 und 4. Gib die Liste aus. Verändere dann den zweiten Eintrag zu einer 4 und gib die neue Liste aus. 
 
 ```{pyodide-python}
 ```
@@ -236,7 +237,7 @@ Bisher haben wir Code geschrieben, der von oben nach unten ausgeführt wird. Wen
 Eine Funktion wird mit dem Schlüsselwort `def` definiert, gefolgt von einem Namen und Klammern `()`. Innerhalb der Klammern können **Parameter** (Eingabewerte) übergeben werden. Mit `return` gibt die Funktion ein Ergebnis zurück.
 
 ### f-Strings in Python
-Im folgenden verwenden wir sogenannte **f-Strings** für die `print()`-Ausgaben. Ein f-String wird durch ein `f` vor dem öffnenden Anführungszeichen eingeleitet (z.B. `f"Hallo"`).
+Im Folgenden verwenden wir sogenannte **f-Strings** für die `print()`-Ausgaben. Ein f-String wird durch ein `f` vor dem öffnenden Anführungszeichen eingeleitet (z.B. `f"Hallo"`).
 
 Der große Vorteil ist, dass man Variablen und Ausdrücke direkt in den Text einbetten kann, indem man sie in geschweifte Klammern `{}` setzt. Das macht den Code oft deutlich lesbarer.
 ```{pyodide-python}
@@ -272,7 +273,7 @@ def rechteck_flaeche(laenge, breite):
 
 Zum Verständnis ein paar Beispiele und eine Aufgabe dazu:  
 
-`For-Schleifen`wiederholen sich über einen gewissen Intervall. Das Schlüsselwort `range` beschreibt hierbei das Intervall von $a$ bis $b$. Dabei ist $a$ der Start der Iteration und $b$ der Endpunkt der Iteration.
+`For-Schleifen`wiederholen sich über ein gewissen Intervall. Das Schlüsselwort `range` beschreibt hierbei das Intervall von $a$ bis $b$. Dabei ist $a$ der Start der Iteration und $b$ der Endpunkt der Iteration.
 
 ```{pyodide-python}
 a = 5 #Die Variable a wird hier definiert
@@ -281,7 +282,7 @@ for i in range(a,b,2): #a,b sind die Grenzen 2 die Schrittgröße
     print(i+1)
 ```
 
-Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, is dies vereinfacht mit Hilfe von Schleifen möglich.
+Wenn eine Rechnung/ eine Abfrage mehrfach ausgeführt werden soll, ist dies vereinfacht mit Hilfe von Schleifen möglich.
 `While-Schleifen`wiederholen hierbei den Code solange wie eine gewisse Bedingung erfüllt ist.
 Ein kleines Bsp.:
 ```{pyodide-python}
@@ -294,11 +295,11 @@ while a<b:
 
 ### Aufgabe zu For-/While- Schleifen
 
-Die obigen Blöcke sind absichtlich bearbeitbar, teste ein wenig in ihnen herum um ein Verständnis dafür zu entwickeln wie die unterschiedlichen Systeme funktionieren.  
-Wenn du dir sicher bist, dass du verstanden hast wie beides funktioniert, versuche gerne mal ein Programm zu schreiben, welches eine Fakultät berechnet, indem du eine `While-Schleife` verwendest.  
+Die obigen Blöcke sind absichtlich bearbeitbar, teste ein wenig in ihnen herum, um ein Verständnis dafür zu entwickeln, wie die unterschiedlichen Systeme funktionieren.  
+Wenn du dir sicher bist, dass du verstanden hast, wie beides funktioniert, versuche gerne mal ein Programm zu schreiben, welches eine Fakultät berechnet, indem du eine `While-Schleife` verwendest.  
 
 ```{pyodide-python}
-#Hier ein Beispiel Code für eine For Schleife
+#Hier ein Beispielcode für eine For Schleife
 #Text hinter einem # zählt als Kommentar und wird von Python ignoriert
 def fakultaet_for(n):
     if n == 0:
@@ -318,7 +319,7 @@ print("Die Fakultät von 10 ist:", fakultaet_for(10))
 ```
 
 ```{pyodide-python}
-#Versuche dich hier an einer Funktion für eine While Schleife
+#Versuche dich hier an einer Funktion für eine While-Schleife
 def fakultaet_while(n):
 ```
 
@@ -336,7 +337,7 @@ Auch wirst du die folgenden Dinge benötigen:
 4. Zusatz: Was passiert bei `n = 0`?
 
 <details>
-<summary> Hier eine mögliche Lösung für eine `While Schleife`, falls du absolut nicht mehr weiter weist </summary>
+<summary> Hier eine mögliche Lösung für eine `While Schleife`, falls du absolut nicht mehr weiter weißt </summary>
 
 ```{pyodide-python}
 def fakultaet_while(n):
@@ -361,10 +362,10 @@ print("Die Fakultät von 5 ist:", fakultaet_while(5))
 Eine der größten Stärken von Python ist die riesige Auswahl an **Bibliotheken** (auch Module genannt). Eine Bibliothek ist eine Sammlung von vordefinierten Funktionen und Konstanten, die du in deinem Code verwenden kannst, ohne das Rad neu erfinden zu müssen. 
 
 Um eine Bibliothek zu nutzen, musst du sie mit dem `import`-Befehl am Anfang deines Codes "laden". Für dieses Tutorial sind die `numpy` und `matplotlib` Bibliotheken besonders relevant:  
-_Der Effizienz halber werden Bibliotheken meist nicht vollständig importiert sondern ein gewisser Kernabschnitt der Bibliothek._
+_Der Effizienz halber werden Bibliotheken meist nicht vollständig importiert, sondern ein gewisser Kernabschnitt der Bibliothek._
 
 **1. `numpy` – Für numerische Berechnungen (unser Hauptwerkzeug!)**  
-`numpy` ist die _wichtigste_ Bibliothek für dieses Tutorial. Sie ist optimiert für die Arbeit mit Vektoren und Matrizen (in NumPy `arrays` genannt). Man importiert sie üblicherweise mit dem Kürzel `np`. Das sorgt dafür, dass im weiteren Verlauf des Programms `np.array` verwendet werden kann anstatt von `numpy.array`.
+`numpy` ist die _wichtigste_ Bibliothek für dieses Tutorial. Sie ist optimiert für die Arbeit mit Vektoren und Matrizen (in NumPy `arrays` genannt). Man importiert sie üblicherweise mit dem Kürzel `np`. Das sorgt dafür, dass im weiteren Verlauf des Programms `np.array` verwendet werden kann, anstatt von `numpy.array`.
 
 ```{pyodide-python}
 import numpy as np

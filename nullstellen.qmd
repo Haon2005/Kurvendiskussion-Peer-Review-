@@ -5,22 +5,22 @@ filters:
   - pyodide
 ---
 
-Auf dieser Seite sollst Du lernen wie Du mit Python Nullstellen bestimmen kannst.
+Auf dieser Seite sollst du lernen, wie du mit Python Nullstellen bestimmen kannst.
 
 # Was sind Nullstellen?
 
-Hoffentlich ist bekannt was Nullstellen sind, aber für den theoretischen Fall, dass es nicht bekannt ist, hier eine kurze Erklärung.
-Die Nullstellen einer Funktion sind diejenigen $x$ Werte, für die $f(x) = 0$ gilt.
-Das heißt auch, dass an diesen Koordinaten die Funktion die $X-Achse$ schneidet.
+Hoffentlich ist bekannt, was Nullstellen sind, aber für den theoretischen Fall, dass es nicht bekannt ist, hier eine kurze Erklärung.
+Die Nullstellen einer Funktion sind diejenigen $x$-Werte, für die $f(x) = 0$ gilt.
+Das heißt auch, dass an diesen Koordinaten die Funktion die $x$-Achse schneidet.
 
-Wie in anderen Kapiteln brauchen wir für das berechnen mindestens eine Python Bibliothek.
+Wie in anderen Kapiteln brauchen wir für das Berechnen mindestens eine Python-Bibliothek.
 In diesem Fall ist die genutzte erneut `sympy`.
 
 # Nullstellen i.A. bestimmen
 
-Im Grunde ist das bestimmen von Nullstellen nichts anderes, als eine Funktion gleich $0$ zu setzten und zu betrachten für welche Werte die Funktion $0$ annimmt.
+Im Grunde ist das Bestimmen von Nullstellen nichts anderes, als eine Funktion gleich $0$ zu setzen und zu betrachten, für welche Werte die Funktion $0$ annimmt.
 
-Hierfür nutzen wir eine bestimmte Sympy Funktion, nämlich `sympy.solveset()`, diese tut ebendies.
+Hierfür nutzen wir eine bestimmte `sympy`-Funktion, nämlich `sympy.solveset()`, diese tut ebendies.
 
 ```{pyodide-python}
 #| read-only: true
@@ -36,27 +36,27 @@ print(f"Die Nullstellen der Funktion sind: {nullstellen}")
 
 ``` 
 
-In diesem Fall löst `sympy.solveset()` die Funktion $x^3 - 2x^2 - 5x + 6=0$ nach 0 auf. 
+In diesem Fall löst `sympy.solveset()` die Gleichung $x^3 - 2x^2 - 5x + 6=0$ nach $x$ auf. 
 Hierbei wird eine Liste an möglichen Lösungen generiert.
 
 ## Aufgabe zum Bestimmen von Nullstellen
 
-Erstelle mithilfe des oben gegebenen Codes einen Code, welcher die Nullstellen einer Funktion überprüft und dann eine Ausgabe erzeugt, welche dem Nutzer des Programms angibt, welche Nullstellen die angegebene Funktion hat.
+Erstelle mithilfe des oben gegebenen Codes einen Code, welcher die Nullstellen einer Funktion überprüft und dann eine Ausgabe erzeugt, welche den Nutzenden des Programms angibt, welche Nullstellen die angegebene Funktion hat.
 
 
 ```{pyodide-python}
 
 ``` 
 
-_kleiner Tipp: du kannst die Liste der Nullstellen auch sortieren, damit sie nicht in ausrechnen Reihenfolge, sondern in Zahlenstrahl Reihenfolge erscheint._
+_Kleiner Tipp: Du kannst die Liste der Nullstellen auch sortieren, damit sie nicht in der berechneten Reihenfolge, sondern in Zahlenstrahl-Reihenfolge erscheint._
 
 ## Probleme beim Nullstellen bestimmen angehen
 
-Da dieses Tutorial nur einen kleinen Einblick in das Thema Python Nutzung anhand eines spezifischen Themas geben soll werden hier unterschiedliche Probleme die beim bestimmen von Nullstellen entstehen können nicht aufgegriffen.
+Da dieses Tutorial nur einen kleinen Einblick in das Thema Python-Nutzung, anhand eines spezifischen Themas geben soll, werden hier unterschiedliche Probleme, die beim Bestimmen von Nullstellen entstehen können, nicht aufgegriffen.
 
-1.  **Nicht lösbar durch sympy.solveset** Es gibt einige Funktionen, Z.B. Funktionen die verkettet sind und Trigonometrische Funktionen enthalten, welche nicht durch sympy.solveset gelöst werden können. Bei diesen Funktionen ist es meist jedoch möglich eine Herangehensweise, die numerische Bestimmung der Nullstellen zu betrachten. 
-D.h. man kann dafür Algorithmen wie die Bisektion nutzen um Nullstellen zu finden.
+1.  **Nicht lösbar durch sympy.solveset**: Es gibt einige Funktionen, z.B. Funktionen die verkettet sind und trigonometrische Funktionen enthalten, welche nicht durch sympy.solveset gelöst werden können. Bei diesen Funktionen ist es meist jedoch möglich, eine Herangehensweise, die numerische Bestimmung der Nullstellen zu betrachten. 
+D.h. man kann dafür Algorithmen wie die Bisektion nutzen, um Nullstellen zu finden.
 
-2.  **Periodizität** Bei periodischen Funktionen wie Sinus und Cosinus werden zwar theoretisch richtig alle Nullstellen bestimmt, dies ist jedoch nicht so gut zu lesen wie bei anderen Nullstellen.
+2.  **Periodizität**: Bei periodischen Funktionen wie Sinus und Cosinus werden zwar theoretisch richtig alle Nullstellen bestimmt, dies ist jedoch nicht so gut zu lesen wie bei anderen Nullstellen.
 
-Diese Probleme sind jedoch lösbar, falls Dir die Aufgaben bisher ein wenig zu einfach erschienen versuche gerne diese Probleme in deinem Code mit zu beachten!
+Diese Probleme sind jedoch lösbar, falls dir die Aufgaben bisher ein wenig zu einfach erschienen, versuche gerne diese Probleme in deinem Code mit zu beachten!

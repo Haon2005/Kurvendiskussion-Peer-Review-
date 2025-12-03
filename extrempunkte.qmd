@@ -7,23 +7,23 @@ filters:
 
 # Was ist ein Extrempunkt/Sattelpunkt?
 
-Als **Extrempunkt** oder auch **Extremum** wird ein Punkt bezeichnet der "tiefer,höher" als alle anderen Punkte im Umfeld liegt. Als Analogie können ein Berg, bzw. ein Tal betrachtet werden.  
+Als **Extrempunkt** oder auch **Extremum** wird ein Punkt bezeichnet, der "tiefer,höher" als alle anderen Punkte im Umfeld liegt. Als Analogie können ein Berg, bzw. ein Tal betrachtet werden.  
 
 * Die Spitze des Bergs ist ein *Hochpunkt*, also ein Extrempunkt, der höher ist als nebenliegende Funktionswerte.  
 * Die tiefste Stelle ist ein *Tiefpunkt*, also ein Extrempunkt, der niedriger ist als nebenliegende Funktionswerte.  
-_Im weiteren Verlauf dieses Kapitels wird die Benennung Minimum=Tiefpunkt und Maximum=Hochpunkt genutzt._
+_Im weiteren Verlauf dieses Kapitels wird die Benennung Minimum = Tiefpunkt und Maximum = Hochpunkt genutzt._
 
 ## Lokale vs. Globale Extrema
-Die Differenzierung zwischen *lokalen- und globalen- Extrempunkten* ist nicht so leicht zu verstehen.  
+Die Differenzierung zwischen *lokalen und globalen Extrempunkten* ist nicht so leicht zu verstehen.  
 Eine Funktion kann mehrere *lokale Extrema* haben, jedoch *höchstens ein globales Maximum und höchstens ein globales Minimum*.   
-Damit eine Funktion an der Stelle $x$ **ein Extremum hat** müssen **zwei Bedingungen** erfüllt sein.
+Damit eine Funktion an der Stelle $x$ **ein Extremum hat**, müssen **zwei Bedingungen** erfüllt sein.
 
-1.  $f'(x)=0$ Das bedeutet, dass an der Stelle die Steigung Null ist, d.h. der Wert nicht weiter ansteigen/abfallen kann.  
-2.  $f''(x) =|= 0$ Das bedeutet, dass an der Stelle die **[Krümmung](kruemmungsverhalten.qmd)** entweder positiv, oder negativ ist, das sorgt dafür, dass das Monotonieverhalten ändert.  
+1.  $f'(x)=0$ Das bedeutet, dass an der Stelle die Steigung Null ist, der Wert nicht weiter ansteigt/abfällt.  
+2.  $f''(x) \neq 0$ Das bedeutet, dass an der Stelle die **[Krümmung](kruemmungsverhalten.qmd)** entweder positiv, oder negativ ist. Dies sorgt dafür, dass sich das Monotonieverhalten ändert.  
 
 _Der 2. Punkt kann auch anders geprüft werden. Falls die zweite Ableitung nicht bestimmt werden soll, kann ein Wert minimal kleiner und minimal größer als $x$ in die Ableitung eingesetzt werden, wenn sich die Vorzeichen unterscheiden, so ist dort ein Extremum.  
-Falls für den kleineren $x$ Wert das Vorzeichen Minus, und für den größeren Plus ist, handelt es sich um einen **Tiefpunkt**,   
-Falls für den kleineren $x$ Wert das Vorzeichen Plus, und für den größeren Minus ist, handelt es sich um einen **Hochpunkt**._  
+Falls für den kleineren $x$-Wert das Vorzeichen Minus, und für den größeren Plus ist, handelt es sich um einen **Tiefpunkt**,   
+Falls für den kleineren $x$-Wert das Vorzeichen Plus und für den größeren Minus ist, handelt es sich um einen **Hochpunkt**._  
 
 
 ### Globale Extrema 
@@ -33,13 +33,13 @@ Für ein *globales Minimum* $x_{min}$ gilt, $f(x_{min}) \le f(x) \forall x \in D
 
 ## Sattelpunkte
 
-**Sattelpunkt** wird ein potentielles Extremum genannt, welches jedoch keins ist.  
-Potentiell in soweit, als dass für einen Sattelpunkt **gilt, dass:** $f'(x_{sat})=0$ ABER im Gegensatz zum Extremum muss für die zweite Ableitung gelten, dass $f''(x_{sat})=0$.  
-Ein *Sattelpunkt* ist also ein Punkt in einer Funktion an dem die Steigung Null ist sich vorher und nachher in ihrer Ausrichtung jedoch nicht ändert.
+Als **Sattelpunkt** wird ein potentielles Extremum bezeichnet, welches jedoch keines ist.  
+Potentiell insoweit, als dass für einen Sattelpunkt **gilt, dass:** $f'(x_{sat})=0$ **aber** im Gegensatz zum Extremum muss für die zweite Ableitung gelten, dass $f''(x_{sat})=0$.  
+Ein *Sattelpunkt* ist also ein Punkt in einer Funktion an dem die Steigung Null ist, sich vorher und nachher in der Ausrichtung der Funktion jedoch nichts ändert.
 
 # Python Implementierung
 
-Nachdem Dir nun klar sein sollte, was noch mal ein Extrempunkt/Sattelpunkt ist, wird die Implementierung bei Python betrachtet.
+Nachdem dir nun klar sein sollte, was noch mal ein Extrempunkt/Sattelpunkt ist, wird die Implementierung in Python betrachtet.
 
 ```{pyodide-python}
 #| read-only: true
@@ -64,15 +64,15 @@ for cp in critical_points: #Die Liste der Punkte in critical_points wird durchla
 
     if f_double_prime_at_cp > 0:
         print(f"Bei x = {cp} ,y = {y_value} liegt ein Tiefpunkt vor (f''({cp}) = {f_double_prime_at_cp} > 0).")
-    elif f_double_prime_at_cp < 0: #elif beutetet Else If, also "falls nicht, wenn, dann...""
+    elif f_double_prime_at_cp < 0: #elif bedeutet Else If, also "falls nicht, wenn, dann...""
         print(f"Bei x = {cp} ,y = {y_value} liegt ein Hochpunkt vor (f''({cp}) = {f_double_prime_at_cp} < 0).")
 ```
 
 ## Aufgabe: Bestimmung Sattelpunkt
 
-Eine leichte Aufgabe zum reinkommen.  
-Mithilfe der Erklärung oben sollte es hoffentlich nicht all zu schwer sein einen Code zu verfassen, welcher Eine Funktion testet, ob sie einen Sattelpunkt hat.  
-_Ideal wäre natürlich ein Code der nach Hochpunkt/Tiefpunkt, und Sattelpunkt überprüft_  
+Eine leichte Aufgabe zum Reinkommen.  
+Mithilfe der Erklärung oben sollte es hoffentlich nicht allzu schwer sein einen Code zu verfassen, welcher Eine Funktion testet, ob sie einen Sattelpunkt hat.  
+_Ideal wäre natürlich ein Code, der nach Hochpunkt/Tiefpunkt und Sattelpunkt überprüft_  
 
 ```{pyodide-python}
 #Gib hier deinen Code an
@@ -81,10 +81,10 @@ _Ideal wäre natürlich ein Code der nach Hochpunkt/Tiefpunkt, und Sattelpunkt �
 ## Aufgabe2: Bestimmung Extrema ohne 2. Ableitung
 
 Nach der Einstiegsaufgabe nun eine etwas kniffligere Aufgabe.  
-Wie in dem Erklärtext bereits erklärt wurde, gibt es nicht nur die bereits gecodete Variante der Extrema Prüfung, sondern noch mindestens eine weitere, welche keine 2. Ableitung benötigt.  
-Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob Extrema hat und wenn wo diese sind.  
+Wie in dem Erklärtext bereits erklärt wurde, gibt es nicht nur die bereits gecodete Variante der Extrema-Prüfung, sondern noch mindestens eine weitere, welche keine 2. Ableitung benötigt.  
+Verfasse einen Code, der ohne die 2. Ableitung zu bestimmen ebenfalls testet, ob die Funktion Extrema hat und wenn ja, wo diese sind.  
 ```{pyodide-python}
 #Gib hier deinen Code an
 ```
 
-Wenn Du damit fertig bist geht es weiter mit **[Krümmungsverhalten](kruemmungsverhalten.qmd)**.
+Wenn Du damit fertig bist, geht es weiter mit **[Krümmungsverhalten](kruemmungsverhalten.qmd)**.

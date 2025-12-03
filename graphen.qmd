@@ -7,20 +7,20 @@ filters:
 
 # Graphen erstellen
 
-In diesem Abschnitt sollst Du lernen wie Du mit Hilfe von Python einen Graphen darstellen (plotten) kannst.  
-Hierbei gibt es mehrere Aspekte die für uns weiterhin wichtig sein werden.  
+In diesem Abschnitt sollst du lernen wie du mit Hilfe von Python einen Graphen darstellen (plotten) kannst.  
+Hierbei gibt es mehrere Aspekte, die für uns weiterhin wichtig sein werden.  
 
 1. Das Grundgerüst
 2. Einen Graphen plotten
 3. Mehrere Funktionen auf einmal plotten
-4. Wie kann man Punkte in einen Graph plotten
+4. Wie kann man Punkte in einen Graphen plotten
 5. Wie kann man Einzelheiten einstellen (Farbe, Strichstil etc.)
 
-_In diesem Abschnitt wird es keine Aufgaben als solche geben, jeder Code kann dafür bearbeitet werden, also teste dich gerne im Code herum, verändere Dinge und guck was passiert!_
+_In diesem Abschnitt wird es keine Aufgaben als solche geben, jeder Code kann dafür bearbeitet werden, also teste gerne am Code herum, verändere Dinge und guck was passiert!_
 
 ## 1. Das Grundgerüst
 
-Zuerst benötigen wir das Grundgerüst, um eine Funktion überhaupt zeichnen zu können. Dazu importieren wir die `matplotlib.pyplot` Bibliothek, mithilfe von dieser können Graphen geplottet werden.  
+Zuerst benötigen wir das Grundgerüst, um eine Funktion überhaupt zeichnen zu können. Dazu importieren wir die `matplotlib.pyplot`-Bibliothek, mithilfe dieser können Graphen geplottet werden.  
 Wir importieren die Bibliothek als `plt`, damit können Funktionen deutlich kürzer geschrieben werden.  
 
 ```{pyodide-python}
@@ -38,18 +38,18 @@ plt.show()
 *   `fig, ax = plt.subplots()` wird hier genutzt, damit sich in diesem Tutorial in jedem Code ein neuer Graph erstellt und keine Werte aus dem letzten Block mit in den Graph geplottet werden. 
 *   `fig` beschreibt die gesamte Abbildung (das Fenster) 
 *   `ax` ist der eigentliche Graph (das Koordinatensystem), auf dem wir zeichnen.
-*   `plt.subplots` ist eine der Möglichkeiten eine Grundlage zu schaffen auf der Graphen geplottet werden können. Es gibt auch die Möglichkeit `plt.plot()`.
+*   `plt.subplots` ist eine der Möglichkeiten, eine Grundlage zu schaffen, auf der Graphen geplottet werden können. Es gibt auch die Möglichkeit `plt.plot()`.
 *   `plt.show()`: Dieser Befehl ist entscheidend. Er nimmt alles, was bisher "gezeichnet" wurde, und zeigt es in der Ausgabe an. Ohne diesen Befehl siehst Du nichts!
 :::
 
 ## 2. Einen Graphen plotten
 
 Nachdem das Grundgerüst steht, können wir unseren ersten Graphen zeichnen.  
-Hierfür werden Datenpunkte benötigt, damit diese nicht einzeln eingetippt werden hilft dir `numpy` Bibliothek aus, indem mit `np.linspace` Werte zwischen 0 und 10 generiert werden (100 an der Zahl).  
+Hierfür werden Datenpunkte benötigt, damit diese nicht einzeln eingetippt werden, hilft dir `numpy` Bibliothek aus, indem mit `np.linspace` Werte zwischen 0 und 10 generiert werden (100 an der Zahl).  
 
 ::: {.callout-tip collapse="true" title="Was ist Numpy? Eine kurze Erklärung"}
-`Numpy` (Numerical Python) ist eine der fundamentaleren Python Bibliotheken, diese bietet das rechnen und berechnen mit und von Matrizen/Vektoren und großen mehrdimensionalen Arrays an.  
-Auch ist `Numpy` die Bibliothek welche für numerische Berechnungen genutzt wird.  
+`Numpy` (Numerical Python) ist eine der fundamentaleren Python-Bibliotheken. Diese bietet das Rechnen und Berechnen von und mit Matrizen/Vektoren und großen mehrdimensionalen Arrays an.  
+Auch ist `Numpy` die Bibliothek, welche für numerische Berechnungen genutzt wird.  
 
 :::
 
@@ -61,7 +61,7 @@ fig, ax = plt.subplots()
 x = np.linspace(0, 10, 100) 
 y = np.sin(x)              
 
-ax.plot(x, y) #Plottet den Graphen der von den x/y Werten erzeugt wird.
+ax.plot(x, y) #Plottet den Graphen, der von den x/y Werten erzeugt wird.
 
 ax.set_xlabel("x-Achse")
 ax.set_ylabel("y-Achse")
@@ -72,9 +72,10 @@ plt.show()
 
 ::: {.callout-tip collapse="true" title="Tipps zum Plotten eines Graphen"}
 *   Mit `np.linspace` werden gleichverteilte Werte zwischen 0 und 10 generiert (100 an der Zahl).
-*   Mit "`ax.set_xlabel` und `ax.set_ylabel` können x-/y- Achsen und Titel benannt werden. 
+*   Mit `ax.set_xlabel` und `ax.set_ylabel` können x-/y- Achsen und Titel benannt werden. 
 
-Eine Andere Möglichkeit einen Graphen zu generieren ist (diese Möglichkeit mag simpler erscheinen, gradliniger, aber hat einige Probleme, wenn die Codeblöcke in diesem Abschnitt so geschrieben wären, könnte immer nur ein Graph auf einmal dargestellt werden und es würden auch immer alle anderen Funktionen nach dem durchführen des Codeblocks in allen anderen Graphen existent bleiben.):  
+Eine andere Möglichkeit einen Graphen zu generieren ist:  
+Dieser alternative Ansatz wirkt zwar einfacher, ist aber für dieses Tutorial ungeeignet. Der Grund dafür ist, dass Graphen nur unter **einem** Code Block ausgeführt werden können auf diese Art und sich dabei auch inhaltlich überschreiben können.
 
 ```{pyodide-python}
 import matplotlib.pyplot as plt
@@ -86,19 +87,19 @@ plt.plot(x, y) #Hier ist der Hauptunterschied!
 
 plt.xlabel('x - Achse')
 plt.ylabel('y - Achse')
-plt.title('Mein erste Graph!')
+plt.title('Mein erster Graph!')
 
 plt.show()
 
 ```
 
-_Falls also das Problem besteht, dass nach durchführen dieses Codeblocks in den nächsten Graphen immer dieser Graphen mit abgebildet wird, bitte einmal die Seite neu laden und den obigen Code **NICHT AUSFÜHREN**.
+_Falls also das Problem besteht, dass nach Durchführen dieses Codeblocks in den nächsten Graphen immer dieser Graph mit abgebildet wird, bitte einmal die Seite neu laden und den obigen Code **NICHT AUSFÜHREN**.
 :::
 
 ## 3. Mehrere Funktionen auf einmal plotten
 
 Oft möchte man mehrere Funktionen in einem einzigen Graphen vergleichen.  
-Das geht recht einfach mit der `plot`-Funktion, es wird jede Funktion einzeln geplottet `Plt.show`  stellt dann alle geplotteten Funktionen dar. Matplotlib kümmert sich automatisch darum, jeder Linie eine andere Farbe zu geben. 
+Das geht recht einfach mit der `plot`-Funktion, es wird jede Funktion einzeln geplottet `plt.show`  stellt dann alle geplotteten Funktionen dar. Matplotlib kümmert sich automatisch darum, jeder Linie eine andere Farbe zu geben. 
 
 ```{pyodide-python}
 import matplotlib.pyplot as plt
@@ -115,23 +116,23 @@ y2 = np.cos(x)
 ax.plot(x, y1, label="Sinus")
 ax.plot(x, y2, label="Cosinus")
 
-# ax.legend erzeugt eine Legende der unterschiedlichen Graphen die dargestellt werden und mit den "labeln" benannt werden.
+# ax.legend erzeugt eine Legende der unterschiedlichen Graphen, die dargestellt werden und mit den "Labels" benannt werden.
 ax.legend()
 
 ax.set_xlabel("x-Achse")
 ax.set_ylabel("y-Achse")
-ax.set_title("Sinus und Cosinus Graph")
+ax.set_title("Sinus- und Cosinus- Graph")
 
 plt.show()
 ```
 
 ::: {.callout-tip collapse="true" title="Tipps zum Plotten mehrerer Funktionen"}
 *   **Die Legende:** Um eine Legende anzuzeigen, musst Du zwei Dinge tun:
-    1.  Gib jedem plot ein `label` (z.B. `ax.plot(x, y1, label="Sinus")`).
+    1.  Gib jedem Plot ein `label` (z.B. `ax.plot(x, y1, label="Sinus")`).
     2.  Rufe `ax.legend()` auf, um die Legende basierend auf den Labels tatsächlich zu zeichnen.
 :::
 
-## 4. Wie können Punkte in einen Graph plotten
+## 4. Wie kann man Punkte in einen Graphen plotten
 
 Manchmal wollen wir keine durchgehende Linie, sondern einzelne Datenpunkte darstellen, z.B. aus einem Experiment. Dafür eignet sich die `scatter`-Funktion hervorragend. Sie ist speziell dafür gemacht, eine Wolke von Punkten zu zeichnen.
 
@@ -150,7 +151,7 @@ ax.scatter(x_punkte, y_punkte, label="Einzelpunkte", marker="x", color="red")
 
 ax.set_xlabel("x-Werte")
 ax.set_ylabel("y-Werte")
-ax.set_title("Test Darstellung einzelner Punkte")
+ax.set_title("Test-Darstellung einzelner Punkte")
 
 ax.legend()
 
@@ -158,20 +159,20 @@ plt.show()
 ```
 
 ::: {.callout-tip collapse="true" title="Tipps zum Plotten von Punkten"}
-*   Es gibt mehrere Möglichkeiten Punkte zu verteilen, es ist auch möglich `ax.plot(x_punkte, y_punkte)` zu verwenden. Nutze gern unterschiedliche Möglichkeiten und versuche die Unterschiede zu erkennen.  
-*   Wie im Graphen zu sehen bestehen sehr wohl auch die Möglichkeiten die Art und Farbe der Punkte zu verändern.
+*   Es gibt mehrere Möglichkeiten, Punkte zu verteilen, es ist auch möglich `ax.plot(x_punkte, y_punkte)` zu verwenden. Nutze gern unterschiedliche Möglichkeiten und versuche die Unterschiede zu erkennen.  
+*   Wie im Graphen zu sehen bestehen sehr wohl auch die Möglichkeiten, die Art und Farbe der Punkte zu verändern.
 *   Du kannst `plot` und `scatter` im selben Graphen **kombinieren**. Zeichne zuerst eine Funktionslinie mit `plot` und dann einzelne Messpunkte darüber mit `scatter`.
 *   Probiere das gerne aus! (indem du dir einen eigenen Block erstellst)
 :::
 
 ## 5. Wie kann man Einzelheiten einstellen
 
-Es gibt viele Einzelheiten die verändert werden können.  
-Im folgenden Code wird eine Menge geändert auf unterschiedliche Arten und Weisen und in den Tipps wird dann erklärt was welche Veränderung herbeiführt.  
+Es gibt viele Einzelheiten, die verändert werden können.  
+Im folgenden Code wird eine Menge geändert auf unterschiedliche Arten und Weisen und in den Tipps wird dann erklärt, was welche Veränderung herbeiführt.  
 Im Grunde kann das folgende verändert werden:  
 
 *   Linienstil (gestrichelt, gepunktet, ...)
-*   Markerstil  (Kreis, Kreuze, ...)
+*   Markerstil (Kreis, Kreuze, ...)
 *   Linienbreite
 *   Farbe
 *   Form der Markierung
@@ -195,7 +196,7 @@ plt.show()
 ```
 
 ::: {.callout-tip collapse="true" title="Tipps zur Anpassung"}
-*   **Farben (`color`):** Du kannst Farbnamen (`'red'`, `'green'`), Kurzcodes (`'r'`, `'g'`, `'b'`, `'k'` für schwarz) oder Hex-Codes (`'#FF5733'`) verwenden.
+*   **Farben (`color`):** Du kannst Farbnamen (`'red'`, `'green'`), Kurzcodes (`'r'`, `'g'`, `'b'`, `'k'` für Schwarz) oder Hex-Codes (`'#FF5733'`) verwenden.
 *   **Linienstile (`linestyle`):**
     *   `'-'` oder `'solid'`: Durchgezogene Linie (Standard)
     *   `'--'` oder `'dashed'`: Gestrichelte Linie

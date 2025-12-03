@@ -7,16 +7,16 @@ filters:
 
 **Kapitelübersicht**
 
-In diesem Kapitel wird sich mit der graphischen Darstellung von Funktionen beschäftigen, dass ganze wird in zwei Kapitel unterteilt: 
+In diesem Kapitel beschäftigen wir uns mit der graphischen Darstellung von Funktionen beschäftigen. Das Ganze wird in zwei Kapitel unterteilt: 
 
 *   **[Graphen erstellen](graphen.qmd)**  
-    * Im ersten Abschnitt soll es um die Grundlagen der Graphischen Darstellung mit Hilfe von Python gehen.  
-    Was für Bibliotheken werden benötigt, was sind die Grundbefehle, die für das erstellen eines Graphen wichtig sind.
+    * Im ersten Abschnitt soll es um die Grundlagen der graphischen Darstellung mit Hilfe von Python gehen.  
+    Was für Bibliotheken werden benötigt, was sind die Grundbefehle, die für das Erstellen eines Graphen wichtig sind.
 
 ---
 
 *   **[Graphen beschriften](graphen_beschriften.qmd)**  
-    * Dieser Abschnitt soll das Ende des Tutorials darstellen, da in diesem Abschnitt behandelt wird wie, mit Hilfe der ganzen anderen Kapitel, Funktionen im Graph dargestellt werden können und dazu besondere Punkte der Funktion im Graphen markiert, Asymptoten eingezeichnet werden etc.
+    * Dieser Abschnitt soll das Ende des Tutorials darstellen, da in diesem Abschnitt behandelt wird wie, mithilfe der Ganzen anderen Kapitel, Funktionen im Graphen dargestellt werden können und dazu besondere Punkte der Funktion im Graphen markiert, Asymptoten eingezeichnet werden und so weiter.
 
 ---
 
