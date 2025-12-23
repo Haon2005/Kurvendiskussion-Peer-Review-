@@ -1,0 +1,373 @@
+---
+title: "Test Quiz"
+format: html
+filters:
+  - quizdown
+---
+
+```quizdown
+# Multiplikation
+
+Welches Zeichen wird in Python für die Multiplikation verwendet?
+
+- [ ] `+`
+- [x] `*`
+- [ ] `-`
+- [ ] `.`
+
+
+# Division
+
+Was ist das Ergebnis von `10 / 2` in Python?
+
+> Beachte den Datentyp! In Python wird der Punkt `.` als Dezimaltrennzeichen verwendet.
+
+- [ ] 5
+- [x] 5.0
+- [ ] "5"
+- [ ] 5,0
+
+# Subtraktion
+
+Was ist das Ergebnis von `10 - 3`?
+
+- [x] 7
+- [ ] 13
+- [ ] 7.0
+- [ ] -7
+
+# Variablenzuweisung
+
+Welchen Wert hat `a` am Ende dieses Codes?
+
+~~~python
+a = 4
+a = 7 + a
+~~~
+
+- [ ] 4
+- [ ] 7
+- [x] 11
+- [ ] 74
+
+# Datentypen
+
+Welche der folgenden Aussagen zu Datentypen sind wahr?
+
+- [x] `15` ist ein Integer (Ganzzahl).
+- [x] `1.5` ist ein Float (Gleitkommazahl).
+- [ ] Eine Division `/` zweier Integer ergibt immer einen Integer.
+- [x] Boolean Werte sind `True` oder `False`.
+
+# Vergleichsoperatoren
+
+Wie prüft man, ob `a` **ungleich** `b` ist?
+
+- [ ] `a <> b`
+- [ ] `a NOT b`
+- [x] `a != b`
+- [ ] `a == b`
+
+# Fallunterscheidung
+
+Was ist die Kurzform für "else if" in Python?
+
+- [ ] `else if`
+- [ ] `elseif`
+- [x] `elif`
+- [ ] `if else`
+
+# Listen-Index
+
+Welchen Index hat das **erste** Element einer Liste?
+
+- [ ] 1
+- [x] 0
+- [ ] -1
+- [ ] A
+
+# Listen-Zugriff
+
+Gegeben ist `L = [10, 20, 30, 40, 50]`. Wie greift man auf die Zahl 50 zu?
+
+- [ ] `L[5]`
+- [x] `L[4]`
+- [ ] `L(5)`
+- [ ] `L{4}`
+
+# Listen erstellen
+
+Bringe die Befehle in die richtige Reihenfolge, um die Liste `[4, -7]` zu erstellen.
+
+1. `Liste = []`
+2. `Liste.append(4)`
+3. `Liste.append(-7)`
+
+# Listen verändern
+
+Was passiert bei `Liste[1] = -9`?
+
+- [ ] Ein neues Element -9 wird angehängt.
+- [ ] Das erste Element wird -9.
+- [x] Das zweite Element wird -9.
+- [ ] Die Liste wird gelöscht.
+
+# Funktionen definieren
+
+Mit welchem Schlüsselwort beginnt eine Funktionsdefinition?
+
+- [ ] `function`
+- [ ] `define`
+- [x] `def`
+- [ ] `fun`
+
+# Rückgabewerte
+
+Welches Schlüsselwort gibt einen Wert aus einer Funktion zurück?
+
+- [ ] `print`
+- [ ] `output`
+- [x] `return`
+- [ ] `back`
+
+# f-Strings
+
+Wie bettet man die Variable `name` korrekt in einen f-String ein?
+
+- [ ] `"Hallo {name}"`
+- [x] `f"Hallo {name}"`
+- [ ] `f"Hallo (name)"`
+- [ ] `f'Hallo [name]'`
+
+# Schleifen - Range
+
+Welche Zahlen erzeugt `range(0, 3)`?
+
+- [ ] 1, 2, 3
+- [x] 0, 1, 2
+- [ ] 0, 1, 2, 3
+- [ ] 0, 3
+
+# Range Parameter
+
+Was bedeuten die Parameter in `range(a, b, c)`?
+
+- [x] a ist der Startwert.
+- [x] b ist der Endwert (exklusiv).
+- [x] c ist die Schrittweite.
+- [ ] b ist der Endwert (inklusiv).
+
+# While-Schleife
+
+Was ist eine Gefahr bei While-Schleifen?
+
+- [ ] Sie sind zu schnell.
+- [x] Endlosschleifen, wenn die Bedingung nie falsch wird.
+- [ ] Sie können nicht rechnen.
+- [ ] Man kann sie nicht stoppen.
+
+# Bibliotheken importieren
+
+Wie importiert man NumPy üblicherweise?
+
+- [ ] `import numpy`
+- [x] `import numpy as np`
+- [ ] `import np from numpy`
+- [ ] `use numpy`
+
+# Matplotlib Alias
+
+Welches Kürzel wird für `matplotlib.pyplot` üblicherweise verwendet?
+
+- [ ] `mat`
+- [ ] `plot`
+- [x] `plt`
+- [ ] `mpp`
+
+# NumPy Arrays
+
+Was sind Vorteile von NumPy Arrays?
+
+- [x] Man kann mit Vektoren rechnen (z.B. `vektor * 2`).
+- [x] Sie sind effizient für numerische Berechnungen.
+- [ ] Sie können nur Text speichern.
+- [ ] Sie sind langsamer als Listen.
+
+# Plot anzeigen
+
+Welcher Befehl zeigt einen Plot an?
+
+- [ ] `plt.render()`
+- [ ] `plt.draw()`
+- [x] `plt.show()`
+- [ ] `plt.display()`
+
+# Code-Verständnis
+
+Was gibt dieser Code aus?
+
+~~~python
+a = 15
+b = 20
+if a >= b:
+    print("X")
+else:
+    print("Y")
+~~~
+
+- [ ] X
+- [x] Y
+- [ ] XY
+- [ ] Nichts
+
+# Logik
+
+Was ergibt der Vergleich `15 == 15`?
+
+- [x] `True`
+- [ ] `False`
+
+# Kommentare
+
+Wie macht man einen Kommentar in Python?
+
+- [ ] `// Kommentar`
+- [ ] `/* Kommentar */`
+- [x] `# Kommentar`
+- [ ] `<!-- Kommentar -->`
+
+# Variable überschreiben
+
+Was wird durch `print(x)` ausgegeben?
+
+~~~python
+x = 5
+x = 10
+print(x)
+~~~
+
+- [ ] 5
+- [x] 10
+- [ ] 15
+- [ ] Fehler
+
+# Matplotlib Grid
+
+Wie fügt man ein Gitter zum Plot hinzu?
+
+- [ ] `plt.grid(False)`
+- [x] `plt.grid(True)`
+- [ ] `plt.net()`
+- [ ] `plt.lines()`
+
+# Plot Beschriftung
+
+Ordne die Befehle für einen beschrifteten Plot sinnvoll an.
+
+1. `plt.plot(x, y)`
+2. `plt.xlabel("X")`
+3. `plt.ylabel("Y")`
+4. `plt.show()`
+
+# Funktionsaufruf
+
+Wie ruft man die Funktion `def test(a):` mit dem Wert 5 auf?
+
+- [ ] `test`
+- [ ] `call test 5`
+- [x] `test(5)`
+- [ ] `run test 5`
+
+# Leere Liste
+
+Wie erstellt man eine leere Liste?
+
+- [ ] `L = ()`
+- [x] `L = []`
+- [ ] `L = {}`
+- [ ] `L = empty`
+
+# String Verknüpfung
+
+Was ist das Ergebnis dieses Codes?
+
+~~~python
+a = "Py"
+b = "thon"
+print(a + b)
+~~~
+
+- [x] `"Python"`
+- [ ] `"Py thon"`
+- [ ] `"Py+thon"`
+- [ ] Fehler
+
+# Modulo Operator
+
+Was berechnet der Modulo-Operator `%`?
+
+~~~python
+print(10 % 3)
+~~~
+
+- [x] `1` (Rest der Division)
+- [ ] `3` (Ergebnis der Division)
+- [ ] `3.33` (Dezimalwert)
+- [ ] `0`
+
+> Der Modulo-Operator funktioniert wie `10 mod 3` in der Mathematik.
+
+# Logische Operatoren
+
+Was wird hier ausgegeben?
+
+~~~python
+x = True
+y = False
+print(x and y)
+~~~
+
+- [ ] `True`
+- [x] `False`
+- [ ] `None`
+- [ ] `Error`
+
+# Schleifen-Summe
+
+Welchen Wert hat `s` am Ende?
+
+~~~python
+s = 0
+for i in range(3):
+    s = s + i
+print(s)
+~~~
+
+- [ ] `0`
+- [ ] `1`
+- [x] `3`
+- [ ] `6`
+
+# Listen-Slicing
+
+Was gibt dieser Code aus?
+
+~~~python
+L = [10, 20, 30, 40]
+print(L[1:3])
+~~~
+
+- [x] `[20, 30]`
+- [ ] `[10, 20]`
+- [ ] `[20, 30, 40]`
+- [ ] `[10, 20, 30]`
+
+# Zusammenfassung
+
+Welche Konzepte wurden in den Grundlagen behandelt?
+
+- [x] Variablen
+- [x] Schleifen
+- [x] Funktionen
+- [x] Bibliotheken
+```
