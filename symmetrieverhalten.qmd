@@ -5,7 +5,7 @@ filters:
   - pyodide
 ---
 
-In diesem Kapitel des Tutorials sollst Du lernen, wie Du mithilfe von Python das Symmetrieverhalten einer Funktion untersuchen kannst.  
+In diesem Kapitel des Tutorials sollst du lernen, wie du mithilfe von Python das Symmetrieverhalten einer Funktion untersuchen kannst.  
 _Hierbei gilt wie in anderen Kapiteln, dass in der Python-Umgebung auf dieser Website leider keine Input-Abfragen, also Eingabeforderungen genutzt werden können, also betrachten wir hier Programme, an denen an einer Stelle eine Funktion eingegeben werden kann._
 
 # Welche Formen von Symmetrie gibt es?
@@ -59,7 +59,7 @@ else:
 
 ## Wie teste ich eine Funktion auf Punktsymmetrie zum Ursprung?
 
-Da der Code für diesem Test sehr ähnlich ist, ist das eine Aufgabe für Dich.
+Da der Code für diesem Test sehr ähnlich ist, ist das eine Aufgabe für dich.
 Schreibe einen Code, der eine Funktion auf Punktsymmetrie zum Ursprung testet.
 
 ``` {pyodide-python}

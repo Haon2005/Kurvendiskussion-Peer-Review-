@@ -80,6 +80,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-24772959a0e306aba8d7698078628ce7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdown.js"></script>
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdownKatex.js"></script>
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdownHighlight.js"></script>
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdown-init.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -1073,6 +1077,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#abschlussprojekt-dein-eigenes-analyse-tool" id="toc-abschlussprojekt-dein-eigenes-analyse-tool" class="nav-link" data-scroll-target="#abschlussprojekt-dein-eigenes-analyse-tool">Abschlussprojekt: Dein eigenes Analyse-Tool</a>
   <ul class="collapse">
+  <li><a href="#ein-quiz-über-alles-was-du-für-dein-analyse-tool-brauchst" id="toc-ein-quiz-über-alles-was-du-für-dein-analyse-tool-brauchst" class="nav-link" data-scroll-target="#ein-quiz-über-alles-was-du-für-dein-analyse-tool-brauchst">Ein Quiz über alles was du für dein Analyse-Tool brauchst</a></li>
   <li><a href="#erstelle-dein-analyse-tool" id="toc-erstelle-dein-analyse-tool" class="nav-link" data-scroll-target="#erstelle-dein-analyse-tool">Erstelle Dein Analyse-Tool</a></li>
   </ul></li>
   </ul>
@@ -1418,6 +1423,156 @@ Tipp für eine saubere grafische Darstellung
 <section id="abschlussprojekt-dein-eigenes-analyse-tool" class="level1">
 <h1>Abschlussprojekt: Dein eigenes Analyse-Tool</h1>
 <p>Zielgerade! du hast dir in diesem Tutorial jetzt alle Fähigkeiten erarbeitet, die du benötigst um dir im Folgenden ein einzelnes Python-Programm zu schreiben, welches eine komplette Kurvendiskussion (wie sie meist in der Schule durchgeführt wird) durchführt.</p>
+<section id="ein-quiz-über-alles-was-du-für-dein-analyse-tool-brauchst" class="level2">
+<h2 class="anchored" data-anchor-id="ein-quiz-über-alles-was-du-für-dein-analyse-tool-brauchst">Ein Quiz über alles was du für dein Analyse-Tool brauchst</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Das Quiz ist hier hinter, damit es nicht die Übersicht stört.">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Das Quiz ist hier hinter, damit es nicht die Übersicht stört.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quizdown">
+# Welche drei Bibliotheken sind das "Dream-Team" für unser Analyse-Projekt?
+- [x] `sympy` 
+- [x] `matplotlib.pyplot` 
+- [x] `numpy` 
+- [ ] `pandas` 
+- [ ] `random` 
+
+&gt; Hinweis: Wir brauchen Symbolik, Numerik und Grafik.
+
+# Warum müssen wir eine SymPy-Funktion mit `sympy.lambdify` umwandeln, bevor wir sie mit Matplotlib plotten?
+1. [x] Weil Matplotlib nicht direkt mit symbolischen SymPy-Formeln rechnen kann. Wir brauchen eine Funktion, die NumPy-Arrays verarbeitet.
+1. [ ] Weil die Funktion sonst falsch abgeleitet wird.
+1. [ ] Weil der Code sonst zu langsam ist.
+
+&gt; Hinweis: Matplotlib braucht viele konkrete Zahlen (x und y), keine Buchstaben.
+
+# Bringe den Workflow für das Erstellen eines Graphen in die richtige Reihenfolge.
+1. f_numpy = sympy.lambdify(x, f, "numpy")
+2. x_werte = np.linspace(-5, 5, 400)
+3. y_werte = f_numpy(x_werte)
+4. plt.plot(x_werte, y_werte)
+5. plt.show()
+
+&gt; Hinweis: Erst umwandeln, dann x-Werte erzeugen, dann y-Werte berechnen, dann zeichnen.
+
+# Mit welchem Befehl erzeugst du ein Array von 100 x-Werten zwischen -10 und 10?
+1. [x] `np.linspace(-10, 10, 100)`
+1. [ ] `np.range(-10, 10)`
+1. [ ] `sympy.symbols(-10, 10)`
+1. [ ] `plt.axis(-10, 10)`
+
+# Du hast Extrempunkte berechnet. Welcher Befehl eignet sich am besten, um diese *einzelnen Punkte* im Graphen zu markieren?
+1. [x] `plt.scatter(x_liste, y_liste)`
+1. [ ] `plt.plot(x_liste, y_liste)`
+1. [ ] `plt.bar(x_liste, y_liste)`
+
+&gt; Hinweis: `plot` verbindet Punkte mit Linien, wir wollen aber nur die Punkte (Streudiagramm).
+
+# Welche Befehle helfen dir, den Graphen übersichtlicher zu gestalten?
+- [x] `plt.grid()` 
+- [x] `plt.title("Mein Graph")` 
+- [x] `plt.xlabel("x")` und `plt.ylabel("f(x)")` 
+- [ ] `plt.make_pretty()`
+- [x] `plt.axhline(0, color='black')` 
+
+&gt; Hinweis: Denk darüber nach, was einen Graphen "übersichtlicher" macht, was sollte man leicht sehen können?
+
+# Du möchtest an einen Hochpunkt $(2|4)$ den Text "HP" schreiben. Welcher Befehl macht das?
+1. [x] `plt.annotate("HP", (2, 4))`
+1. [ ] `plt.write("HP", 2, 4)`
+1. [ ] `plt.print(2, 4, "HP")`
+
+&gt; Hinweis: Wir wollen eine Anmerkung (Annotation) an Koordinaten heften.
+
+# Wie sorgst du dafür, dass deine geplotteten Linien eine Legende bekommen (z.B. "f(x)" und "f'(x)")?
+1. [x] Ich nutze in `plt.plot(..., label="Name")` das Label-Argument und rufe am Ende `plt.legend()` auf.
+1. [ ] Das macht Matplotlib automatisch.
+1. [ ] Ich schreibe es mit `plt.text` daneben.
+
+# Was passiert, wenn du `plt.show()` vergisst?
+1. [x] Der Graph wird (je nach Umgebung) eventuell nicht angezeigt.
+1. [ ] Der Graph wird gelöscht.
+1. [ ] Es gibt eine Fehlermeldung.
+
+&gt; Hinweis: `show()` ist der Befehl: "Jetzt alles auf den Bildschirm malen!".
+
+# Du willst eine senkrechte Asymptote (vertikale Linie) bei $x=2$ einzeichnen. Welcher Befehl passt?
+1. [x] `plt.axvline(2, color='red', linestyle='--')`
+1. [ ] `plt.axhline(2)`
+1. [ ] `plt.plot(2)`
+
+&gt; Hinweis: "v" steht für vertical (senkrecht).
+
+# Was berechnet `sympy.diff(f, x, 2)`?
+1. [x] Die zweite Ableitung $f''(x)$.
+1. [ ] Die erste Ableitung quadriert.
+1. [ ] Das Integral.
+
+# Welche mathematische Bedingung prüfst du im Code, um einen Wendepunkt zu bestätigen?
+- [x] $f''(x_0) = 0$
+- [x] `$f'''(x_0) \neq 0$`
+- [ ] $f'(x_0) = 0$
+
+&gt; Hinweis: Die Krümmung muss Null sein und sich ändern.
+
+# Wie beschränkst du die Ansicht der y-Achse auf den Bereich -10 bis 10 (Zoom)?
+1. [x] `plt.ylim(-10, 10)`
+1. [ ] `plt.range_y(-10, 10)`
+1. [ ] `plt.zoom(-10, 10)`
+
+# Du hast eine Liste mit x-Koordinaten von Hochpunkten: `hp_x = [-2, 2]`. Wie bekommst du die passenden y-Werte, um sie zu plotten?
+1. [x] Ich setze jeden x-Wert in die Funktion ein (z.B. in einer Schleife oder mit `f_numpy(np.array(hp_x))`).
+1. [ ] Die y-Werte sind immer 0.
+1. [ ] Ich rate sie.
+
+&gt; Hinweis: Ein Punkt besteht immer aus $(x | f(x))$.
+
+# Wenn du mehrere Kurven in ein Bild plotten willst (z.B. $f$ und $f'$), was musst du tun?
+1. [x] Einfach mehrere `plt.plot(...)`-Befehle nacheinander aufrufen, bevor `plt.show()` kommt.
+1. [ ] Für jede Kurve ein neues Skript schreiben.
+1. [ ] `plt.multi_plot()` nutzen.
+
+# Was ist der Vorteil von `f-Strings` (z.B. `f"HP bei {x}"`) beim Beschriften?
+1. [x] Man kann Variablenwerte (wie berechnete Koordinaten) direkt in den Text einbauen.
+1. [ ] Sie sind schneller zu tippen.
+1. [ ] Sie machen den Text fett.
+
+# Welche Farbe wird in Matplotlib mit dem Kürzel `'k'` erzeugt?
+1. [x] Schwarz (Black - 'b' ist schon für Blue vergeben).
+1. [ ] Kunterbunt.
+1. [ ] Kupfer.
+
+# Bringe die Schritte zum Einzeichnen von Nullstellen in die richtige Reihenfolge.
+1. nullstellen = sympy.solve(f, x)
+2. # Umwandeln der SymPy-Zahlen in float (für Matplotlib)
+3. for ns in nullstellen:
+4.     y_coord = 0
+5.     plt.scatter(ns, y_coord, color='red')
+
+# Was bedeutet `linestyle='--'` im Plot-Befehl?
+1. [x] Die Linie wird gestrichelt gezeichnet.
+1. [ ] Die Linie wird besonders dünn.
+1. [ ] Die Linie wird doppelt gezeichnet.
+
+# Dein Code wirft einen Fehler: `NameError: name 'np' is not defined`. Was hast du vergessen?
+1. [x] `import numpy as np`
+1. [ ] `import number_python`
+1. [ ] NumPy zu installieren.
+
+&gt; Hinweis: Man muss dem Kind einen Namen geben (Alias), wenn man es so rufen will.
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="erstelle-dein-analyse-tool" class="level2">
 <h2 class="anchored" data-anchor-id="erstelle-dein-analyse-tool">Erstelle Dein Analyse-Tool</h2>
 <p>Nun geht’s an die Arbeit!<br>
@@ -1426,7 +1581,7 @@ Wichtig ist, dass du dir einen Überblick verschaffst darüber, was du alles in 
 <div id="qpyodide-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <div class="callout callout-style-default callout-note callout-titled" title="Dein Analyse Tool: Tipp 1">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1435,7 +1590,7 @@ Wichtig ist, dass du dir einen Überblick verschaffst darüber, was du alles in 
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Wenn es darum geht einen großen Code zu erstellen, sollte zur eigenen Übersicht, aber auch der Übersicht anderer der Code systematisiert werden.</p>
 <p>In diesem Fall heißt das also z.B.:</p>
@@ -1474,7 +1629,7 @@ Klicke HIER, um eine mögliche <code>function</code>, die die Fakultät einer be
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Dein Analyse Tool: Tipp 2">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1483,7 +1638,7 @@ Klicke HIER, um eine mögliche <code>function</code>, die die Fakultät einer be
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Ein gutes Programm zeichnet sich durch Details und Robustheit aus. Hier sind einige Ideen, wie du dein Tool noch besser machen kannst:</p>
 <ul>
@@ -1514,7 +1669,7 @@ Ein Beispiel
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Dein Analyse Tool: Tipp 3">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1523,7 +1678,7 @@ Ein Beispiel
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Zielgerade! Die Grundfunktion steht vermutlich bereits, hier sind noch ein paar Tipps, um Dein Programm abzurunden.</p>
 <ul>
@@ -2025,9 +2180,9 @@ Ein Beispiel für einen Code, der den X-Bereich dynamisch bestimmt
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Graphen beschriften"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - pyodide</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - pyodide</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - quizdown</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Graphen beschriften</span></span>
@@ -2334,151 +2489,288 @@ Ein Beispiel für einen Code, der den X-Bereich dynamisch bestimmt
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>Zielgerade! du hast dir in diesem Tutorial jetzt alle Fähigkeiten erarbeitet, die du benötigst um dir im Folgenden ein einzelnes Python-Programm zu schreiben, welches eine komplette Kurvendiskussion (wie sie meist in der Schule durchgeführt wird) durchführt.</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="fu">## Erstelle Dein Analyse-Tool</span></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ein Quiz über alles was du für dein Analyse-Tool brauchst</span></span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>Nun geht's an die Arbeit!  </span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>Wichtig ist, dass du dir einen Überblick verschaffst darüber, was du alles in dem Programm bearbeiten willst, und dir die Kapitel die du dafür benötigst nebenbei vielleicht in einem anderen Tab aufmachst.  </span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>Wichtig ist, du solltest dir überlegen, welche Bereiche du mit in den Graphen einzeichnen kannst. Dennoch solltest du einmal alle Angaben zur Funktion auch schriftlich ausgeben lassen, die Werte sind so oder so berechnet.  </span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="co">#Füge Dein Analyse-Tool hier ein.</span></span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip collapse="true" title="Das Quiz ist hier hinter, damit es nicht die Übersicht stört."}</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a><span class="in">```quizdown</span></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="in"># Welche drei Bibliotheken sind das "Dream-Team" für unser Analyse-Projekt?</span></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `sympy` </span></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `matplotlib.pyplot` </span></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `numpy` </span></span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="in">- [ ] `pandas` </span></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="in">- [ ] `random` </span></span>
 <span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Dein Analyse Tool: Tipp 1" collapse="true"}</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>Wenn es darum geht einen großen Code zu erstellen, sollte zur eigenen Übersicht, aber auch der Übersicht anderer der Code systematisiert werden.  </span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>In diesem Fall heißt das also z.B.:  </span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Import der relevanten Bibliotheken**</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Definition der Variablen/der Objekte oder noch besser der `function`**</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Funktionen (<span class="in">`functions`</span>) sind in diesem Tutorial schon erschienen, dennoch eine kurze Zusammenfassung. Eine der elegantesten Lösungen wäre, das Programm als eine Funktion zu schreiben, so dass unten an den Python Code angefügt werden kann <span class="in">`function("x^2+3x-7")`</span> und dann eine Kurvendiskussion von $x^2+3x-7$ durchgeführt wird.   </span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Berechnung der relevanten Werte**</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Hierbei kann gerne auch jeder der Werte unterschieden werden, also über einer Gruppe von Rechnungen steht #Wendepunkte z.B.</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>x_wendepunkte, y_wendepunkte hilft auch enorm dabei eine Übersicht zu haben, also die passenden Wertepaare in ihrer Definition mit ihrem Ursprung benennen</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Plotten der relevanten Werte**</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Hier gilt das gleiche wie oben (beides hilft stark bei der Fehlerbehebung)</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Eigenschaften des Graphen bestimmen**</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Legende</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Grid</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Achsenbeschriftung</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Titel des Graphen etc.</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Klicke HIER, um eine mögliche <span class="in">`function`</span>, die die Fakultät einer beliebigen Zahl bestimmt zu sehen: <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fakultaet_berechnen(n):</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prüfen, ob die Eingabe eine gültige Zahl ist</span></span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(n, <span class="bu">int</span>) <span class="kw">or</span> n <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Fehler: Bitte eine nicht-negative ganze Zahl eingeben."</span></span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Basisfall: Die Fakultät von 0 ist 1</span></span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Berechnung der Fakultät</span></span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>    ergebnis <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        ergebnis <span class="op">=</span> ergebnis <span class="op">*</span> i</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ergebnis</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispielaufruf der Funktion</span></span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Die Fakultät von </span><span class="sc">{</span>zahl<span class="sc">}</span><span class="ss"> ist: </span><span class="sc">{</span>fakultaet_berechnen(zahl)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Wir brauchen Symbolik, Numerik und Grafik.</span></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a><span class="in"># Warum müssen wir eine SymPy-Funktion mit `sympy.lambdify` umwandeln, bevor wir sie mit Matplotlib plotten?</span></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Weil Matplotlib nicht direkt mit symbolischen SymPy-Formeln rechnen kann. Wir brauchen eine Funktion, die NumPy-Arrays verarbeitet.</span></span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Weil die Funktion sonst falsch abgeleitet wird.</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Weil der Code sonst zu langsam ist.</span></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Matplotlib braucht viele konkrete Zahlen (x und y), keine Buchstaben.</span></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="in"># Bringe den Workflow für das Erstellen eines Graphen in die richtige Reihenfolge.</span></span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a><span class="in">1. f_numpy = sympy.lambdify(x, f, "numpy")</span></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="in">2. x_werte = np.linspace(-5, 5, 400)</span></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="in">3. y_werte = f_numpy(x_werte)</span></span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a><span class="in">4. plt.plot(x_werte, y_werte)</span></span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="in">5. plt.show()</span></span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Erst umwandeln, dann x-Werte erzeugen, dann y-Werte berechnen, dann zeichnen.</span></span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a><span class="in"># Mit welchem Befehl erzeugst du ein Array von 100 x-Werten zwischen -10 und 10?</span></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] `np.linspace(-10, 10, 100)`</span></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `np.range(-10, 10)`</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `sympy.symbols(-10, 10)`</span></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.axis(-10, 10)`</span></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="in"># Du hast Extrempunkte berechnet. Welcher Befehl eignet sich am besten, um diese *einzelnen Punkte* im Graphen zu markieren?</span></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] `plt.scatter(x_liste, y_liste)`</span></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.plot(x_liste, y_liste)`</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.bar(x_liste, y_liste)`</span></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: `plot` verbindet Punkte mit Linien, wir wollen aber nur die Punkte (Streudiagramm).</span></span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a><span class="in"># Welche Befehle helfen dir, den Graphen übersichtlicher zu gestalten?</span></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `plt.grid()` </span></span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `plt.title("Mein Graph")` </span></span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `plt.xlabel("x")` und `plt.ylabel("f(x)")` </span></span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="in">- [ ] `plt.make_pretty()`</span></span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `plt.axhline(0, color='black')` </span></span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Denk darüber nach, was einen Graphen "übersichtlicher" macht, was sollte man leicht sehen können?</span></span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="in"># Du möchtest an einen Hochpunkt $(2|4)$ den Text "HP" schreiben. Welcher Befehl macht das?</span></span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] `plt.annotate("HP", (2, 4))`</span></span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.write("HP", 2, 4)`</span></span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.print(2, 4, "HP")`</span></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Wir wollen eine Anmerkung (Annotation) an Koordinaten heften.</span></span>
 <span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Dein Analyse Tool: Tipp 2" collapse="true"}</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>Ein gutes Programm zeichnet sich durch Details und Robustheit aus. Hier sind einige Ideen, wie du dein Tool noch besser machen kannst:</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a><span class="in"># Wie sorgst du dafür, dass deine geplotteten Linien eine Legende bekommen (z.B. "f(x)" und "f'(x)")?</span></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Ich nutze in `plt.plot(..., label="Name")` das Label-Argument und rufe am Ende `plt.legend()` auf.</span></span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Das macht Matplotlib automatisch.</span></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Ich schreibe es mit `plt.text` daneben.</span></span>
 <span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Unterscheide zwischen Hoch- und Tiefpunkten:**</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Anstatt alle Extrema in eine Liste zu packen, durchlaufe die gefundenen x-Werte der Extrema in einer Schleife, die die Bedingungen überprüft.</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Sortiere die Punkte in separate Listen (z.B. <span class="in">`x_hochpunkte`</span>,  <span class="in">`x_tiefpunkte`</span>,  <span class="in">`y_tiefpunkte`</span>, <span class="in">`x_sattelpunkte`</span>, <span class="in">`y_sattelpunkte`</span>) und plotte sie mit unterschiedlichen Farben oder Markern _Um sie deutlich zu unterscheiden_</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Umgang mit möglichen Fehlern:**</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Dein Code sollte idealerweise eine Ausgabe haben, die einen Fehler ausgibt, wenn die Funktion von deinem Programm nicht bearbeitet werden kann:</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a><span class="in"># Was passiert, wenn du `plt.show()` vergisst?</span></span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Der Graph wird (je nach Umgebung) eventuell nicht angezeigt.</span></span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Der Graph wird gelöscht.</span></span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Es gibt eine Fehlermeldung.</span></span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: `show()` ist der Befehl: "Jetzt alles auf den Bildschirm malen!".</span></span>
 <span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Ein Beispiel <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="in"># Du willst eine senkrechte Asymptote (vertikale Linie) bei $x=2$ einzeichnen. Welcher Befehl passt?</span></span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] `plt.axvline(2, color='red', linestyle='--')`</span></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.axhline(2)`</span></span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.plot(2)`</span></span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: "v" steht für vertical (senkrecht).</span></span>
 <span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>funktion_str <span class="op">=</span> <span class="st">"log(x / (x-1"</span> <span class="co"># Ungültig, da eine Klammer fehlt</span></span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> sympy.symbols(<span class="st">'x'</span>)</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    f_sym <span class="op">=</span> sympy.sympify(funktion_str)</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Funktion erfolgreich erstellt: </span><span class="sc">{</span>f_sym<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> sympy.SympifyError <span class="im">as</span> e:</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Die Funktion konnte nicht erstellt werden, Fehler war: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a><span class="in"># Was berechnet `sympy.diff(f, x, 2)`?</span></span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Die zweite Ableitung $f''(x)$.</span></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Die erste Ableitung quadriert.</span></span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Das Integral.</span></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="in"># Welche mathematische Bedingung prüfst du im Code, um einen Wendepunkt zu bestätigen?</span></span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] $f''(x_0) = 0$</span></span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `$f'''(x_0) \neq 0$`</span></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a><span class="in">- [ ] $f'(x_0) = 0$</span></span>
 <span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Die Krümmung muss Null sein und sich ändern.</span></span>
 <span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Saubere Textausgabe:**</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Es hilft beim Erstellen eines eigenen Codes sehr, die berechneten Werte ausgeben zu lassen, dadurch fällt dir schneller auf, wo der Fehler liegen könnte.</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Dein Analyse Tool: Tipp 3" collapse="true"}</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>Zielgerade! Die Grundfunktion steht vermutlich bereits, hier sind noch ein paar Tipps, um Dein Programm abzurunden.</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Vollständige Text-Analyse:**</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Ein Graph ist toll, aber für eine vollständige Kurvendiskussion braucht man auch Text. Plotte nicht nur die Punkte, sondern auch die **Intervalle** für Monotonie und Krümmung.</span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Vergiss nicht, auch den **Definitions- und Wertebereich** auszugeben! </span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Dynamischer und intelligenter Plot-Bereich:**</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Anstatt feste <span class="in">`x_min`</span> und <span class="in">`x_max`</span> Werte zu verwenden, passe den Plot-Bereich dynamisch an die Funktion an!</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>**Idee:** Sammle alle relevanten x-Werte (Nullstellen, Extrema, Wendepunkte). Finde den kleinsten und größten dieser Werte und füge auf beiden Seiten einen kleinen Puffer hinzu (z.B. 20 % des Gesamtbereichs). So stellst du sicher, dass alle wichtigen Merkmale immer gut sichtbar sind, egal welche Funktion analysiert wird.</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Ein Beispiel für einen Code, der den X-Bereich dynamisch bestimmt <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="in"># Wie beschränkst du die Ansicht der y-Achse auf den Bereich -10 bis 10 (Zoom)?</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] `plt.ylim(-10, 10)`</span></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.range_y(-10, 10)`</span></span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.zoom(-10, 10)`</span></span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a><span class="in"># Du hast eine Liste mit x-Koordinaten von Hochpunkten: `hp_x = [-2, 2]`. Wie bekommst du die passenden y-Werte, um sie zu plotten?</span></span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Ich setze jeden x-Wert in die Funktion ein (z.B. in einer Schleife oder mit `f_numpy(np.array(hp_x))`).</span></span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Die y-Werte sind immer 0.</span></span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Ich rate sie.</span></span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Ein Punkt besteht immer aus $(x | f(x))$.</span></span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a><span class="in"># Wenn du mehrere Kurven in ein Bild plotten willst (z.B. $f$ und $f'$), was musst du tun?</span></span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Einfach mehrere `plt.plot(...)`-Befehle nacheinander aufrufen, bevor `plt.show()` kommt.</span></span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Für jede Kurve ein neues Skript schreiben.</span></span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `plt.multi_plot()` nutzen.</span></span>
 <span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a><span class="co"># Angenommen, du hast diese Listen mit x-Werten:</span></span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>nullstellen_x <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">3</span>]</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>extrema_x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>]</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>wendepunkte_x <span class="op">=</span> [<span class="dv">2</span>]</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a><span class="co"># Sammle alle x-Werte in einer Liste</span></span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>alle_x_punkte <span class="op">=</span> nullstellen_x <span class="op">+</span> extrema_x <span class="op">+</span> wendepunkte_x</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> alle_x_punkte:</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Finde min/max und berechne Puffer</span></span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>    x_min_auto <span class="op">=</span> <span class="bu">min</span>(alle_x_punkte)</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>    x_max_auto <span class="op">=</span> <span class="bu">max</span>(alle_x_punkte)</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>    puffer <span class="op">=</span> (x_max_auto <span class="op">-</span> x_min_auto) <span class="op">*</span> <span class="fl">0.2</span> <span class="co"># 20% Puffer</span></span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Setze finale Plot-Grenzen</span></span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>    x_plot_min <span class="op">=</span> x_min_auto <span class="op">-</span> puffer</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>    x_plot_max <span class="op">=</span> x_max_auto <span class="op">+</span> puffer</span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fallback, falls keine Punkte gefunden wurden</span></span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>    x_plot_min <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>    x_plot_max <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Automatischer Plot-Bereich von </span><span class="sc">{</span>x_plot_min<span class="sc">:.2f}</span><span class="ss"> bis </span><span class="sc">{</span>x_plot_max<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a><span class="co"># Diese Werte kannst du dann für np.linspace(x_plot_min, x_plot_max, 400) verwenden.</span></span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>GRATULATIONEN, wenn du hier angekommen bist, hast du das gesamte Tutorial durchgearbeitet, jetzt solltest du:  </span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Eine kleine Erinnerung an die Schulmathematik gehabt haben</span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Die Grundmechaniken von Python verstanden haben</span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>In der Lage sein eine Kurvendiskussion in Python durchzuführen</span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Auch andere Probleme in Python lösen können indem du die Systeme, die du hier kennengelernt hast, dort anwendest!</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a><span class="in"># Was ist der Vorteil von `f-Strings` (z.B. `f"HP bei {x}"`) beim Beschriften?</span></span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Man kann Variablenwerte (wie berechnete Koordinaten) direkt in den Text einbauen.</span></span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Sie sind schneller zu tippen.</span></span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Sie machen den Text fett.</span></span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a><span class="in"># Welche Farbe wird in Matplotlib mit dem Kürzel `'k'` erzeugt?</span></span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Schwarz (Black - 'b' ist schon für Blue vergeben).</span></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Kunterbunt.</span></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Kupfer.</span></span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a><span class="in"># Bringe die Schritte zum Einzeichnen von Nullstellen in die richtige Reihenfolge.</span></span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a><span class="in">1. nullstellen = sympy.solve(f, x)</span></span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a><span class="in">2. # Umwandeln der SymPy-Zahlen in float (für Matplotlib)</span></span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a><span class="in">3. for ns in nullstellen:</span></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a><span class="in">4.     y_coord = 0</span></span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a><span class="in">5.     plt.scatter(ns, y_coord, color='red')</span></span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a><span class="in"># Was bedeutet `linestyle='--'` im Plot-Befehl?</span></span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] Die Linie wird gestrichelt gezeichnet.</span></span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Die Linie wird besonders dünn.</span></span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] Die Linie wird doppelt gezeichnet.</span></span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a><span class="in"># Dein Code wirft einen Fehler: `NameError: name 'np' is not defined`. Was hast du vergessen?</span></span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] `import numpy as np`</span></span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `import number_python`</span></span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] NumPy zu installieren.</span></span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a><span class="in">&gt; Hinweis: Man muss dem Kind einen Namen geben (Alias), wenn man es so rufen will.</span></span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a><span class="fu">## Erstelle Dein Analyse-Tool</span></span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>Nun geht's an die Arbeit!  </span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>Wichtig ist, dass du dir einen Überblick verschaffst darüber, was du alles in dem Programm bearbeiten willst, und dir die Kapitel die du dafür benötigst nebenbei vielleicht in einem anderen Tab aufmachst.  </span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>Wichtig ist, du solltest dir überlegen, welche Bereiche du mit in den Graphen einzeichnen kannst. Dennoch solltest du einmal alle Angaben zur Funktion auch schriftlich ausgeben lassen, die Werte sind so oder so berechnet.  </span>
 <span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>Wenn du nicht mal alle Tipps aufmachen musstest, oder beim Öffnen des ein oder anderen Tipps dachtest, "Ach das habe ich doch schon..." dann kannst du Dir getrost auf die Schulter klopfen, das hast du außerordentlich gut gemacht!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a><span class="co">#Füge Dein Analyse-Tool hier ein.</span></span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Dein Analyse Tool: Tipp 1" collapse="true"}</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>Wenn es darum geht einen großen Code zu erstellen, sollte zur eigenen Übersicht, aber auch der Übersicht anderer der Code systematisiert werden.  </span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>In diesem Fall heißt das also z.B.:  </span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Import der relevanten Bibliotheken**</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Definition der Variablen/der Objekte oder noch besser der `function`**</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Funktionen (<span class="in">`functions`</span>) sind in diesem Tutorial schon erschienen, dennoch eine kurze Zusammenfassung. Eine der elegantesten Lösungen wäre, das Programm als eine Funktion zu schreiben, so dass unten an den Python Code angefügt werden kann <span class="in">`function("x^2+3x-7")`</span> und dann eine Kurvendiskussion von $x^2+3x-7$ durchgeführt wird.   </span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Berechnung der relevanten Werte**</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Hierbei kann gerne auch jeder der Werte unterschieden werden, also über einer Gruppe von Rechnungen steht #Wendepunkte z.B.</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>x_wendepunkte, y_wendepunkte hilft auch enorm dabei eine Übersicht zu haben, also die passenden Wertepaare in ihrer Definition mit ihrem Ursprung benennen</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Plotten der relevanten Werte**</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Hier gilt das gleiche wie oben (beides hilft stark bei der Fehlerbehebung)</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Eigenschaften des Graphen bestimmen**</span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Legende</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Grid</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Achsenbeschriftung</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a><span class="ss">     * </span>Titel des Graphen etc.</span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Klicke HIER, um eine mögliche <span class="in">`function`</span>, die die Fakultät einer beliebigen Zahl bestimmt zu sehen: <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fakultaet_berechnen(n):</span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prüfen, ob die Eingabe eine gültige Zahl ist</span></span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(n, <span class="bu">int</span>) <span class="kw">or</span> n <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"Fehler: Bitte eine nicht-negative ganze Zahl eingeben."</span></span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Basisfall: Die Fakultät von 0 ist 1</span></span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Berechnung der Fakultät</span></span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>    ergebnis <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>        ergebnis <span class="op">=</span> ergebnis <span class="op">*</span> i</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ergebnis</span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispielaufruf der Funktion</span></span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Die Fakultät von </span><span class="sc">{</span>zahl<span class="sc">}</span><span class="ss"> ist: </span><span class="sc">{</span>fakultaet_berechnen(zahl)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Dein Analyse Tool: Tipp 2" collapse="true"}</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>Ein gutes Programm zeichnet sich durch Details und Robustheit aus. Hier sind einige Ideen, wie du dein Tool noch besser machen kannst:</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Unterscheide zwischen Hoch- und Tiefpunkten:**</span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Anstatt alle Extrema in eine Liste zu packen, durchlaufe die gefundenen x-Werte der Extrema in einer Schleife, die die Bedingungen überprüft.</span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Sortiere die Punkte in separate Listen (z.B. <span class="in">`x_hochpunkte`</span>,  <span class="in">`x_tiefpunkte`</span>,  <span class="in">`y_tiefpunkte`</span>, <span class="in">`x_sattelpunkte`</span>, <span class="in">`y_sattelpunkte`</span>) und plotte sie mit unterschiedlichen Farben oder Markern _Um sie deutlich zu unterscheiden_</span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Umgang mit möglichen Fehlern:**</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Dein Code sollte idealerweise eine Ausgabe haben, die einen Fehler ausgibt, wenn die Funktion von deinem Programm nicht bearbeitet werden kann:</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Ein Beispiel <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>funktion_str <span class="op">=</span> <span class="st">"log(x / (x-1"</span> <span class="co"># Ungültig, da eine Klammer fehlt</span></span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> sympy.symbols(<span class="st">'x'</span>)</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>    f_sym <span class="op">=</span> sympy.sympify(funktion_str)</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Funktion erfolgreich erstellt: </span><span class="sc">{</span>f_sym<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> sympy.SympifyError <span class="im">as</span> e:</span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Die Funktion konnte nicht erstellt werden, Fehler war: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Saubere Textausgabe:**</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Es hilft beim Erstellen eines eigenen Codes sehr, die berechneten Werte ausgeben zu lassen, dadurch fällt dir schneller auf, wo der Fehler liegen könnte.</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="Dein Analyse Tool: Tipp 3" collapse="true"}</span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>Zielgerade! Die Grundfunktion steht vermutlich bereits, hier sind noch ein paar Tipps, um Dein Programm abzurunden.</span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Vollständige Text-Analyse:**</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Ein Graph ist toll, aber für eine vollständige Kurvendiskussion braucht man auch Text. Plotte nicht nur die Punkte, sondern auch die **Intervalle** für Monotonie und Krümmung.</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Vergiss nicht, auch den **Definitions- und Wertebereich** auszugeben! </span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>**Dynamischer und intelligenter Plot-Bereich:**</span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>Anstatt feste <span class="in">`x_min`</span> und <span class="in">`x_max`</span> Werte zu verwenden, passe den Plot-Bereich dynamisch an die Funktion an!</span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a><span class="ss">    *   </span>**Idee:** Sammle alle relevanten x-Werte (Nullstellen, Extrema, Wendepunkte). Finde den kleinsten und größten dieser Werte und füge auf beiden Seiten einen kleinen Puffer hinzu (z.B. 20 % des Gesamtbereichs). So stellst du sicher, dass alle wichtigen Merkmale immer gut sichtbar sind, egal welche Funktion analysiert wird.</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Ein Beispiel für einen Code, der den X-Bereich dynamisch bestimmt <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a><span class="co"># Angenommen, du hast diese Listen mit x-Werten:</span></span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>nullstellen_x <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">3</span>]</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>extrema_x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>]</span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>wendepunkte_x <span class="op">=</span> [<span class="dv">2</span>]</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a><span class="co"># Sammle alle x-Werte in einer Liste</span></span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>alle_x_punkte <span class="op">=</span> nullstellen_x <span class="op">+</span> extrema_x <span class="op">+</span> wendepunkte_x</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> alle_x_punkte:</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Finde min/max und berechne Puffer</span></span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>    x_min_auto <span class="op">=</span> <span class="bu">min</span>(alle_x_punkte)</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>    x_max_auto <span class="op">=</span> <span class="bu">max</span>(alle_x_punkte)</span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>    puffer <span class="op">=</span> (x_max_auto <span class="op">-</span> x_min_auto) <span class="op">*</span> <span class="fl">0.2</span> <span class="co"># 20% Puffer</span></span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Setze finale Plot-Grenzen</span></span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>    x_plot_min <span class="op">=</span> x_min_auto <span class="op">-</span> puffer</span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>    x_plot_max <span class="op">=</span> x_max_auto <span class="op">+</span> puffer</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fallback, falls keine Punkte gefunden wurden</span></span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>    x_plot_min <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>    x_plot_max <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Automatischer Plot-Bereich von </span><span class="sc">{</span>x_plot_min<span class="sc">:.2f}</span><span class="ss"> bis </span><span class="sc">{</span>x_plot_max<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a><span class="co"># Diese Werte kannst du dann für np.linspace(x_plot_min, x_plot_max, 400) verwenden.</span></span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>GRATULATIONEN, wenn du hier angekommen bist, hast du das gesamte Tutorial durchgearbeitet, jetzt solltest du:  </span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Eine kleine Erinnerung an die Schulmathematik gehabt haben</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Die Grundmechaniken von Python verstanden haben</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>In der Lage sein eine Kurvendiskussion in Python durchzuführen</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Auch andere Probleme in Python lösen können indem du die Systeme, die du hier kennengelernt hast, dort anwendest!</span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>Wenn du nicht mal alle Tipps aufmachen musstest, oder beim Öffnen des ein oder anderen Tipps dachtest, "Ach das habe ich doch schon..." dann kannst du Dir getrost auf die Schulter klopfen, das hast du außerordentlich gut gemacht!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script type="module">

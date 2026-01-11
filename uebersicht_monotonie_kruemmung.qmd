@@ -3,6 +3,7 @@ title: "Monotonie- und Krümmungsverhalten"
 format: html
 filters:
   - pyodide
+  - quizdown
 ---
 
 # Kapitelübersicht
@@ -32,3 +33,119 @@ Es geht um die Bestimmung von Extrem-, Sattel- und Wendepunkten.
     * Im letzten Abschnitt des Kapitels geht es darum, die Ergebnisse des Abschnittes zum Krümmungsverhalten zu nutzen, um damit herauszufinden wie Wendepunkte mit Hilfe von Python bestimmt werden können.
 
 ---
+
+# Quiz: Alles bisher gelernte 
+
+Also Python Grundlagen, Definitionsbereich & Wertebereich, Symmetrie & Achsenschnittpunkte und Globalverhalten & Asymptoten
+
+```quizdown
+# Welche Aussagen zu "senkrechten Asymptoten" (Polstellen) sind wahr? 
+- [x] Sie treten häufig auf, wo der Nenner eines Bruchs Null wird.
+- [x] Der Funktionswert nähert sich dort $\pm \infty$.
+- [ ] Der Funktionsgraph schneidet dort die x-Achse.
+- [ ] Sie treten auf, wenn $x \to \infty$ geht.
+
+> Hinweis: Denk an die Funktion $1/x$ bei $x=0$.
+
+# Mit welchem Befehl berechnest du in SymPy den Grenzwert für $x$ gegen Unendlich?
+1. [x] `sympy.limit(f, x, sympy.oo)`
+1. [ ] `sympy.solve(f, x, sympy.oo)`
+1. [ ] `sympy.diff(f, x)`
+1. [ ] `f.subs(x, 999999)`
+
+> Hinweis: Wir suchen den "Limes".
+
+# Bringe den Code in die richtige Reihenfolge, um eine horizontale Asymptote zu prüfen.
+1. import sympy
+2. f = (2*x)/(x+1)
+3. grenzwert = sympy.limit(f, x, sympy.oo)
+4. print(grenzwert)
+
+# Welche dieser Funktionen sind achsensymmetrisch zur y-Achse? 
+- [x] $f(x) = x^2$
+- [x] $f(x) = x^4 + 2$
+- [x] $f(x) = \cos(x)$
+- [ ] $f(x) = x^3$
+- [ ] $f(x) = \sin(x)$
+
+> Hinweis: Achsensymmetrie liegt vor bei geraden Exponenten und beim Cosinus.
+
+# Was bedeutet das Ergebnis `AccumulationBounds(-1, 1)` bei einer Grenzwertberechnung?
+1. [x] Die Funktion pendelt (oszilliert) im Unendlichen zwischen -1 und 1.
+1. [ ] Der Grenzwert ist 0.
+1. [ ] Die Funktion ist dort nicht definiert (Error).
+
+> Hinweis: Das passiert oft bei trigonometrischen Funktionen im Unendlichen.
+
+# Was berechnet der Befehl `sympy.solveset(f, x)`? 
+- [x] Die Nullstellen der Funktion.
+- [x] Die Schnittpunkte des Graphen mit der x-Achse.
+- [ ] Den Schnittpunkt mit der y-Achse.
+- [ ] Die Ableitung.
+
+> Hinweis: Nullstellen und x-Achsenschnittpunkte sind geometrisch das Gleiche.
+
+# Bringe die Schritte zur Bestimmung einer Definitionslücke (Nenner = 0) in die richtige Reihenfolge.
+1. nenner = x**2 - 4
+2. kritische_stellen = sympy.solveset(nenner, x)
+3. print(f"Definitionslücken bei: {kritische_stellen}")
+
+# Welche mathematischen Operationen sind in den reellen Zahlen "verboten" und schränken den Definitionsbereich ein? 
+- [x] Teilen durch 0.
+- [x] Wurzelziehen aus negativen Zahlen (bei geraden Wurzeln).
+- [ ] Logarithmus aus positiven Zahlen.
+- [x] Logarithmus aus 0 oder negativen Zahlen.
+- [ ] Rechnen mit Kommazahlen.
+
+# Welcher Python-Operator prüft auf Gleichheit (z.B. in einer `if`-Bedingung)?
+1. [x] `==`
+1. [ ] `=`
+1. [ ] `!=`
+1. [ ] `is equal`
+
+> Hinweis: Ein einfaches Gleichheitszeichen ist für Zuweisungen.
+
+# Welche Aussagen zum y-Achsenabschnitt sind richtig? 
+- [x] Man berechnet ihn durch Einsetzen von $x=0$.
+- [x] Es gibt maximal einen y-Achsenabschnitt pro Funktion (bei Funktionen im engeren Sinn).
+- [ ] Man berechnet ihn mit `solveset(f, x)`.
+- [ ] Er existiert bei jeder Funktion (z.B. $1/x$).
+
+> Hinweis: Eine Funktion ordnet jedem x nur ein y zu. Aber ist x=0 immer erlaubt?
+
+# Was passiert mathematisch bei $f(x) = \frac{x^2}{x^2+1}$ für $x \to \infty$?
+1. [x] Die Funktion nähert sich der 1 an (waagerechte Asymptote).
+1. [ ] Die Funktion geht gegen $\infty$.
+1. [ ] Die Funktion geht gegen 0.
+
+> Hinweis: Zähler und Nenner wachsen gleich schnell (gleicher Grad).
+
+# Welche Schritte sind notwendig, um Symmetrie in Python sicher zu prüfen? 
+- [x] Substituieren von $x$ mit $-x$ (`f.subs`).
+- [x] Vereinfachen des Terms (`sympy.simplify`).
+- [ ] Ableiten der Funktion.
+- [x] Vergleich mit der Originalfunktion.
+
+# Bringe die Python-Datentypen-Hierarchie grob in Ordnung (was ist in was enthalten?).
+1. import sympy
+2. from sympy import S
+3. wertebereich = function_range(f, x, S.Reals)
+
+> Hinweis: Ohne das Importieren von S aus sympy funktioniert S.Reals nicht.
+
+# Wie lautet die Bedingung für Punktsymmetrie zum Ursprung?
+1. [x] $f(-x) = -f(x)$
+1. [ ] $f(-x) = f(x)$
+1. [ ] $f(x) = 0$
+
+> Hinweis: Doppelte Spiegelung (x und y werden negiert).
+
+# Was benötigst du, um den Wertebereich mit Python zu bestimmen? 
+- [x] `import sympy`
+- [x] `from sympy.calculus.util import function_range`
+- [ ] `import matplotlib`
+- [ ] `import random`
+
+> Hinweis: Die Funktion versteckt sich in einem Untermodul.
+
+```

@@ -3,6 +3,7 @@ title: "Globalverhalten und Asymptoten"
 format: html
 filters:
   - pyodide
+  - quizdown
 ---
 
 **Kapitelübersicht**
@@ -22,4 +23,73 @@ Dieses Kapitel hat zwei Abschnitte, welche sich mit den folgenden Themen beschä
     Bei beiden handelt es sich um Stellen beziehungsweise Werte, die nicht von der Funktion erreicht werden, in deren Umfeld die Funktion jedoch starke Veränderungen durchläuft.
 
 ---
+
+
+# Quiz: Symmetrie & Achsenschnittpunkte
+
+```quizdown
+# Welche mathematische Bedingung muss gelten, damit eine Funktion achsensymmetrisch zur y-Achse ist?
+1. [x] $f(x) = f(-x)$
+1. [ ] $f(-x) = -f(x)$
+1. [ ] $f(x) = -f(x)$
+1. [ ] $f(0) = 0$
+> Hinweis: Wenn du für $x$ den negativen Wert einsetzt, muss wieder der ursprüngliche Funktionswert herauskommen (Spiegelung an der y-Achse).
+
+# Mit welchem Python-Befehl setzt du in `sympy` für die Variable `x` den Wert `-x` ein (Substitution)?
+1. [x] `f.subs(x, -x)`
+1. [ ] `f.replace(x, -x)`
+1. [ ] `f.set(x, -x)`
+1. [ ] `f(-x)`
+> Hinweis: Der Befehl kommt vom englischen Wort "substitute" (ersetzen).
+
+# Bringe die Schritte für einen Symmetrie-Test in Python in die richtige Reihenfolge.
+1. f_minus_x = f.subs(x, -x)
+2. differenz = f - f_minus_x
+3. if sympy.simplify(differenz) == 0:
+4.     print("Achsensymmetrisch")
+> Hinweis: Erst ersetzen, dann vergleichen (Differenz bilden), dann prüfen/vereinfachen, dann ausgeben.
+
+# Um den Schnittpunkt mit der y-Achse (Y-Achsenabschnitt) zu berechnen, was musst du tun?
+1. [x] Ich setze $x = 0$ und berechne $f(0)$.
+1. [ ] Ich setze $f(x) = 0$ und löse nach $x$ auf.
+1. [ ] Ich setze $x = 1$.
+> Hinweis: Die y-Achse verläuft genau dort, wo die x-Koordinate Null ist.
+
+# Welcher Python-Code berechnet den y-Achsenabschnitt korrekt?
+1. [x] `y_wert = f.subs(x, 0)`
+1. [ ] `y_wert = sympy.solve(f, 0)`
+1. [ ] `y_wert = f(0)`
+> Hinweis: Wir wollen einen konkreten Wert für $x$ einsetzen (substituieren).
+
+# Was berechnen wir, wenn wir `sympy.solveset(f, x, domain=sympy.S.Reals)` nutzen?
+1. [x] Die Nullstellen (Schnittpunkte mit der x-Achse).
+1. [ ] Den y-Achsenabschnitt.
+1. [ ] Die Extrempunkte.
+1. [ ] Die Symmetrie.
+> Hinweis: `solve` sucht Lösungen für eine Gleichung (standardmäßig $f(x)=0$).
+
+# Eine Funktion ist punktsymmetrisch zum Ursprung. Was gilt?
+1. [x] $f(-x) = -f(x)$
+1. [ ] $f(x) = f(-x)$
+1. [ ] $f(x) > 0$
+> Hinweis: Wenn du das Vorzeichen von $x$ umdrehst, muss sich auch das Vorzeichen des Ergebnisses umdrehen (doppelte Spiegelung).
+
+# Warum nutzen wir `sympy.simplify(...)` beim Symmetrietest?
+1. [x] Weil Python sonst manchmal nicht erkennt, dass zwei Terme mathematisch gleich sind (z. B. $x(x+1)$ vs $x^2+x$).
+1. [ ] Um die Ableitung zu bilden.
+1. [ ] Um die Funktion zu plotten.
+> Hinweis: Computer vergleichen oft nur Zeichenketten; `simplify` rechnet den Term mathematisch so weit wie möglich herunter.
+
+# Was bedeutet es, wenn `sympy.solveset` als Ergebnis `EmptySet()` zurückgibt?
+1. [x] Die Funktion hat keine Nullstellen (schneidet die x-Achse nicht).
+1. [ ] Es ist ein Fehler im Code aufgetreten.
+1. [ ] Die Funktion ist überall 0.
+> Hinweis: Ein "leeres Set" ist eine Menge ohne Inhalt – also wurden keine Lösungen gefunden.
+
+# Welchen Punkt hat JEDE Funktion der Form $f(x) = ax^3 + bx$ (Polynom mit nur ungeraden Exponenten) sicher im Graphen?
+1. [x] Den Ursprung $(0|0)$.
+1. [ ] Den Punkt $(1|1)$.
+1. [ ] Keinen Schnittpunkt mit den Achsen.
+> Hinweis: Wenn alle Exponenten ungerade sind, fehlt das absolute Glied (die Zahl ohne x). Was passiert dann bei $x=0$?
+```
 

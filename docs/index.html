@@ -80,6 +80,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-24772959a0e306aba8d7698078628ce7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdown.js"></script>
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdownKatex.js"></script>
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdownHighlight.js"></script>
+<script src="site_libs/quarto-contrib/quizdown-0.6.0/quizdown-init.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -1088,6 +1092,31 @@ Du kannst die einzelnen Abschnitte auf-/zu klappen.<br>
 Das Tutorial ist dafür gemacht, von oben bis unten nacheinander durchgearbeitet zu werden. Beim Überspringen von Kapiteln/Unterkapiteln kann es daher sein, dass Weiteres nicht verstanden wird.</p>
 <p><strong>Rechtsseitig</strong> siehst du die Übersicht über die Seite, auf der du bist. Das heißt, hier kannst du die einzelnen Überschriften des Unterkapitels sehen und direkt dorthin springen.</p>
 <p><strong>Oben</strong> in der Leiste erkennst du mehrere Symbole. Die <i class="fa-solid fa-magnifying-glass"></i> ist die Suchfunktion, mit der du im ganzen Tutorial nach einem Begriff suchen kannst. Mit dem <i class="fa-solid fa-circle-half-stroke"></i>-Symbol kannst du zwischen Light- und Dark-Mode wechseln. Das <i class="fa-solid fa-book-open-reader"></i>-Symbol aktiviert den <em>Reader-Mode</em>, der die Seitenleisten ausblendet, um dir ein ungestörtes Lesen zu ermöglichen.</p>
+<p>Es wird auch zwischendurch immer wieder <strong>Quizze</strong> geben, mit welchen du testen kannst, ob du das bisherige gut verstanden hast.</p>
+<div class="quizdown">
+# Single-Choice Quiz Beispiel
+We will we will ____ you! (Queen)
+
+1. [ ] `sing with`
+1. [ ] `ring`
+1. [ ] `roll`
+1. [x] `rock`
+
+# Multiple-Choice Quiz Beispiel
+Klassische Rock Bands der 60-80er Jahre sind:
+- [x] `The Beatles`
+- [x] `Queen`
+- [ ] `ABBA`
+- [x] `The Rolling Stones`
+
+# Sorting Quiz Beispiel
+In welcher Reihenfolge wurden die folgenden Erfindungen erfunden? (Oben näher am jetzt, unten weiter in der Vergangenheit).
+
+2. `Erstes I-Phone`
+4. `Erster 3D-Drucker`
+3. `Facebook`
+1. `Erster Sprachassistent (Siri)`
+</div>
 </div>
 </div>
 </div>
@@ -1591,54 +1620,81 @@ Das heißt, in ihnen kannst du wie in Python programmieren!</p>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - pyodide</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - quizdown</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Kurvendiskussion mit Python realisieren</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Auf dieser Webseite soll dir anhand eines dir bekannten Themas Python näher gebracht werden.  </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>:::{.callout-note title="Für ein paar Tipps zur Nutzung des Tutorials hier klicken!" collapse="true"}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>*Solche klickbaren Blöcke wird es immer mal wieder im Tutorial geben, um das Ganze ein wenig übersichtlicher zu machen, oder aber um evtl. bekanntes Wissen für Nutzende, die dieses bereits haben, auszublenden.*  </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Hier klicken! <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>_Auch diese Form der klickbaren Blöcke wird aus ähnlichen Gründen im Tutorial erscheinen, sie kann aber im Gegensatz zum oberen keine Icons enthalten._</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>**Linksseitig** siehst du eine Übersicht über das ganze Tutorial.  </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Du kannst die einzelnen Abschnitte auf-/zu klappen.  </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Das Tutorial ist dafür gemacht, von oben bis unten nacheinander durchgearbeitet zu werden. Beim Überspringen von Kapiteln/Unterkapiteln kann es daher sein, dass Weiteres nicht verstanden wird.  </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Rechtsseitig** siehst du die Übersicht über die Seite, auf der du bist. Das heißt, hier kannst du die einzelnen Überschriften des Unterkapitels sehen und direkt dorthin springen.  </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>**Oben** in der Leiste erkennst du mehrere Symbole. Die <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-magnifying-glass"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> ist die Suchfunktion, mit der du im ganzen Tutorial nach einem Begriff suchen kannst. Mit dem <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-circle-half-stroke"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span>-Symbol kannst du zwischen Light- und Dark-Mode wechseln. Das <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-book-open-reader"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span>-Symbol aktiviert den *Reader-Mode*, der die Seitenleisten ausblendet, um dir ein ungestörtes Lesen zu ermöglichen.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Ziel des Tutorials:**  </span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Das Tutorial soll dir als nutzende Person, Python ein wenig näher bringen mithilfe des Abitur Themas der Kurvendiskussion.  </span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Hierbei werden Schritt für Schritt die Schritte der Kurvendiskussion durchgegangen und jeweils gezeigt, wie diese Schritte mit Python umgesetzt werden können.  </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Kurvendiskussion mit Python realisieren</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Auf dieser Webseite soll dir anhand eines dir bekannten Themas Python näher gebracht werden.  </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>:::{.callout-note title="Für ein paar Tipps zur Nutzung des Tutorials hier klicken!" collapse="true"}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>*Solche klickbaren Blöcke wird es immer mal wieder im Tutorial geben, um das Ganze ein wenig übersichtlicher zu machen, oder aber um evtl. bekanntes Wissen für Nutzende, die dieses bereits haben, auszublenden.*  </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span> Hier klicken! <span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>_Auch diese Form der klickbaren Blöcke wird aus ähnlichen Gründen im Tutorial erscheinen, sie kann aber im Gegensatz zum oberen keine Icons enthalten._</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>**Linksseitig** siehst du eine Übersicht über das ganze Tutorial.  </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Du kannst die einzelnen Abschnitte auf-/zu klappen.  </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Das Tutorial ist dafür gemacht, von oben bis unten nacheinander durchgearbeitet zu werden. Beim Überspringen von Kapiteln/Unterkapiteln kann es daher sein, dass Weiteres nicht verstanden wird.  </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>**Rechtsseitig** siehst du die Übersicht über die Seite, auf der du bist. Das heißt, hier kannst du die einzelnen Überschriften des Unterkapitels sehen und direkt dorthin springen.  </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**Oben** in der Leiste erkennst du mehrere Symbole. Die <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-magnifying-glass"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> ist die Suchfunktion, mit der du im ganzen Tutorial nach einem Begriff suchen kannst. Mit dem <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-circle-half-stroke"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span>-Symbol kannst du zwischen Light- und Dark-Mode wechseln. Das <span class="dt">&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-book-open-reader"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span>-Symbol aktiviert den *Reader-Mode*, der die Seitenleisten ausblendet, um dir ein ungestörtes Lesen zu ermöglichen.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Es wird auch zwischendurch immer wieder **Quizze** geben, mit welchen du testen kannst, ob du das bisherige gut verstanden hast.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">```quizdown</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in"># Single-Choice Quiz Beispiel</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">We will we will ____ you! (Queen)</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>In diesem Tutorial werden oft **Code-Blöcke** wie die folgenden auftauchen, das sind **Pyodide-Python-Blöcke**, sie sind ausführbar mit dem **Pfeilsymbol (▶)** und führen den Code, der in ihnen steht aus.  </span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| read-only: true</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">#Manche Code-Blöcke kannst du nicht bearbeiten</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World!"</span>)</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">#Andere Code-Blöcke kannst du bearbeiten</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World?"</span>)</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co">#Ändere als Test gerne "Hello World?" zu der Ausgabe deiner Wahl.</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Solche Felder erstellen eine Python-Umgebung.  </span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Das heißt, in ihnen kannst du wie in Python programmieren!  </span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip title="Weiteres zu den Code-Blöcken"}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>**Weitere Code-Blöcke erzeugen** kannst du mit dem "Add New Codeblock"-Button erzeugen.  </span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>**Ki-Feedback** zu deinem Code kannst du mit dem Feedback-Button erzeugen, hierfür musst du jedoch oben eine Base-URL und einen API-Key angegeben haben.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `sing with`</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `ring`</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">1. [ ] `roll`</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">1. [x] `rock`</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in"># Multiple-Choice Quiz Beispiel</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">Klassische Rock Bands der 60-80er Jahre sind:</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `The Beatles`</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `Queen`</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">- [ ] `ABBA`</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">- [x] `The Rolling Stones`</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in"># Sorting Quiz Beispiel</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="in">In welcher Reihenfolge wurden die folgenden Erfindungen erfunden? (Oben näher am jetzt, unten weiter in der Vergangenheit).</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="in">2. `Erstes I-Phone`</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">4. `Erster 3D-Drucker`</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="in">3. `Facebook`</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">1. `Erster Sprachassistent (Siri)`</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>**Ziel des Tutorials:**  </span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>Das Tutorial soll dir als nutzende Person, Python ein wenig näher bringen mithilfe des Abitur Themas der Kurvendiskussion.  </span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Hierbei werden Schritt für Schritt die Schritte der Kurvendiskussion durchgegangen und jeweils gezeigt, wie diese Schritte mit Python umgesetzt werden können.  </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>In diesem Tutorial werden oft **Code-Blöcke** wie die folgenden auftauchen, das sind **Pyodide-Python-Blöcke**, sie sind ausführbar mit dem **Pfeilsymbol (▶)** und führen den Code, der in ihnen steht aus.  </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co">#| read-only: true</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co">#Manche Code-Blöcke kannst du nicht bearbeiten</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World!"</span>)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide-python}</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="co">#Andere Code-Blöcke kannst du bearbeiten</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World?"</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co">#Ändere als Test gerne "Hello World?" zu der Ausgabe deiner Wahl.</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Solche Felder erstellen eine Python-Umgebung.  </span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Das heißt, in ihnen kannst du wie in Python programmieren!  </span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip title="Weiteres zu den Code-Blöcken"}</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>**Weitere Code-Blöcke erzeugen** kannst du mit dem "Add New Codeblock"-Button erzeugen.  </span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>**Ki-Feedback** zu deinem Code kannst du mit dem Feedback-Button erzeugen, hierfür musst du jedoch oben eine Base-URL und einen API-Key angegeben haben.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <script type="module">

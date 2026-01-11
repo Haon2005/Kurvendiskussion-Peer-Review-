@@ -3,6 +3,7 @@ title: Tutorial Übersicht
 format: html
 filters:
   - pyodide
+  - quizdown
 ---
 
 
@@ -24,6 +25,32 @@ Das Tutorial ist dafür gemacht, von oben bis unten nacheinander durchgearbeitet
 **Rechtsseitig** siehst du die Übersicht über die Seite, auf der du bist. Das heißt, hier kannst du die einzelnen Überschriften des Unterkapitels sehen und direkt dorthin springen.  
 
 **Oben** in der Leiste erkennst du mehrere Symbole. Die <i class="fa-solid fa-magnifying-glass"></i> ist die Suchfunktion, mit der du im ganzen Tutorial nach einem Begriff suchen kannst. Mit dem <i class="fa-solid fa-circle-half-stroke"></i>-Symbol kannst du zwischen Light- und Dark-Mode wechseln. Das <i class="fa-solid fa-book-open-reader"></i>-Symbol aktiviert den *Reader-Mode*, der die Seitenleisten ausblendet, um dir ein ungestörtes Lesen zu ermöglichen.
+
+Es wird auch zwischendurch immer wieder **Quizze** geben, mit welchen du testen kannst, ob du das bisherige gut verstanden hast.
+```quizdown
+# Single-Choice Quiz Beispiel
+We will we will ____ you! (Queen)
+
+1. [ ] `sing with`
+1. [ ] `ring`
+1. [ ] `roll`
+1. [x] `rock`
+
+# Multiple-Choice Quiz Beispiel
+Klassische Rock Bands der 60-80er Jahre sind:
+- [x] `The Beatles`
+- [x] `Queen`
+- [ ] `ABBA`
+- [x] `The Rolling Stones`
+
+# Sorting Quiz Beispiel
+In welcher Reihenfolge wurden die folgenden Erfindungen erfunden? (Oben näher am jetzt, unten weiter in der Vergangenheit).
+
+2. `Erstes I-Phone`
+4. `Erster 3D-Drucker`
+3. `Facebook`
+1. `Erster Sprachassistent (Siri)`
+```
 
 :::
 

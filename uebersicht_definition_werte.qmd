@@ -3,6 +3,7 @@ title: "Definitionsbereich und Wertebereich"
 format: html
 filters:
   - pyodide
+  - quizdown
 ---
 # Der Definitionsbereich
 
@@ -25,6 +26,87 @@ Es gibt zum einen **strukturelle Eigenschaften der Funktion** welche den Wertebe
 Darunter fällt das Vorhandensein von **globalen Extremwerten** und **natürliche Wertegrenzen bestimmter Funktionstypen** (Exponentialfunktionen, Wurzelfunktionen, Betragsfunktionen, Trigonometrische Funktion, Periodische Funktionen)
 Auch spielt das **Verhalten der Funktion an Grenzen oder im Unendlichen** eine Rollen, dies bezieht sich vor allem auf **horizontale Asymptoten**, da diese den Wertebereich einschränken. 
 
+# Quiz über Python Grundlagen
 
+```quizdown
+# Was gibt der folgende Python-Code aus?
+~~~python
+a = 10
+b = 2
+print(a / b)
+~~~
+- [x] 5.0
+- [ ] 5
+- [ ] 20
+- [ ] Error
+> Hinweis: Denk daran, was bei einer Division in Python immer passiert (Datentyp Float).
+
+# Wir haben eine Liste `zahlen = [10, 20, 30, 40]`. Wie greifst du auf den ersten Eintrag (10) zu?
+- [x] `zahlen[0]`
+- [ ] `zahlen[1]`
+- [ ] `zahlen(0)`
+- [ ] `zahlen.first()`
+> Hinweis: Python beginnt beim Zählen immer bei 0.
+
+# Was passiert hier mit der Liste?
+~~~python
+werte = [1, 2, 3]
+werte[1] = 99
+print(werte)
+~~~
+- [x] `[1, 99, 3]`
+- [ ] `[1, 2, 3, 99]`
+- [ ] `[99, 2, 3]`
+- [ ] Error
+> Hinweis: Wir überschreiben den Eintrag an Index 1 (das ist die zweite Zahl).
+
+# Bringe den Code in die richtige Reihenfolge, um SymPy zu importieren und x als Symbol zu definieren.
+1. import sympy
+2. x = sympy.symbols('x')
+3. f = x**2 + 1
+> Hinweis: Erst die Bibliothek laden, dann die Variable definieren.
+
+# Welche mathematische Operation wird hier durchgeführt: `y = x**3`?
+- [x] $x$ hoch 3 (Potenz)
+- [ ] $x$ mal 3 (Multiplikation)
+- [ ] $x$ plus 3 (Addition)
+- [ ] Wurzel aus $x$
+
+# Bringe die Zeilen in die richtige Reihenfolge, um eine einfache Funktion zu definieren.
+1. def meine_funktion(x):
+2.     ergebnis = x + 5
+3.     return ergebnis
+> Hinweis: Denk an den Funktionskopf (`def`), den Körper und die Rückgabe (`return`).
+
+# Welche zwei Gründe führen typischerweise zu einer Definitionslücke (in den reellen Zahlen)?
+- [x] Division durch Null
+- [x] Negative Zahl unter einer geraden Wurzel
+- [ ] Multiplikation mit Null
+- [ ] $x$ ist negativ bei einer Parabel
+
+# Was gibt dieser Code aus (Fallunterscheidung)?
+~~~python
+x = -5
+if x < 0:
+    print("Negativ")
+else:
+    print("Positiv")
+~~~
+- [x] "Negativ"
+- [ ] "Positiv"
+- [ ] Nichts
+- [ ] Error
+
+# Wie fügt man einer bestehenden Liste in Python ein Element hinzu?
+~~~python
+liste = [1, 2]
+# Was fehlt hier?
+print(liste) # Soll [1, 2, 3] sein
+~~~
+- [x] `liste.append(3)`
+- [ ] `liste.add(3)`
+- [ ] `liste + 3`
+- [ ] `liste.insert(3)`
+```
 
 

@@ -1,8 +1,8 @@
 ---
 title: "Graphen beschriften"
-format: html
 filters:
   - pyodide
+  - quizdown
 ---
 
 # Graphen beschriften
@@ -308,6 +308,143 @@ _Der Code sorgt dafür, dass die Y-Werte in einem Betragsabstand von 0,1 um den 
 # Abschlussprojekt: Dein eigenes Analyse-Tool
 
 Zielgerade! du hast dir in diesem Tutorial jetzt alle Fähigkeiten erarbeitet, die du benötigst um dir im Folgenden ein einzelnes Python-Programm zu schreiben, welches eine komplette Kurvendiskussion (wie sie meist in der Schule durchgeführt wird) durchführt.
+
+## Ein Quiz über alles was du für dein Analyse-Tool brauchst
+
+:::{.callout-tip collapse="true" title="Das Quiz ist hier hinter, damit es nicht die Übersicht stört."}
+```quizdown
+# Welche drei Bibliotheken sind das "Dream-Team" für unser Analyse-Projekt?
+- [x] `sympy` 
+- [x] `matplotlib.pyplot` 
+- [x] `numpy` 
+- [ ] `pandas` 
+- [ ] `random` 
+
+> Hinweis: Wir brauchen Symbolik, Numerik und Grafik.
+
+# Warum müssen wir eine SymPy-Funktion mit `sympy.lambdify` umwandeln, bevor wir sie mit Matplotlib plotten?
+1. [x] Weil Matplotlib nicht direkt mit symbolischen SymPy-Formeln rechnen kann. Wir brauchen eine Funktion, die NumPy-Arrays verarbeitet.
+1. [ ] Weil die Funktion sonst falsch abgeleitet wird.
+1. [ ] Weil der Code sonst zu langsam ist.
+
+> Hinweis: Matplotlib braucht viele konkrete Zahlen (x und y), keine Buchstaben.
+
+# Bringe den Workflow für das Erstellen eines Graphen in die richtige Reihenfolge.
+1. f_numpy = sympy.lambdify(x, f, "numpy")
+2. x_werte = np.linspace(-5, 5, 400)
+3. y_werte = f_numpy(x_werte)
+4. plt.plot(x_werte, y_werte)
+5. plt.show()
+
+> Hinweis: Erst umwandeln, dann x-Werte erzeugen, dann y-Werte berechnen, dann zeichnen.
+
+# Mit welchem Befehl erzeugst du ein Array von 100 x-Werten zwischen -10 und 10?
+1. [x] `np.linspace(-10, 10, 100)`
+1. [ ] `np.range(-10, 10)`
+1. [ ] `sympy.symbols(-10, 10)`
+1. [ ] `plt.axis(-10, 10)`
+
+# Du hast Extrempunkte berechnet. Welcher Befehl eignet sich am besten, um diese *einzelnen Punkte* im Graphen zu markieren?
+1. [x] `plt.scatter(x_liste, y_liste)`
+1. [ ] `plt.plot(x_liste, y_liste)`
+1. [ ] `plt.bar(x_liste, y_liste)`
+
+> Hinweis: `plot` verbindet Punkte mit Linien, wir wollen aber nur die Punkte (Streudiagramm).
+
+# Welche Befehle helfen dir, den Graphen übersichtlicher zu gestalten?
+- [x] `plt.grid()` 
+- [x] `plt.title("Mein Graph")` 
+- [x] `plt.xlabel("x")` und `plt.ylabel("f(x)")` 
+- [ ] `plt.make_pretty()`
+- [x] `plt.axhline(0, color='black')` 
+
+> Hinweis: Denk darüber nach, was einen Graphen "übersichtlicher" macht, was sollte man leicht sehen können?
+
+# Du möchtest an einen Hochpunkt $(2|4)$ den Text "HP" schreiben. Welcher Befehl macht das?
+1. [x] `plt.annotate("HP", (2, 4))`
+1. [ ] `plt.write("HP", 2, 4)`
+1. [ ] `plt.print(2, 4, "HP")`
+
+> Hinweis: Wir wollen eine Anmerkung (Annotation) an Koordinaten heften.
+
+# Wie sorgst du dafür, dass deine geplotteten Linien eine Legende bekommen (z.B. "f(x)" und "f'(x)")?
+1. [x] Ich nutze in `plt.plot(..., label="Name")` das Label-Argument und rufe am Ende `plt.legend()` auf.
+1. [ ] Das macht Matplotlib automatisch.
+1. [ ] Ich schreibe es mit `plt.text` daneben.
+
+# Was passiert, wenn du `plt.show()` vergisst?
+1. [x] Der Graph wird (je nach Umgebung) eventuell nicht angezeigt.
+1. [ ] Der Graph wird gelöscht.
+1. [ ] Es gibt eine Fehlermeldung.
+
+> Hinweis: `show()` ist der Befehl: "Jetzt alles auf den Bildschirm malen!".
+
+# Du willst eine senkrechte Asymptote (vertikale Linie) bei $x=2$ einzeichnen. Welcher Befehl passt?
+1. [x] `plt.axvline(2, color='red', linestyle='--')`
+1. [ ] `plt.axhline(2)`
+1. [ ] `plt.plot(2)`
+
+> Hinweis: "v" steht für vertical (senkrecht).
+
+# Was berechnet `sympy.diff(f, x, 2)`?
+1. [x] Die zweite Ableitung $f''(x)$.
+1. [ ] Die erste Ableitung quadriert.
+1. [ ] Das Integral.
+
+# Welche mathematische Bedingung prüfst du im Code, um einen Wendepunkt zu bestätigen?
+- [x] $f''(x_0) = 0$
+- [x] `$f'''(x_0) \neq 0$`
+- [ ] $f'(x_0) = 0$
+
+> Hinweis: Die Krümmung muss Null sein und sich ändern.
+
+# Wie beschränkst du die Ansicht der y-Achse auf den Bereich -10 bis 10 (Zoom)?
+1. [x] `plt.ylim(-10, 10)`
+1. [ ] `plt.range_y(-10, 10)`
+1. [ ] `plt.zoom(-10, 10)`
+
+# Du hast eine Liste mit x-Koordinaten von Hochpunkten: `hp_x = [-2, 2]`. Wie bekommst du die passenden y-Werte, um sie zu plotten?
+1. [x] Ich setze jeden x-Wert in die Funktion ein (z.B. in einer Schleife oder mit `f_numpy(np.array(hp_x))`).
+1. [ ] Die y-Werte sind immer 0.
+1. [ ] Ich rate sie.
+
+> Hinweis: Ein Punkt besteht immer aus $(x | f(x))$.
+
+# Wenn du mehrere Kurven in ein Bild plotten willst (z.B. $f$ und $f'$), was musst du tun?
+1. [x] Einfach mehrere `plt.plot(...)`-Befehle nacheinander aufrufen, bevor `plt.show()` kommt.
+1. [ ] Für jede Kurve ein neues Skript schreiben.
+1. [ ] `plt.multi_plot()` nutzen.
+
+# Was ist der Vorteil von `f-Strings` (z.B. `f"HP bei {x}"`) beim Beschriften?
+1. [x] Man kann Variablenwerte (wie berechnete Koordinaten) direkt in den Text einbauen.
+1. [ ] Sie sind schneller zu tippen.
+1. [ ] Sie machen den Text fett.
+
+# Welche Farbe wird in Matplotlib mit dem Kürzel `'k'` erzeugt?
+1. [x] Schwarz (Black - 'b' ist schon für Blue vergeben).
+1. [ ] Kunterbunt.
+1. [ ] Kupfer.
+
+# Bringe die Schritte zum Einzeichnen von Nullstellen in die richtige Reihenfolge.
+1. nullstellen = sympy.solve(f, x)
+2. # Umwandeln der SymPy-Zahlen in float (für Matplotlib)
+3. for ns in nullstellen:
+4.     y_coord = 0
+5.     plt.scatter(ns, y_coord, color='red')
+
+# Was bedeutet `linestyle='--'` im Plot-Befehl?
+1. [x] Die Linie wird gestrichelt gezeichnet.
+1. [ ] Die Linie wird besonders dünn.
+1. [ ] Die Linie wird doppelt gezeichnet.
+
+# Dein Code wirft einen Fehler: `NameError: name 'np' is not defined`. Was hast du vergessen?
+1. [x] `import numpy as np`
+1. [ ] `import number_python`
+1. [ ] NumPy zu installieren.
+
+> Hinweis: Man muss dem Kind einen Namen geben (Alias), wenn man es so rufen will.
+```
+:::
 
 ## Erstelle Dein Analyse-Tool
 

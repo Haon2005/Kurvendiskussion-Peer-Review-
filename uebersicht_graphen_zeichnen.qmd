@@ -3,6 +3,7 @@ title: "Graphen zeichnen"
 format: html
 filters:
   - pyodide
+  - quizdown
 ---
 
 **Kapitelübersicht**
@@ -20,3 +21,116 @@ In diesem Kapitel beschäftigen wir uns mit der graphischen Darstellung von Funk
 
 ---
 
+# Quiz: Monotonie, Krümmung & Wendepunkte
+
+```quizdown
+# Welche Bedingungen müssen erfüllt sein, damit an einer Stelle $x_0$ sicher ein Hochpunkt (lokales Maximum) vorliegt? 
+- [x] $f'(x_0) = 0$ 
+- [x] $f''(x_0) < 0$ 
+- [ ] $f''(x_0) > 0$
+- [ ] $f'(x_0) > 0$
+
+> Hinweis: Es gibt die "Notwendige Bedingung" und die "Hinreichende Bedingung". Bei einem Hochpunkt ist die Steigung Null und die Kurve ist rechtsgekrümmt (sieht aus wie ein Berg).
+
+# Mit welchem Python-Befehl bildest du die zweite Ableitung $f''(x)$?
+1. [x] `f_double_prime = sympy.diff(f, x, 2)`
+1. [ ] `f_double_prime = sympy.diff(f, x)`
+1. [ ] `f_double_prime = sympy.derive(f, x, 2)`
+1. [ ] `f_double_prime = sympy.solve(f, x, 2)`
+
+> Hinweis: Das dritte Argument bei `diff` gibt die Ordnung der Ableitung an.
+
+# Bringe die Schritte einer Kurvendiskussion zur Bestimmung von Extrempunkten in die richtige Reihenfolge.
+1. f_prime = sympy.diff(f, x)
+2. kritische_stellen = sympy.solve(f_prime, x)
+3. f_double_prime = sympy.diff(f, x, 2)
+4. # Einsetzen der Stellen in die 2. Ableitung
+
+# Was bedeutet es mathematisch, wenn $f''(x) > 0$ in einem Intervall ist?
+1. [x] Der Graph ist linksgekrümmt (konvex).
+1. [ ] Der Graph ist rechtsgekrümmt (konkav).
+1. [ ] Der Graph fällt streng monoton.
+1. [ ] Es liegt ein Wendepunkt vor.
+
+> Hinweis: "Konvex ist der Podex, wenn das Mädel brav war" (oder einfach: Linkskurve wie beim Autofahren).
+
+# Was gilt für einen Wendepunkt? 
+- [x] Die Krümmung ändert sich (von links nach rechts oder umgekehrt).
+- [x] Die zweite Ableitung ist Null ($f''(x_0) = 0$).
+- [x] Die dritte Ableitung ist ungleich Null ($f'''(x_0) \neq 0$).
+- [ ] Die Steigung ist zwingend Null ($f'(x_0) = 0$).
+
+> Hinweis: Ein Wendepunkt muss keine waagerechte Tangente haben (Sattelpunkt), aber die Krümmung muss 0 sein.
+
+# Was berechnet dieser Code?
+~~~python
+if f_prime.subs(x, wert) > 0:
+    print("Steigend")
+~~~
+1. [x] Ob die Funktion an der Stelle `wert` streng monoton steigt.
+1. [ ] Ob ein Hochpunkt vorliegt.
+1. [ ] Ob die Funktion positiv ist.
+
+> Hinweis: Wir schauen uns das Vorzeichen der ersten Ableitung an.
+
+# Welche Aussagen zu Sattelpunkten sind wahr? 
+- [x] Es sind Wendepunkte mit waagerechter Tangente.
+- [x] Es gilt $f'(x_0) = 0 \land f''(x_0) = 0 \land f'''(x_0) \neq 0$.
+- [ ] Es sind Extrempunkte.
+- [ ] Die Funktion wechselt dort das Vorzeichen.
+> Hinweis: Ein Terrassenpunkt, an dem es kurz flach wird, es dann aber in die gleiche Richtung weitergeht.
+
+# Bringe die Python-Befehle zur Bestimmung von Wendepunkten in die Reihenfolge.
+1. f_3_prime = sympy.diff(f, x, 3)
+2. kandidaten = sympy.solve(f_double_prime, x)
+3. test = f_3_prime.subs(x, kandidaten[0])
+4. if test != 0: print("Wendepunkt!")
+
+# Was passiert, wenn $f'(x_0) = 0$ und auch $f''(x_0) = 0$ ist?
+1. [x] Wir können noch keine Aussage treffen (Sattelpunkt oder flaches Extremum) und müssen höher ableiten.
+1. [ ] Es ist sicher ein Sattelpunkt.
+1. [ ] Es ist sicher ein Extrempunkt.
+
+> Hinweis: Das Kriterium der 2. Ableitung versagt hier.
+
+# Welche Python-Bibliotheken oder Module hast du in den letzten Kapiteln genutzt? 
+- [x] `sympy`
+- [ ] `matplotlib` 
+- [ ] `pandas`
+- [ ] `pygame`
+
+# Wenn eine Funktion im Intervall $I$ streng monoton fällt, welches Vorzeichen hat $f'(x)$ dort?
+1. [x] Minus ($< 0$)
+1. [ ] Plus ($> 0$)
+1. [ ] Null
+
+> Hinweis: Negative Steigung bedeutet Fallen.
+
+# (Wiederholung) Wie findest du heraus, ob eine Funktion eine waagerechte Asymptote hat?
+1. [x] Grenzwertbetrachtung mit `sympy.limit(f, x, sympy.oo)`.
+1. [ ] Nullstellen berechnen mit `solve`.
+1. [ ] Ableitung gleich Null setzen.
+
+# Was ist der Unterschied zwischen `sympy.solve` und `sympy.solveset`? 
+- [x] `solveset` ist neuer und mathematisch präziser (gibt Mengen zurück).
+- [x] `solve` gibt oft einfache Listen zurück (gut für Weiterverarbeitung).
+- [ ] `solve` kann keine Ableitungen lösen.
+
+> Hinweis: In den Tutorials haben wir meist `solve` für einfache Listen genutzt, aber `solveset` kennen wir vom Definitionsbereich.
+
+# Du hast eine Liste von Nullstellen `st = [-2, 2]`. Wie prüfst du das Monotonieverhalten *dazwischen*?
+1. [x] Ich wähle einen Testwert (z.B. 0), setze ihn in $f'(x)$ ein und prüfe das Vorzeichen.
+1. [ ] Ich setze -2 und 2 in $f(x)$ ein.
+1. [ ] Das kann man nicht prüfen.
+
+> Hinweis: Zwischen zwei Nullstellen der Ableitung ändert sich das Vorzeichen der Steigung nicht.
+
+# Welcher Befehl sortiert eine Liste von gefundenen Extremstellen aufsteigend?
+1. [x] `liste.sort()`
+1. [ ] `liste.order()`
+1. [ ] `sympy.sort(liste)`
+1. [ ] `liste.arrange()`
+
+> Hinweis: Ein Standard-Python-Befehl für Listen.
+
+```

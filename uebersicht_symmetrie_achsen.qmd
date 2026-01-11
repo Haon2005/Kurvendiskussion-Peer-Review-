@@ -3,6 +3,7 @@ title: "Symmetrie und Achsenschnittpunkte"
 format: html
 filters:
   - pyodide
+  - quizdown
 ---
 
 Es geht in diesem Abschnitt darum, allgemeine Eigenschaften der Funktion zu bestimmen, 
@@ -24,5 +25,77 @@ dazu gehören:
 
 ---
 
+
+# Quiz: Python-Basics & Definitionsbereich
+
+```quizdown
+# Bringe den Code in die richtige Reihenfolge, um den Wertebereich zu bestimmen.
+1. from sympy.calculus.util import function_range
+2. f = sympy.sympify("x**2")
+3. bereich = function_range(f, x, sympy.S.Reals)
+4. print(bereich)
+> Hinweis: Erst importieren, dann Funktion erstellen, dann berechnen, dann ausgeben.
+
+# Welche mathematische Bedingung führt bei $f(x) = \frac{1}{x-2}$ zu einer Definitionslücke?
+- [x] $x - 2 = 0$
+- [ ] $x - 2 > 0$
+- [ ] $x = 0$
+- [ ] $f(x) = 0$
+> Hinweis: Ein Bruch darf im Nenner niemals 0 werden.
+
+# Was gibt dieser Code aus (Schleifen-Verständnis)?
+~~~python
+summe = 0
+for i in range(1, 4):
+    summe = summe + i
+print(summe)
+~~~
+- [x] 6
+- [ ] 4
+- [ ] 3
+- [ ] 10
+> Hinweis: `range(1, 4)` erzeugt die Zahlen 1, 2 und 3. (1+2+3).
+
+# Welche Aussage zum "Wertebereich" ist richtig?
+- [x] Er umfasst alle y-Werte, die die Funktion annehmen kann.
+- [ ] Er umfasst alle x-Werte, die man einsetzen darf.
+- [ ] Er ist immer gleich den reellen Zahlen ($\mathbb{R}$).
+
+# Was passiert, wenn man in Python `sympy.S.Reals` verwendet, ohne `import sympy` gemacht zu haben?
+- [x] Es gibt einen `NameError` (sympy is not defined).
+- [ ] Python importiert es automatisch.
+- [ ] Nichts, es funktioniert einfach.
+
+# Wir haben eine Liste `nullstellen = [-2, 0, 2]`. Wie greifen wir auf das **letzte** Element zu?
+- [x] `nullstellen[-1]`
+- [ ] `nullstellen[last]`
+- [ ] `nullstellen[3]`
+- [ ] `nullstellen.end()`
+> Hinweis: In Python kann man mit negativen Indizes von hinten zählen.
+
+# Welchen Definitionsbereich hat die Funktion $f(x) = \sqrt{x}$ im Reellen?
+- [x] $x \ge 0$ (Nicht-negative Zahlen)
+- [ ] $x > 0$ (Nur positive Zahlen)
+- [ ] Ganz $\mathbb{R}$ (Alles)
+- [ ] $x \le 0$ (Nicht-positive Zahlen)
+
+# Bringe die Zeilen in die richtige Reihenfolge, um eine Funktion mit einer Definitionslücke abzufangen.
+1. try:
+2.     wert = 1 / x
+3. except ZeroDivisionError:
+4.     print("Teilen durch 0 nicht erlaubt!")
+> Hinweis: Erst versuchen (`try`), dann den Fehler auffangen (`except`).
+
+# Was ist der Unterschied zwischen `sympy` und `numpy`?
+- [x] `sympy` rechnet symbolisch (exakt), `numpy` rechnet numerisch (mit Zahlen/Arrays).
+- [ ] `sympy` ist nur für Graphen, `numpy` für Gleichungen.
+- [ ] Es gibt keinen Unterschied.
+
+# Wenn eine Funktion $f(x) = x^2 + 2$ ist (eine nach oben verschobene Parabel), was ist ihr Wertebereich?
+- [x] $[2, \infty)$ (Alle Werte ab 2 aufwärts)
+- [ ] $(-\infty, \infty)$ (Alle Zahlen)
+- [ ] $[0, \infty)$ (Alle positiven Zahlen)
+> Hinweis: Der kleinste Wert, den $x^2$ annehmen kann, ist 0. Plus 2 macht...?
+```
 
 
