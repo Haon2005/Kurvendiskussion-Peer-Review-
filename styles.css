@@ -1,34 +1,3 @@
-/* Container für das gesamte Layout */
-/* Gesamt-Container */
-.quarto-container {
-  display: flex; /* Flexbox für horizontale Anordnung */
-  max-width: 2100px;
-  margin: 0 auto; /* Zentrierung des Containers */
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Linke Sidebar */
-#quarto-sidebar.sidebar {
-  order: 1; /* Linke Sidebar soll als erstes erscheinen */
-  flex: 0 0 250px; /* Feste Breite */
-  box-sizing: border-box;
-}
-
-/* Hauptinhalt */
-#quarto-document-content.content {
-  order: 2; /* Hauptinhalt kommt nach der linken Sidebar */
-  flex: 1; /* Hauptinhalt nimmt den restlichen Platz ein */
-  box-sizing: border-box;
-}
-
-/* Rechte Sidebar (Margin Sidebar) */
-#quarto-margin-sidebar.sidebar {
-  order: 3; /* Rechte Sidebar soll als letztes erscheinen */
-  flex: 0 0 250px; /* Feste Breite */
-  box-sizing: border-box;
-}
-
 /* --- Icons in der Navigationsleiste anpassen --- */
 
 /* Verstecke die originalen Bootstrap Icons */
